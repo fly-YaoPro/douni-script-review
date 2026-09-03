@@ -1,0 +1,1758 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-09-01T13:58:18.297Z",
+  "sourceFile": "豆包 Skill 全量手册（详细结构化版）.md",
+  "handbookPath": "E:\\豆包创作线Agent\\skills\\douni-script-review\\references\\doubao-skill-handbook.md",
+  "mirrorPath": "E:\\Linkly知识库\\豆尼审稿Skill-Linkly数据库\\02-豆包Workplace全部Skills\\豆包-Skill-全量手册-详细结构化版.md",
+  "priority": {
+    "role": "secondary_capability_reference",
+    "precedence": "现行产品官方 Skill/SKILL.md > 本手册 > 模型常识",
+    "warning": "本手册用于发现能力、输入输出、场景与扩展方向；发生冲突时必须回读对应官方 Skill，不得单独据此生成 feature_error。"
+  },
+  "skillCount": 108,
+  "skills": [
+    {
+      "skillId": "doubao-academic-researcher",
+      "title": "1.1 学术文献调研",
+      "aliases": [
+        "1.1 学术文献调研",
+        "doubao-academic-researcher"
+      ],
+      "lineStart": 51,
+      "lineEnd": 76,
+      "oneLine": "在未锁定具体论文前，系统摸清一个学术方向的研究现状、热点前沿、学术史与选题依据，产出结论先行、引用可追溯的结构化综述。",
+      "triggerSummary": "\"调研某方向\"\"梳理 related work / 研究现状\"\"看最新进展/学术史\"\"找文献支撑观点\"\"选题依据\"。",
+      "inputSummary": "研究主题/问题、学科、时间窗、输出语言、证据标准（开工先冻结研究简报）。",
+      "outputSummary": "默认飞书云文档 + 对话摘要，含文献地图表、核心逻辑图、参考文献清单。\n\n**关键约束**：①不可核验引用一条不进，DOI 能解析但标题不符按幻觉拦截；②证据分级尊重人文/质性范式，不搞\"非 RCT 即低质\"；③IRON RULES 高于临时指令。",
+      "boundarySummary": "不出 IMRaD 成品、不代写论文章节 → `doubao-academic-polish`；评判想法 → `doubao-academic-evaluator`；逐篇精读 → `doubao-paper-close-reading`；只查引用真假 → `doubao-reference-audit`。",
+      "sectionCharacterCount": 1224
+    },
+    {
+      "skillId": "doubao-academic-polish",
+      "title": "1.2 论文写作润色",
+      "aliases": [
+        "1.2 论文写作润色",
+        "doubao-academic-polish"
+      ],
+      "lineStart": 77,
+      "lineEnd": 101,
+      "oneLine": "学术论文正文写作、结构设计与语言润色总入口，按\"产物类型 + 语言\"分流到三条工作线。",
+      "triggerSummary": "\"帮我写论文/这一节\"\"扩写成章节\"\"中文材料写成英文\"\"润色但不改意思\"\"只给结构提纲\"\"学术中译英\"。",
+      "inputSummary": "已有材料/数据/想法、目标语言、任务类型、目标期刊要求（可选）。",
+      "outputSummary": "成品正文（文档/在线文档），只出成品，不带内部检查痕迹。\n\n**关键约束**：①忠于原意绝不虚构数据/文献/机制；②输出干净，不打印 handoff/流程；③发现深层硬伤转 evaluator 不糊过。",
+      "boundarySummary": "先评研究是否成立 → 先转 evaluator；先系统调研 → 先转 researcher；会改变科学含义的改动必须标出请作者确认。",
+      "sectionCharacterCount": 1166
+    },
+    {
+      "skillId": "doubao-academic-evaluator",
+      "title": "1.3 学术评审诊断",
+      "aliases": [
+        "1.3 学术评审诊断",
+        "doubao-academic-evaluator"
+      ],
+      "lineStart": 102,
+      "lineEnd": 123,
+      "oneLine": "以资深审稿人/导师视角做\"只看不改\"的诊断——评判想法值不值得做，或给成稿挑硬伤、判断能不能投。",
+      "triggerSummary": "\"帮我看看这个想法\"\"值不值得做\"\"投稿前审一遍\"\"能不能投\"\"这批实验数据撑不撑得住观点\"。",
+      "inputSummary": "想法（假设+机制+方案）或论文草稿；实验数据与对应主张；学科与目标期刊/会议。",
+      "outputSummary": "简短判断直接对话；完整审查先出 Markdown 源稿再转飞书文档（无权限则保留 Markdown）。\n\n**关键约束**：①没给的数字绝不编（最高优先级）；②判断指向原文具体位置，不空泛；③未验证想法最多\"值得一试但需实验确认\"；全程引用文献 ≤15 篇。",
+      "boundarySummary": "只诊断不代写（不重写正文/不画图/不重跑数据）→ 写作转 polish；没有的数字绝不编；只有想法走 idea-evaluate，已有草稿走 submission-review。",
+      "sectionCharacterCount": 998
+    },
+    {
+      "skillId": "doubao-paper-close-reading",
+      "title": "1.4 论文深度精读",
+      "aliases": [
+        "1.4 论文深度精读",
+        "doubao-paper-close-reading"
+      ],
+      "lineStart": 124,
+      "lineEnd": 143,
+      "oneLine": "对一篇或少量论文做专业深度精读，讲清问题、故事、方法机制、关键证据、结果、可信边界、复现风险与启示。",
+      "triggerSummary": "\"论文精读/深度解读\"\"分析方法与实验\"\"判价值或局限\"\"值不值得引用/复现\"\"组会精读笔记\"。",
+      "inputSummary": "PDF/Word/MD/正文/arXiv/DOI/标题；阅读目的（理解贡献/学方法/判可信/备复现/做比较/找启发）；图表、参考文献、补充材料。",
+      "outputSummary": "完整 Markdown 精读报告 + 内容一致并回读的飞书文档；飞书不可用时 Markdown 即完整交付（模板见 assets/report-template.md）。\n\n**关键约束**：先理解再评价、先给判断再展开；全文看见但重点深读；深度服从用户目的，不对外包装成\"低中高档产品\"。",
+      "boundarySummary": "无种子论文的开放综述 → researcher；只核验 DOI/文献真假 → reference-audit；代写/润色/排版 → polish / journal-format；只有摘要节选不得冒充全文精读。",
+      "sectionCharacterCount": 754
+    },
+    {
+      "skillId": "doubao-research-proposal",
+      "title": "1.5 研究计划书撰写",
+      "aliases": [
+        "1.5 研究计划书撰写",
+        "doubao-research-proposal"
+      ],
+      "lineStart": 144,
+      "lineEnd": 165,
+      "oneLine": "面向基金申请、开题报告、人才计划的学术提案撰写、审查与优化。",
+      "triggerSummary": "\"写基金申请/国自然\"\"优化开题报告\"\"审查研究计划\"\"按已有成果写立项书\"\"核对模板\"。",
+      "inputSummary": "研究方向与已有成果、申请类型、模板/格式要求、研究基础与团队。",
+      "outputSummary": "研究计划书/立项书（事实与 AI 建议分层标注）。\n\n**关键约束**：严格区分已有事实与 AI 补充；任务书各部分逻辑一致；参考按需加载；反编造规则。",
+      "boundarySummary": "全面文献计量综述 → researcher；从零选题/纯润色 → evaluator/polish；法律医疗财务高风险结论不在范围。",
+      "sectionCharacterCount": 749
+    },
+    {
+      "skillId": "doubao-reference-audit",
+      "title": "1.6 参考文献审查",
+      "aliases": [
+        "1.6 参考文献审查",
+        "doubao-reference-audit"
+      ],
+      "lineStart": 166,
+      "lineEnd": 185,
+      "oneLine": "系统审查参考文献真实性、题录准确性、文内—文后对应，以及正文主张是否真被引用文献支持。",
+      "triggerSummary": "\"论文/参考文献审计\"\"引用核对\"\"引用是否支持观点\"\"查错引/过度推断/二手转引\"。",
+      "inputSummary": "论文全文 + 参考文献清单（最好含正文引用位置）；目标期刊引用格式（可选）。",
+      "outputSummary": "专业引用审计报告（结论、核心发现、修改建议、实质性引用问题、题录版本问题、结构观察、证据边界）+ 飞书文档。\n\n**关键约束**：全量看见、风险聚焦；先辨引用角色再查支持；摘要只适合筛查不适合包办判断；原始研究优先于二手转述；证据不足保留判断。",
+      "boundarySummary": "开放综述 → researcher；整篇精读 → close-reading；代写/润色 → polish。",
+      "sectionCharacterCount": 640
+    },
+    {
+      "skillId": "doubao-journal-format",
+      "title": "1.7 期刊格式排版",
+      "aliases": [
+        "1.7 期刊格式排版",
+        "doubao-journal-format"
+      ],
+      "lineStart": 186,
+      "lineEnd": 207,
+      "oneLine": "对学术论文 Word/DOCX 按期刊、学校、会议或课程要求做格式排版与修复（只动格式不动内容）。",
+      "triggerSummary": "\"论文排版/期刊投稿格式/学位论文格式\"\"套会议模板\"\"修复 Word 格式\"。",
+      "inputSummary": "论文 DOCX（.doc/.dot 先转换并标注置信度更低）+ 模板 DOCX 或明确格式规则。",
+      "outputSummary": "排版后 DOCX + 格式/QA 报告（内部产物默认不展示），必要时渲染对比。\n\n**关键约束**：只动格式不动学术内容；模板是样式权威、转换件不是。",
+      "boundarySummary": "不做写作/润色/降重/翻译/代写/检索/补引用/伪造数据；普通非论文 Word 套模板不用本 Skill；**同一请求同时含排版与非排版任务时，必须先停下问\"只排版\"还是\"拆分复合任务\"，用户选择前不执行**。",
+      "sectionCharacterCount": 904
+    },
+    {
+      "skillId": "doubao-medical-literature-search",
+      "title": "1.8 医学文献检索",
+      "aliases": [
+        "1.8 医学文献检索",
+        "doubao-medical-literature-search"
+      ],
+      "lineStart": 208,
+      "lineEnd": 232,
+      "oneLine": "查找临床指南、共识与研究论文，围绕医学主题/疾病/药物/干预做综述与课题论证。",
+      "triggerSummary": "\"查某病最新指南\"\"检索某药物研究\"\"做医学文献综述\"\"找某干预证据\"。",
+      "inputSummary": "医学主题/疾病/药物/干预；受众（患者/专业）；是否要正式报告。",
+      "outputSummary": "quick_answer 直出对话；full_report 默认飞书文档（含证据分级与来源链接）。\n\n**关键约束**：硬证据约束；响应模式由触发条件唯一决定，不混用。",
+      "boundarySummary": "具体病例诊疗 → clinical-decision-support；已给一篇要解读 → medical-literature-interpretation；翻译 → translation；订阅跟踪 → monitoring；体检报告 → medical-report。",
+      "sectionCharacterCount": 854
+    },
+    {
+      "skillId": "doubao-medical-literature-interpretation",
+      "title": "1.9 医学文献解读",
+      "aliases": [
+        "1.9 医学文献解读",
+        "doubao-medical-literature-interpretation"
+      ],
+      "lineStart": 233,
+      "lineEnd": 252,
+      "oneLine": "对用户已给定的一篇/一组医学论文、指南做总结、问答、逐篇解读、横向比较与方法学评价。",
+      "triggerSummary": "上传医学论文/指南 PDF、链接、DOI、摘要、表格、图片，要求\"解读/总结/分析/问答/对比\"。",
+      "inputSummary": "已给定文献 + 具体问题。",
+      "outputSummary": "聊天回答或飞书 Full Report。\n\n**关键约束**：只基于用户来源不外扩；来源不可读要明说。",
+      "boundarySummary": "需主动检索新文献 → search；具体病例 → clinical-decision-support。",
+      "sectionCharacterCount": 580
+    },
+    {
+      "skillId": "doubao-medical-literature-translation",
+      "title": "1.10 医学文献翻译",
+      "aliases": [
+        "1.10 医学文献翻译",
+        "doubao-medical-literature-translation"
+      ],
+      "lineStart": 253,
+      "lineEnd": 272,
+      "oneLine": "医学领域文献中英互译，覆盖论文、摘要、指南、临床试验、药品资料。",
+      "triggerSummary": "\"翻译这篇医学论文/指南/说明书\"\"摘要译成英文\"。",
+      "inputSummary": "待译文本/PDF/链接 + 方向 + 范围。",
+      "outputSummary": "短片段直出；全文默认飞书文档（最小格式与表图校验、写入回读双门槛）。\n\n**关键约束**：仅做来源内语言转换，忠实不发挥；专业术语准确。",
+      "boundarySummary": "检索/综合多证据 → search；具体病例 → clinical；单篇解读 → interpretation；改写适配期刊 → academic-polish。",
+      "sectionCharacterCount": 604
+    },
+    {
+      "skillId": "doubao-medical-literature-monitoring",
+      "title": "1.11 医学进展跟踪",
+      "aliases": [
+        "1.11 医学进展跟踪",
+        "doubao-medical-literature-monitoring"
+      ],
+      "lineStart": 273,
+      "lineEnd": 292,
+      "oneLine": "为医生/研究/医学内容团队跟踪某领域最新进展，首次出报告并可订阅定时增量推送。",
+      "triggerSummary": "\"查某领域最新进展\"\"订阅监控\"\"定期推送某主题新研究\"。",
+      "inputSummary": "跟踪主题、关注维度、推送频率；订阅须用户明确确认。",
+      "outputSummary": "首期飞书进展报告 + 定时任务（后续增量推送）。\n\n**关键约束**：日期/身份/证据边界清晰；订阅必须确认后创建。",
+      "boundarySummary": "一次性综述 → search；具体患者问题 → clinical-decision-support。",
+      "sectionCharacterCount": 625
+    },
+    {
+      "skillId": "doubao-clinical-decision-support",
+      "title": "1.12 临床决策支持",
+      "aliases": [
+        "1.12 临床决策支持",
+        "doubao-clinical-decision-support"
+      ],
+      "lineStart": 293,
+      "lineEnd": 314,
+      "oneLine": "循证医学临床辅助决策，结合病例与指南文献，给出诊断鉴别、检查路径、用药安全、治疗比较、预后与风险分析。",
+      "triggerSummary": "给病例/临床表现，问\"考虑什么诊断、做什么检查、怎么选药、预后如何、风险多大\"。",
+      "inputSummary": "具体临床问题 + 病例资料（主诉/病史/检查/用药）。",
+      "outputSummary": "循证临床判断与建议（对话/文档），标注证据来源与不确定性。\n\n**关键约束**：最高优先级是患者安全；只辅助不替代执业医师；证据不足明确披露。",
+      "boundarySummary": "文献调研 → medical-literature-search；单纯报告解读 → medical-report。",
+      "sectionCharacterCount": 770
+    },
+    {
+      "skillId": "doubao-critical-reading-companion",
+      "title": "1.13 深度解读伴读",
+      "aliases": [
+        "1.13 深度解读伴读",
+        "doubao-critical-reading-companion"
+      ],
+      "lineStart": 315,
+      "lineEnd": 334,
+      "oneLine": "把新闻、长评、宣传文案等**非学术公共文本**转成可追溯的\"阅读地图\"，重建论证链、评证据推理、识别隐藏前提、核查关键事实。",
+      "triggerSummary": "判断公共文章/宣传/评论可信度、拆论证、识别宣传话术、作者自检、为行动决策找依据。",
+      "inputSummary": "公共文本全文/链接 + 阅读目标。",
+      "outputSummary": "结构化阅读地图（完整/快判两档）。\n\n**关键约束**：每个判断可追溯到原文位置；外部事实需核查标注；区分事实、推断与作者立场。",
+      "boundarySummary": "学术论文精读 → paper-close-reading；只做普通摘要用通用能力。",
+      "sectionCharacterCount": 567
+    },
+    {
+      "skillId": "doubao-patent-drafting",
+      "title": "1.14 专利撰写",
+      "aliases": [
+        "1.14 专利撰写",
+        "doubao-patent-drafting"
+      ],
+      "lineStart": 335,
+      "lineEnd": 360,
+      "oneLine": "基于技术交底书撰写/修改中国发明、实用新型专利申请文件，或审查已有权利要求书。",
+      "triggerSummary": "\"专利撰写/申请\"\"技术交底书\"\"权利要求/说明书\"\"实用新型/发明专利\"。",
+      "inputSummary": "技术交底书（领域、现有技术缺陷、发明内容、实施例、测试数据）+ 专利类型。",
+      "outputSummary": "专利申请文件（权利要求书 + 说明书）draft，经构建命令格式与一致性校验。\n\n**关键约束**：红线清单全程有效；不编造交底书没有的技术事实；P0 未确认不定稿。",
+      "boundarySummary": "专利检索、FTO/侵权分析、无效宣告、审查意见答复、商标著作权不在流程；这些相邻诉求混入时撰写照常，但须逐项说明处理情况，漏一项即交付不完整。",
+      "sectionCharacterCount": 690
+    },
+    {
+      "skillId": "doubao-daily-stock",
+      "title": "2.1 个股日报",
+      "aliases": [
+        "2.1 个股日报",
+        "doubao-daily-stock"
+      ],
+      "lineStart": 361,
+      "lineEnd": 382,
+      "oneLine": "解释单一上市股票当日/近期涨跌与异动，输出结构完整的个股日报。",
+      "triggerSummary": "\"某股今天为什么涨/跌\"\"做个日报/盘后复盘\"\"近期表现怎么样\"\"资金面和消息面\"。",
+      "inputSummary": "股票名称/代码、市场（A/港/美）、日期或区间、关注点。",
+      "outputSummary": "结构完整个股日报（对话或飞书文档/Word）。\n\n**关键约束**：归因要有证据链，不把相关性当因果；时间口径与市场一致；标注数据时间。",
+      "boundarySummary": "多股横比 → multi-stock-comparison；批量选股 → stock-screening；深度基本面 → public-company-analysis；财报季 → earnings-analysis。",
+      "sectionCharacterCount": 625
+    },
+    {
+      "skillId": "doubao-earnings-analysis",
+      "title": "2.2 财报深度分析",
+      "aliases": [
+        "2.2 财报深度分析",
+        "doubao-earnings-analysis"
+      ],
+      "lineStart": 383,
+      "lineEnd": 404,
+      "oneLine": "对上市公司财报/季报/年报/业绩预告做深度因果分析，回答\"为什么超预期/不及预期、亮点风险、具体科目为何变动\"。",
+      "triggerSummary": "\"解读财报/季报/年报\"\"为什么毛利率下滑\"\"业绩超预期原因\"\"业绩会要点\"。",
+      "inputSummary": "公司、报告期、财报原文/公告（或检索取得）、关注点。",
+      "outputSummary": "财报因果分析报告。\n\n**关键约束**：数字来自财报原文或检索，口径一致；区分会计调整与经营实质。",
+      "boundarySummary": "非财报期的日常异动 → daily-stock；建三表预测模型 → finance-model-builder；公司全景 → public-company-analysis。",
+      "sectionCharacterCount": 549
+    },
+    {
+      "skillId": "doubao-public-company-analysis",
+      "title": "2.3 上市公司深度分析",
+      "aliases": [
+        "2.3 上市公司深度分析",
+        "doubao-public-company-analysis"
+      ],
+      "lineStart": 405,
+      "lineEnd": 426,
+      "oneLine": "研究单一上市公司的商业模式、竞争优势、行业位置、财务质量、估值、风险与投资观点。",
+      "triggerSummary": "\"公司深度分析/研究\"\"商业模式/护城河\"\"估值贵不贵\"\"投资观点/风险\"。",
+      "inputSummary": "公司名/代码、关注维度、投资视角、时间区间。",
+      "outputSummary": "公司深度研究报告（含估值与风险）。\n\n**关键约束**：估值方法按估值决策树选择并说明假设；同行可比协议保证口径一致。",
+      "boundarySummary": "纯事件冲击 → market-hotspot；一级市场未上市 → private-company；多股横比 → multi-stock-comparison；建模型 → finance-model-builder。",
+      "sectionCharacterCount": 868
+    },
+    {
+      "skillId": "doubao-industry-analysis",
+      "title": "2.4 行业分析",
+      "aliases": [
+        "2.4 行业分析",
+        "doubao-industry-analysis"
+      ],
+      "lineStart": 427,
+      "lineEnd": 446,
+      "oneLine": "对某行业做中长期基本面与产业研究：定义与规模、产业链、竞争格局、供需、周期、政策、趋势。",
+      "triggerSummary": "\"研究某行业/赛道\"\"产业链分析\"\"行业格局/规模/趋势\"\"值不值得进入\"。",
+      "inputSummary": "行业名称、地域、研究目的（投资/创业/求职）、时间窗。",
+      "outputSummary": "行业研究报告（产业链图、格局、趋势、关键玩家）。\n\n**关键约束**：市场规模标注测算口径与来源；周期位置要有数据支撑。",
+      "boundarySummary": "行业内单公司 → public-company；事件对行业冲击 → market-hotspot；选股落地 → stock-screening。",
+      "sectionCharacterCount": 458
+    },
+    {
+      "skillId": "doubao-market-hotspot",
+      "title": "2.5 市场热点事件分析",
+      "aliases": [
+        "2.5 市场热点事件分析",
+        "doubao-market-hotspot"
+      ],
+      "lineStart": 447,
+      "lineEnd": 468,
+      "oneLine": "把宏观、政策、监管、供需、地缘、行业或公司事件，转化为对公司/行业/公开市场的因果影响分析。",
+      "triggerSummary": "\"某政策/事件对某板块影响\"\"利好还是利空、涨没涨完\"\"地缘/监管冲击分析\"。",
+      "inputSummary": "事件描述、涉及对象、时间、市场背景。",
+      "outputSummary": "事件影响分析（传导链 + 情景 + 监控/证伪清单）。\n\n**关键约束**：区分一次性与结构性影响；priced-in 必须给判断依据；不预测确定走势。",
+      "boundarySummary": "无事件的常规公司研究 → public-company；当日个股归因 → daily-stock。",
+      "sectionCharacterCount": 522
+    },
+    {
+      "skillId": "doubao-announcement-analysis",
+      "title": "2.6 上市公司公告分析",
+      "aliases": [
+        "2.6 上市公司公告分析",
+        "doubao-announcement-analysis"
+      ],
+      "lineStart": 469,
+      "lineEnd": 488,
+      "oneLine": "搜索并解读 A 股（沪深北）、港股（HKEX）、美股（SEC EDGAR）公告，支持单条/多条深度解读与按公司持续跟踪。",
+      "triggerSummary": "\"解读这份公告\"\"某公司最近发了什么公告\"\"这条公告重要吗/影响几何\"。",
+      "inputSummary": "公告原文/链接/标题，或公司+时间+类型。",
+      "outputSummary": "公告解读（要点、性质、影响、多视角、后续关注点）。\n\n**关键约束**：以公告原文为准，区分事实与市场解读；重大事项标注风险等级。",
+      "boundarySummary": "财报深度归因 → earnings；事件影响推演 → hotspot。",
+      "sectionCharacterCount": 471
+    },
+    {
+      "skillId": "doubao-stock-screening",
+      "title": "2.7 股票筛选",
+      "aliases": [
+        "2.7 股票筛选",
+        "doubao-stock-screening"
+      ],
+      "lineStart": 489,
+      "lineEnd": 510,
+      "oneLine": "在 A/港/美股及其他市场做股票筛选、候选池构建、指定股票比较、行业/主题/产业链/策略风格筛选与龙头识别。",
+      "triggerSummary": "\"找一批符合条件的股票\"\"筛行业/主题/产业链龙头\"\"比较这几只\"\"构建股票池\"。",
+      "inputSummary": "市场、筛选条件（行业/主题/财务/估值/风格）、约束、数量。",
+      "outputSummary": "筛选报告（候选池、证据表、排序与理由、风险），正式报告走执行契约。\n\n**关键约束**：筛选与排序规则透明可复算；数据缺失/冲突按规则处理并标注；结论语言克制。",
+      "boundarySummary": "单公司深度 → public-company；个股日报 → daily-stock；成对深度比较 → multi-stock-comparison。",
+      "sectionCharacterCount": 666
+    },
+    {
+      "skillId": "multi-stock-comparison",
+      "title": "2.8 多公司横向比较",
+      "aliases": [
+        "2.8 多公司横向比较",
+        "multi-stock-comparison"
+      ],
+      "lineStart": 511,
+      "lineEnd": 532,
+      "oneLine": "对两家及以上上市公司做横向研究，覆盖大盘板块、外围、供应链、新闻监管、商业模式、经营财务、成长、预期、估值、股价、组合，以及 A/H 与跨上市地相对价值。",
+      "triggerSummary": "\"A 和 B 哪家更值得投\"\"横向对比这几家\"\"A/H 股差价\"\"配对交易/组合适配\"。",
+      "inputSummary": "≥2 家公司、比较维度、市场、投资视角。",
+      "outputSummary": "横向比较报告（对比矩阵 + 相对价值 + 结论），支持飞书文档与可视化。\n\n**关键约束**：口径统一、同一数据版本；交付门/编辑门双校验。",
+      "boundarySummary": "单公司 → public-company；批量筛选 → stock-screening。",
+      "sectionCharacterCount": 717
+    },
+    {
+      "skillId": "doubao-finance-model-builder",
+      "title": "2.9 财务建模",
+      "aliases": [
+        "2.9 财务建模",
+        "doubao-finance-model-builder"
+      ],
+      "lineStart": 533,
+      "lineEnd": 554,
+      "oneLine": "对 A/港/美上市公司执行可审计、带机器阻断质量门的三表预测、DCF、LBO 或可比公司估值。",
+      "triggerSummary": "\"建财务模型/三表预测\"\"做 DCF/LBO/可比估值\"\"盈利预测模型\"。",
+      "inputSummary": "公司、模型类型、历史财报、关键假设、预测年限。",
+      "outputSummary": "可审计财务模型（含勾稽与公式）+ 估值报告。\n\n**关键约束**：机器质量门不通过阻断交付；假设显式可追溯；公司行动证据冻结防止口径错误。",
+      "boundarySummary": "定性研究 → public-company；一级市场 → private-company。",
+      "sectionCharacterCount": 546
+    },
+    {
+      "skillId": "doubao-private-company",
+      "title": "2.10 一级市场/私募项目筛选",
+      "aliases": [
+        "2.10 一级市场/私募项目筛选",
+        "doubao-private-company"
+      ],
+      "lineStart": 555,
+      "lineEnd": 576,
+      "oneLine": "基于 BP、Deck、财务与访谈资料，评估一级市场、私募股权或创业项目的初步投资价值，输出 Screening Memo。",
+      "triggerSummary": "\"评估这个 BP/创业项目\"\"值不值得投\"\"算单位经济/回报/估值区间\"\"出 Screening Memo\"。",
+      "inputSummary": "BP/Deck、财务、访谈、行业数据、投资 mandate。",
+      "outputSummary": "Screening Memo（结论、市场、产品、团队、单位经济、估值与回报、风险、建议）。\n\n**关键约束**：信息多来自一方材料，标注\"一方称\"；阶段门判断商业化成熟度；缺关键数据走降级。",
+      "boundarySummary": "已上市公司 → public-company；二级市场建模 → finance-model-builder。",
+      "sectionCharacterCount": 879
+    },
+    {
+      "skillId": "doubao-wealth-planning",
+      "title": "2.11 个人/家庭财富规划",
+      "aliases": [
+        "2.11 个人/家庭财富规划",
+        "doubao-wealth-planning"
+      ],
+      "lineStart": 577,
+      "lineEnd": 598,
+      "oneLine": "为个人或家庭做目标导向的财富规划：现金流、应急资金、债务、保障、教育/养老目标、资产配置、情景规划与年度复盘。",
+      "triggerSummary": "\"做家庭理财/资产配置规划\"\"应急金/还债/教育金/养老金\"\"保险保障配置\"\"年度财务复盘\"。",
+      "inputSummary": "家庭收支、资产负债、目标、风险偏好、时间、所在司法辖区（默认中国大陆）。",
+      "outputSummary": "财富规划方案（目标优先级、现金流、配置、保障、情景与复盘）。\n\n**关键约束**：中国大陆辖区规则；不承诺收益、区分规划与投资建议；运行时门不阻断不交付。",
+      "boundarySummary": "个股/公司研究走领域二其他 Skill；不荐具体股票代码做收益承诺。",
+      "sectionCharacterCount": 779
+    },
+    {
+      "skillId": "china-fuel-prices",
+      "title": "2.12 中国油价查询",
+      "aliases": [
+        "2.12 中国油价查询",
+        "china-fuel-prices"
+      ],
+      "lineStart": 599,
+      "lineEnd": 620,
+      "oneLine": "按 `$china-fuel-prices` 或其支持的工作流查询中国成品油价格与调价信息。",
+      "triggerSummary": "\"今天 92/95/0 号油价多少\"\"下次调价涨还是跌\"\"某省油价\"。",
+      "inputSummary": "地区（省/市）、油品标号、是否要调价预测。",
+      "outputSummary": "油价与调价信息（对话直出为主）。\n\n**关键约束**：价格以最近一次官方调价为准并标注时间。",
+      "boundarySummary": "国际原油深度研究/公司分析不在本 Skill。",
+      "sectionCharacterCount": 375
+    },
+    {
+      "skillId": "doubao-newmedia-writing",
+      "title": "3.1 新媒体写作",
+      "aliases": [
+        "3.1 新媒体写作",
+        "doubao-newmedia-writing"
+      ],
+      "lineStart": 621,
+      "lineEnd": 646,
+      "oneLine": "中文新媒体内容总入口，覆盖小红书图文、微信公众号长文、3 分钟内短视频脚本及三者复合创作，默认交付飞书文档。",
+      "triggerSummary": "\"写小红书/公众号/短视频脚本\"\"一篇内容发多平台\"\"按某风格写\"。",
+      "inputSummary": "主题、平台、体裁、风格、素材/事实来源、账号定位。",
+      "outputSummary": "默认飞书文档（含正文、标题备选、封面/配图建议）。\n\n**关键约束**：事实需检索核验；平台调性与字数规范；交付飞书需回读自检。",
+      "boundarySummary": "已有母稿做跨平台适配 → multiplatform-rewrite；只起标题 → headlines-calendar；纯去 AI 味 → human-signal；可拍摄逐镜分镜 → shortvideo-writing；小说 → novel-writing；书稿 → book-writer。",
+      "sectionCharacterCount": 853
+    },
+    {
+      "skillId": "doubao-multiplatform-rewrite",
+      "title": "3.2 多平台内容改写",
+      "aliases": [
+        "3.2 多平台内容改写",
+        "doubao-multiplatform-rewrite"
+      ],
+      "lineStart": 647,
+      "lineEnd": 670,
+      "oneLine": "基于已有母稿（文章/新闻稿/访谈/口播稿/散乱素材）一次性改编成多平台分发包。",
+      "triggerSummary": "\"把这篇改成小红书/微博/短视频\"\"一份素材发四个平台\"\"母稿多平台分发\"。",
+      "inputSummary": "母稿全文/链接/素材、目标平台清单、账号定位、是否要配图。",
+      "outputSummary": "多平台分发包（每平台独立成稿 + 封面/配图建议），格式见 distribution-package-format。\n\n**关键约束**：忠于母稿事实、跨平台不得自相矛盾；事实核查与合规为硬门。",
+      "boundarySummary": "从 0 创作 → newmedia-writing；跨境英文 → cross-border-growth-content。",
+      "sectionCharacterCount": 638
+    },
+    {
+      "skillId": "doubao-headlines-calendar",
+      "title": "3.3 标题与内容日历",
+      "aliases": [
+        "3.3 标题与内容日历",
+        "doubao-headlines-calendar"
+      ],
+      "lineStart": 671,
+      "lineEnd": 692,
+      "oneLine": "跨平台标题生成/改写/评估/A-B 测试，并结合账号定位、受众、产能、节点做周度/月度内容日历。",
+      "triggerSummary": "\"起 10 个标题\"\"哪个标题好、A/B 测\"\"排一周/一月内容日历\"\"结合节点选题\"。",
+      "inputSummary": "内容主题/正文、平台、账号定位、更新频率与产能、时间区间。",
+      "outputSummary": "标题备选（带评估）+ 内容日历表，默认飞书交付（validate_feishu_delivery 校验）。\n\n**关键约束**：标题不做标题党式虚假承诺；节点真实可核。",
+      "boundarySummary": "正文写作 → newmedia-writing。",
+      "sectionCharacterCount": 585
+    },
+    {
+      "skillId": "doubao-creative-design",
+      "title": "3.4 创意视觉设计",
+      "aliases": [
+        "3.4 创意视觉设计",
+        "doubao-creative-design",
+        "创意设计",
+        "图片生成",
+        "生图"
+      ],
+      "lineStart": 693,
+      "lineEnd": 717,
+      "oneLine": "从 0 生成商业/社交媒体创意图片，覆盖系列延展与多比例适配。",
+      "triggerSummary": "\"做海报/KV/Banner/封面/主图/详情页\"\"设计 Logo/IP/包装\"\"一套多尺寸延展\"。",
+      "inputSummary": "主题、用途、平台/尺寸、风格、品牌元素、文案。",
+      "outputSummary": "图片文件（按平台尺寸），系列稿。\n\n**关键约束**：品牌元素（Logo/颜色/产品结构）不漂移；尺寸严格匹配平台。",
+      "boundarySummary": "数据图表/流程图 → doubao-visualization；视频 → creative-video；图片后期处理 → byted-mediakit-image。",
+      "sectionCharacterCount": 638
+    },
+    {
+      "skillId": "doubao-creative-video",
+      "title": "3.5 创意视频文案",
+      "aliases": [
+        "3.5 创意视频文案",
+        "doubao-creative-video",
+        "创意视频",
+        "视频生成",
+        "生视频"
+      ],
+      "lineStart": 718,
+      "lineEnd": 739,
+      "oneLine": "通用视频生成的提示词与文案规划，覆盖创意短片、产品/商品广告、UGC 口播/带货/信息流、marketing/TVC、企业宣传、商务视频。",
+      "triggerSummary": "\"写产品广告/TVC 脚本\"\"企业宣传片文案\"\"口播带货脚本\"\"视频提示词\"。",
+      "inputSummary": "产品/主题、卖点、时长、画幅、风格、是否真人出镜。",
+      "outputSummary": "视频脚本 / 生成提示词 / 分镜说明。\n\n**关键约束**：卖点以商品事实为准，不夸大；提示词可执行。",
+      "boundarySummary": "有剧情的短剧/微电影 → creative-drama；可拍摄逐镜表 → shortvideo-writing；真正生成视频 → seedance-25 / image_to_video。",
+      "sectionCharacterCount": 598
+    },
+    {
+      "skillId": "doubao-creative-drama",
+      "title": "3.6 短剧创作",
+      "aliases": [
+        "3.6 短剧创作",
+        "doubao-creative-drama"
+      ],
+      "lineStart": 740,
+      "lineEnd": 761,
+      "oneLine": "单集 5–10 分钟内的短篇剧作——短剧、动画短片、微电影、剧情视频、动态漫、宣传片/预告片。",
+      "triggerSummary": "\"做个短剧/微电影/动画短片\"\"写分集剧本/分镜\"\"动态漫脚本\"。",
+      "inputSummary": "题材、集数、单集时长、人物、核心冲突、结局走向。",
+      "outputSummary": "剧本 + 分镜 + 资产/提示词清单。\n\n**关键约束**：单集控制在 5–10 分钟；冲突与节奏符合短剧规律。",
+      "boundarySummary": "无剧情的广告/口播 → creative-video；长网文 → novel-writing。",
+      "sectionCharacterCount": 475
+    },
+    {
+      "skillId": "doubao-novel-writing",
+      "title": "3.7 网文小说创作",
+      "aliases": [
+        "3.7 网文小说创作",
+        "doubao-novel-writing"
+      ],
+      "lineStart": 762,
+      "lineEnd": 783,
+      "oneLine": "网文小说创作、改写、续写、诊断、卖点包装、市场调查与编辑视角分析。",
+      "triggerSummary": "\"写开篇/第一章/续写\"\"诊断我的小说\"\"卖点包装/书名简介\"\"这个题材市场怎么样\"。",
+      "inputSummary": "题材、平台、大纲/设定、已有章节、字数目标。",
+      "outputSummary": "章节正文/大纲/诊断报告，支持飞书文档。\n\n**关键约束**：保持人设与设定一致；市场判断需调研支撑。",
+      "boundarySummary": "非虚构书稿/手册/白皮书 → book-writer；短篇剧本 → creative-drama。",
+      "sectionCharacterCount": 532
+    },
+    {
+      "skillId": "doubao-book-writer",
+      "title": "3.8 非虚构长文档工作台",
+      "aliases": [
+        "3.8 非虚构长文档工作台",
+        "doubao-book-writer"
+      ],
+      "lineStart": 784,
+      "lineEnd": 816,
+      "oneLine": "手册、白皮书、报告、培训材料、人物口述、家谱、资料型书稿等**非虚构长文档**的新建、续写、组装、改写、扩写、精修、去 AI 味、质检与交付的工程化工作台。",
+      "triggerSummary": "\"写一本手册/白皮书/培训材料/家谱/口述史\"\"续写/组装/精修长稿\"\"几十万字书稿工程化管理\"。",
+      "inputSummary": "全部已有素材、体裁、目标读者、大纲、总字数与交付形态。",
+      "outputSummary": "完整书稿（分章文件 + 合并稿 + 飞书文档），过全部质量门。\n\n**关键约束**：章节台账必须真实（verify-chapter-ledger-truth 门）；终稿必须清洁（final-manuscript-clean 门）；风格契约一致；原创相似度审计防洗稿。",
+      "boundarySummary": "小说/网文/剧本/诗歌/世界观设定 → novel-writing / creative-drama；单篇文章 → newmedia-writing。",
+      "sectionCharacterCount": 1420
+    },
+    {
+      "skillId": "doubao-human-signal",
+      "title": "3.9 去 AI 味",
+      "aliases": [
+        "3.9 去 AI 味",
+        "doubao-human-signal"
+      ],
+      "lineStart": 817,
+      "lineEnd": 838,
+      "oneLine": "去除或避免文本中的 AI 腔/机器味，让人写得像人。",
+      "triggerSummary": "\"去 AI 味/不要像 AI 写的\"\"这段太机器了改自然点\"\"像真人语气\"。",
+      "inputSummary": "待改文本、目标平台、受众、人设语气。",
+      "outputSummary": "去味后的文本（可附改动说明）。\n\n**关键约束**：去味不改事实与观点；保留专业准确性。",
+      "boundarySummary": "学术润色 → academic-polish。",
+      "sectionCharacterCount": 535
+    },
+    {
+      "skillId": "doubao-shortvideo-writing",
+      "title": "3.10 短视频分镜脚本",
+      "aliases": [
+        "3.10 短视频分镜脚本",
+        "doubao-shortvideo-writing"
+      ],
+      "lineStart": 839,
+      "lineEnd": 860,
+      "oneLine": "产出 3 分钟内可直接拍摄的短视频分镜、逐镜头脚本、storyboard、镜头表。",
+      "triggerSummary": "\"写可拍摄分镜/逐镜头脚本/storyboard/镜头表\"\"把选题或口播稿改成分镜\"。",
+      "inputSummary": "选题/口播稿/产品信息、时长、平台、拍摄条件。",
+      "outputSummary": "分镜脚本表（镜号/景别/画面/台词/字幕/时长/备注）。\n\n**关键约束**：总时长 ≤3 分钟；镜头可执行、信息密度匹配时长。",
+      "boundarySummary": "只要口播文案不要分镜 → creative-video；剧情短片 → creative-drama。",
+      "sectionCharacterCount": 546
+    },
+    {
+      "skillId": "doubao-cross-border-growth-content",
+      "title": "3.11 跨境电商增长内容",
+      "aliases": [
+        "3.11 跨境电商增长内容",
+        "doubao-cross-border-growth-content"
+      ],
+      "lineStart": 861,
+      "lineEnd": 882,
+      "oneLine": "以证据为基础的跨境电商短视频与直播英文脚本及内容运营。",
+      "triggerSummary": "\"写亚马逊/TikTok/独立站英文带货脚本\"\"跨境直播话术\"\"本地化内容\"\"类目合规宣称\"。",
+      "inputSummary": "产品事实、目标市场/平台、受众、可用证据、禁用宣称。",
+      "outputSummary": "英文脚本/直播话术/brief，过证据与宣称风险门。\n\n**关键约束**：所有卖点宣称必须有证据、过 category-claim-risk；不做无法证实的性能承诺。",
+      "boundarySummary": "中文内容 → newmedia/creative-video；Listing 标题详情 → listing-localization；合规税务物流 → ecommerce-compliance。",
+      "sectionCharacterCount": 670
+    },
+    {
+      "skillId": "doubao-customer-service",
+      "title": "3.12 电商在线客服话术",
+      "aliases": [
+        "3.12 电商在线客服话术",
+        "doubao-customer-service"
+      ],
+      "lineStart": 883,
+      "lineEnd": 907,
+      "oneLine": "生成电商在线文字客服的可执行处理方案与正式交付文档。",
+      "triggerSummary": "\"客户催发货/退换货/差评/投诉怎么回\"\"客服 SOP/标准流程/权限矩阵/升级规则\"\"配置自动回复机器人\"。",
+      "inputSummary": "客户问题/聊天截图、店铺规则、售后政策、商品信息。",
+      "outputSummary": "客户回复话术 + SOP/权限矩阵/升级规则/机器人配置（4 份 templates）。\n\n**关键约束**：风险与权限红线（赔偿/投诉升级按矩阵）；知识库保持最新；不越权承诺。",
+      "boundarySummary": "带货营销脚本 → creative-video；商品文案 → product-content。",
+      "sectionCharacterCount": 643
+    },
+    {
+      "skillId": "doubao-marketing-plan",
+      "title": "4.1 首席营销策划",
+      "aliases": [
+        "4.1 首席营销策划",
+        "doubao-marketing-plan"
+      ],
+      "lineStart": 908,
+      "lineEnd": 929,
+      "oneLine": "以首席营销官视角生成、改写、优化全域营销方案，默认飞书文档交付。",
+      "triggerSummary": "\"写营销方案/营销规划/品牌 campaign\"\"优化这份营销 plan\"\"借热点做营销\"。",
+      "inputSummary": "品牌/产品、目标、预算、渠道、人群、时间节点。",
+      "outputSummary": "营销策划方案（默认飞书文档，含配图建议）。\n\n**关键约束**：目标可量化、策略与预算自洽；不虚构市场数据。",
+      "boundarySummary": "单次电商大促玩法/机制 → ecommerce-proposal；广告素材合规 → material-review；落地文案 → product-content/newmedia。",
+      "sectionCharacterCount": 580
+    },
+    {
+      "skillId": "doubao-ecommerce-proposal",
+      "title": "4.2 电商活动策划",
+      "aliases": [
+        "4.2 电商活动策划",
+        "doubao-ecommerce-proposal"
+      ],
+      "lineStart": 930,
+      "lineEnd": 951,
+      "oneLine": "生成完整电商活动策划方案，默认交付一份本地可打开验证的 HTML 网页版方案，覆盖淘天/抖音/京东/得物/拼多多/小红书/Amazon 等。",
+      "triggerSummary": "\"做双 11/618/店庆活动方案\"\"直播间活动机制\"\"某平台大促策划\"。",
+      "inputSummary": "平台、节点、品类货盘、目标 GMV、预算、历史活动数据。",
+      "outputSummary": "**HTML 网页版活动方案**（本地可打开）。\n\n**关键约束**：机制可落地、ROI 可算；平台规则不冲突。",
+      "boundarySummary": "品牌全域营销 → marketing-plan；选品 → product-selection；跨境 → ecommerce-compliance。",
+      "sectionCharacterCount": 646
+    },
+    {
+      "skillId": "doubao-product-selection",
+      "title": "4.3 电商选品",
+      "aliases": [
+        "4.3 电商选品",
+        "doubao-product-selection"
+      ],
+      "lineStart": 952,
+      "lineEnd": 973,
+      "oneLine": "按\"市场需求 × 竞争度 × 利润空间 × 季节性 × 供应链\"做选品与品类机会分析。",
+      "triggerSummary": "\"卖什么好/选品\"\"某品类能不能做\"\"找蓝海品类\"\"按我的货源选品\"。",
+      "inputSummary": "目标平台、预算、货源、毛利目标、风险偏好。",
+      "outputSummary": "选品分析与评分排序、品类机会建议。\n\n**关键约束**：打分维度透明；市场数据需取证、不拍脑袋。",
+      "boundarySummary": "商品上架内容 → product-content；行业研究 → industry-analysis；Listing → listing-localization。",
+      "sectionCharacterCount": 477
+    },
+    {
+      "skillId": "doubao-product-content",
+      "title": "4.4 商品内容",
+      "aliases": [
+        "4.4 商品内容",
+        "doubao-product-content"
+      ],
+      "lineStart": 974,
+      "lineEnd": 1000,
+      "oneLine": "生成/优化电商商品标题、详情文案与商品页静态图片。",
+      "triggerSummary": "\"写商品标题/详情页\"\"做主图/详情图\"\"优化 listing 文案排版\"。",
+      "inputSummary": "商品事实（规格/卖点/成分/场景）、平台、类目、品牌素材。",
+      "outputSummary": "标题 + 详情文案 + 详情静态图，按 6 种交付契约之一交付。\n\n**关键约束**：宣称过合规清单；品牌身份锚点不漂移。",
+      "boundarySummary": "跨境多语言 Listing → listing-localization；营销活动 → ecommerce-proposal；客服 → customer-service。",
+      "sectionCharacterCount": 788
+    },
+    {
+      "skillId": "doubao-listing-localization",
+      "title": "4.5 跨境 Listing 本地化",
+      "aliases": [
+        "4.5 跨境 Listing 本地化",
+        "doubao-listing-localization"
+      ],
+      "lineStart": 1001,
+      "lineEnd": 1022,
+      "oneLine": "跨境电商 Listing 与商品优化——多平台关键词、标题、五点、描述、后台搜索词的本地化与诊断。",
+      "triggerSummary": "\"写亚马逊/TikTok/独立站 Listing\"\"优化标题关键词\"\"Listing 诊断/本地化\"。",
+      "inputSummary": "产品事实、目标站点/语言、平台、关键词、现有 Listing（可选）。",
+      "outputSummary": "本地化 Listing（关键词/标题/五点/描述/搜索词）+ 诊断报告。\n\n**关键约束**：符合平台关键词与政策规则；不堆砌违禁词。",
+      "boundarySummary": "跨境短视频/直播脚本 → cross-border-growth-content；合规税务物流 → ecommerce-compliance；国内商品文案 → product-content。",
+      "sectionCharacterCount": 650
+    },
+    {
+      "skillId": "doubao-ecommerce-compliance-tax-logistics",
+      "title": "4.6 跨境合规·税务·物流",
+      "aliases": [
+        "4.6 跨境合规·税务·物流",
+        "doubao-ecommerce-compliance-tax-logistics"
+      ],
+      "lineStart": 1023,
+      "lineEnd": 1044,
+      "oneLine": "跨境电商合规、税务、知识产权、海关、关税 HS 编码、履约仓储、中国进口的全流程指引。",
+      "triggerSummary": "\"这个产品出口要什么认证/税\"\"查 HS 编码和关税\"\"海外仓/履约怎么设计\"\"清关文件\"\"高风险品（带电/儿童/化妆品）能不能卖\"。",
+      "inputSummary": "产品、材质/成分、目的国、贸易方式、货值。",
+      "outputSummary": "合规/税务/物流方案 + 文件清单 + 风险分级。\n\n**关键约束**：高风险品走决策树、不轻易放行；法规与税率标注来源与时效。",
+      "boundarySummary": "Listing 文案 → listing-localization；通用法律合同 → 领域五；营销内容 → cross-border-growth-content。",
+      "sectionCharacterCount": 621
+    },
+    {
+      "skillId": "doubao-marketing-material-review",
+      "title": "4.7 营销素材审核",
+      "aliases": [
+        "4.7 营销素材审核",
+        "doubao-marketing-material-review"
+      ],
+      "lineStart": 1045,
+      "lineEnd": 1066,
+      "oneLine": "从虚假宣传、合规、平台规则、知识产权等角度审核广告语、营销海报、社媒文案、直播话术。",
+      "triggerSummary": "\"这段广告文案能不能发\"\"审海报/直播话术合规\"\"查违禁词/极限词/虚假宣传\"。",
+      "inputSummary": "待审素材全文/图、发布平台、行业、产品资质。",
+      "outputSummary": "审核意见（风险点—依据—等级—修改建议）。\n\n**关键约束**：高风险宣称必须给法规/规则依据；拿不准标\"建议人工/法务复核\"。",
+      "boundarySummary": "合同法律风险 → 领域五；商品文案写作 → product-content；跨境宣称 → cross-border/ecommerce-compliance。",
+      "sectionCharacterCount": 519
+    },
+    {
+      "skillId": "doubao-product-manager",
+      "title": "4.8 产品经理",
+      "aliases": [
+        "4.8 产品经理",
+        "doubao-product-manager"
+      ],
+      "lineStart": 1067,
+      "lineEnd": 1090,
+      "oneLine": "把产品想法、用户反馈、研究数据、云文档、附件与已有方案，转成有依据的产品判断、策略、MVP、优先级与路线图。",
+      "triggerSummary": "\"写 PRD/MRP\"\"排优先级/路线图\"\"这个功能做不做\"\"设计实验/算样本量\"\"竞品与需求分析\"。",
+      "inputSummary": "产品想法、用户反馈、数据、竞品、约束。",
+      "outputSummary": "PRD、优先级表、路线图、实验设计（支持飞书与可视化）。\n\n**关键约束**：结论需证据支撑；优先级打分可复算。",
+      "boundarySummary": "产品竞争研究报告 → product-analysis；测试 QA → product-qa；营销 → marketing-plan。",
+      "sectionCharacterCount": 626
+    },
+    {
+      "skillId": "doubao-product-analysis",
+      "title": "4.9 产品分析",
+      "aliases": [
+        "4.9 产品分析",
+        "doubao-product-analysis"
+      ],
+      "lineStart": 1091,
+      "lineEnd": 1112,
+      "oneLine": "围绕具体产品、产品想法或存量方案，产出用于进入、定位、竞争策略、上市路径、能力建设与路线图决策的分析。",
+      "triggerSummary": "\"分析这个产品/想法\"\"竞品对比与定位\"\"怎么进入市场/差异化\"\"上市路径\"。",
+      "inputSummary": "产品/想法、竞品、目标市场、已有数据。",
+      "outputSummary": "产品分析报告（定位、竞争、策略、路径）。\n\n**关键约束**：竞品事实必须核查、区分事实与推断。",
+      "boundarySummary": "写 PRD/排期 → product-manager；公司层面研究 → public-company-analysis；选品 → product-selection。",
+      "sectionCharacterCount": 557
+    },
+    {
+      "skillId": "doubao-product-qa",
+      "title": "4.10 产品质量保证 QA",
+      "aliases": [
+        "4.10 产品质量保证 QA",
+        "doubao-product-qa"
+      ],
+      "lineStart": 1113,
+      "lineEnd": 1138,
+      "oneLine": "把 PRD、原型、网页、接口、代码、测试记录和多轮上下文转成可追踪的 QA 基线、风险用例、执行证据与交付物，覆盖 Web/API/移动端/小程序/性能全测试链路。",
+      "triggerSummary": "\"给这个网页/接口/小程序做测试\"\"出测试计划/用例/报告\"\"跑回归/性能/兼容/无障碍\"\"缺陷分析与质量门禁\"。",
+      "inputSummary": "PRD/原型、URL/接口/代码、测试目标、环境与账号。",
+      "outputSummary": "测试计划、用例与追溯矩阵、执行证据、缺陷报告、质量门禁结论（支持飞书交付）。\n\n**关键约束**：用例可追溯到需求；门禁不过不放行；执行证据真实、不编造通过结果。",
+      "boundarySummary": "写 PRD → product-manager；数据分析 → data-analysis；真实压测受环境与授权限制。",
+      "sectionCharacterCount": 1328
+    },
+    {
+      "skillId": "doubao-questionnaire-designer",
+      "title": "4.11 问卷与用户研究",
+      "aliases": [
+        "4.11 问卷与用户研究",
+        "doubao-questionnaire-designer"
+      ],
+      "lineStart": 1139,
+      "lineEnd": 1160,
+      "oneLine": "用户研究一站式助手，覆盖问卷设计、访谈提纲、开放题原声打标、定量问卷分析四大能力，交付 Word/表格。",
+      "triggerSummary": "\"设计一份问卷\"\"写访谈提纲\"\"开放题归类打标\"\"分析问卷数据/出交叉表\"。",
+      "inputSummary": "研究目标、目标人群、样本、（分析时）原始回收数据。",
+      "outputSummary": "问卷/访谈提纲、编码表、定量分析报告（Word/表格）。\n\n**关键约束**：题目避免引导与双重否定；打标保留原声、编码可追溯。",
+      "boundarySummary": "产品需求决策 → product-manager；舆情抓取 → sentiment-tracker；纯数据建模 → data-analysis。",
+      "sectionCharacterCount": 547
+    },
+    {
+      "skillId": "doubao-sentiment-tracker",
+      "title": "4.12 舆情监控",
+      "aliases": [
+        "4.12 舆情监控",
+        "doubao-sentiment-tracker"
+      ],
+      "lineStart": 1161,
+      "lineEnd": 1182,
+      "oneLine": "在网页端/客户端做多平台舆情搜索、内容筛选、原始帖子溯源与品牌声量/口碑追踪，覆盖微博、知乎、即刻、脉脉、B站、抖音、X(Twitter) 等。",
+      "triggerSummary": "\"监控某品牌/话题舆情\"\"用户都怎么评价\"\"找负面/差评原帖\"\"声量趋势\"。",
+      "inputSummary": "品牌/话题关键词、平台、时间窗、情感维度。",
+      "outputSummary": "舆情报告（声量、情感分布、代表原帖、风险点、溯源链接）。\n\n**关键约束**：结论要能溯源到真实原帖；区分平台口径、不混算。",
+      "boundarySummary": "客服回复 → customer-service；问卷调研 → questionnaire；金融情绪另走领域二。",
+      "sectionCharacterCount": 559
+    },
+    {
+      "skillId": "doubao-oceanengine-adops-agent",
+      "title": "4.13 巨量引擎投放盯盘",
+      "aliases": [
+        "4.13 巨量引擎投放盯盘",
+        "doubao-oceanengine-adops-agent"
+      ],
+      "lineStart": 1183,
+      "lineEnd": 1206,
+      "oneLine": "字节 UG 自动化投放 Agent 的巨量引擎**只读**盯盘与数据分析（不做实际投放/改价等写操作）。",
+      "triggerSummary": "\"查巨量账户今天消耗/转化\"\"哪条计划掉量/成本高\"\"盯盘日报/异常诊断\"。",
+      "inputSummary": "已授权的巨量账户、时间范围、关注指标。",
+      "outputSummary": "只读盯盘数据 + 诊断与建议（assets 只读请求模板）。\n\n**关键约束**：严格只读、不触发写操作；数据来自授权账户、不编造。",
+      "boundarySummary": "只读，不代客出价/改预算/建计划；非巨量平台不适用；营销策划 → marketing-plan。",
+      "sectionCharacterCount": 625
+    },
+    {
+      "skillId": "doubao-contract-drafting",
+      "title": "5.1 商业合同起草",
+      "aliases": [
+        "5.1 商业合同起草",
+        "doubao-contract-drafting"
+      ],
+      "lineStart": 1207,
+      "lineEnd": 1230,
+      "oneLine": "直接起草中国大陆商业合同并生成无批注、无颜色、中文字体正确的可编辑 Word，覆盖采购、服务、营销、工程、软件许可、SaaS、委托开发、联合研发、知识产权、租赁、数据处理、保密等场景。",
+      "triggerSummary": "\"起草一份采购/服务/SaaS/开发/租赁合同\"\"按这些交易点出合同 Word\"。",
+      "inputSummary": "合同类型、主体、标的、价款/付款、交付、期限、违约、知识产权、特殊风险点。",
+      "outputSummary": "无批注无颜色、中文字体正确的 .docx 合同。\n\n**关键约束**：中国大陆法域；缺关键要素先问不臆造；高风险场景必走风险清单；生成后过一致性与字体校验。",
+      "boundarySummary": "审已写好的合同 → contract-reviewer；改已签合同 → contract-amendment；纯数据协议 → dpa-drafter；境外法域不适用。",
+      "sectionCharacterCount": 956
+    },
+    {
+      "skillId": "doubao-contract-reviewer",
+      "title": "5.2 合同审查",
+      "aliases": [
+        "5.2 合同审查",
+        "doubao-contract-reviewer"
+      ],
+      "lineStart": 1231,
+      "lineEnd": 1252,
+      "oneLine": "面向大众用户审查各类既有合同，回答\"有没有问题、能不能签、哪里有坑、怎么改\"。",
+      "triggerSummary": "\"帮我审合同/协议\"\"这份能不能签、有什么坑\"\"对方合同哪里对我不利\"。",
+      "inputSummary": "合同全文（Word/PDF/文本）、我方立场（甲方/乙方）、交易背景与谈判地位。",
+      "outputSummary": "合同审查报告（风险点—等级—原文位置—影响—修改建议）。\n\n**关键约束**：站在委托方立场；风险必须定位到具体条款；重大风险提示找专业律师。",
+      "boundarySummary": "从零起草 → contract-drafting；补充协议 → contract-amendment；不出具法律意见书、不替代执业律师。",
+      "sectionCharacterCount": 643
+    },
+    {
+      "skillId": "doubao-contract-amendment",
+      "title": "5.3 合同变更/补充/终止",
+      "aliases": [
+        "5.3 合同变更/补充/终止",
+        "doubao-contract-amendment"
+      ],
+      "lineStart": 1253,
+      "lineEnd": 1274,
+      "oneLine": "在**已签原协议**基础上，依据新情况起草补充协议、变更协议或终止协议，先重建整体法律状态再在授权范围内成文。",
+      "triggerSummary": "\"原合同基础上补一份补充协议\"\"变更付款/期限/范围\"\"签终止/解除协议\"。",
+      "inputSummary": "原协议全文、变更/终止原因与新约定、双方主体。",
+      "outputSummary": "补充协议/变更协议/终止协议（Word）。\n\n**关键约束**：只处理既有协议的派生修改；明确\"未变更部分继续有效\"等衔接条款；不与原协议矛盾。",
+      "boundarySummary": "无原协议的全新合同 → contract-drafting；审合同 → contract-reviewer。",
+      "sectionCharacterCount": 559
+    },
+    {
+      "skillId": "doubao-dpa-drafter",
+      "title": "5.4 数据处理协议 DPA 起草",
+      "aliases": [
+        "5.4 数据处理协议 DPA 起草",
+        "doubao-dpa-drafter"
+      ],
+      "lineStart": 1275,
+      "lineEnd": 1298,
+      "oneLine": "专业起草数据处理协议（DPA）——委托处理、数据共同处理、数据对外提供三类，以及配套的个保影响评估触发判断与告知同意操作。",
+      "triggerSummary": "\"起草数据委托处理协议/ DPA\"\"数据共同处理/对外提供协议\"\"要不要做 PIA、告知同意怎么写\"。",
+      "inputSummary": "处理角色、数据类型与流向、双方义务、数据处理目的方式范围、跨境情况。",
+      "outputSummary": "DPA 协议（Word，三类之一或组合）。\n\n**关键约束**：严格依《个人信息保护法》《网络数据安全管理条例》定义；角色判断错则协议类型错，先定角色。",
+      "boundarySummary": "一般商业合同 → contract-drafting；全面个保审计 → personal-info-audit；业务合规评估 → compliance-assessment。",
+      "sectionCharacterCount": 723
+    },
+    {
+      "skillId": "doubao-compliance-assessment-public",
+      "title": "5.5 业务合规评估",
+      "aliases": [
+        "5.5 业务合规评估",
+        "doubao-compliance-assessment-public"
+      ],
+      "lineStart": 1299,
+      "lineEnd": 1325,
+      "oneLine": "基于**公开法律来源**开展交互式合规评估并生成可审阅报告，覆盖评估业务法律风险、审阅 PRD、判断监管红线、生成合规报告。",
+      "triggerSummary": "\"评估这个业务/PRD 的法律风险\"\"某功能触碰监管红线吗\"\"出一份合规评估报告\"。",
+      "inputSummary": "业务描述/PRD、辖区、业务模式、用户群体、数据流。",
+      "outputSummary": "交互式评估结论 + 可审阅合规报告（Word）。\n\n**关键约束**：只用公开法律来源并登记；风险分级有依据；区分\"明确禁止/限制/需评估/合规\"。",
+      "boundarySummary": "写合同 → 领域五其他 Skill；深度个保审计 → personal-info-audit；只基于公开来源、不查内部机密系统。",
+      "sectionCharacterCount": 802
+    },
+    {
+      "skillId": "doubao-personal-info-audit",
+      "title": "5.6 个人信息保护合规审计",
+      "aliases": [
+        "5.6 个人信息保护合规审计",
+        "doubao-personal-info-audit"
+      ],
+      "lineStart": 1326,
+      "lineEnd": 1356,
+      "oneLine": "开展中国个人信息保护合规审计，覆盖审计触发判断、证据登记与证明力评价、事实与不确定性分析、数据分类、处理活动梳理、问题整改，产出审计底稿 + 审计报告 + 工作簿的重型 Skill。",
+      "triggerSummary": "\"做个人信息保护合规审计/个保审计\"\"出审计报告和底稿\"\"107 项点检\"\"AI/自动化决策/跨境/未成年人专项\"\"整改清单\"。",
+      "inputSummary": "处理活动清单、隐私政策、数据流、组织制度、第三方与跨境链路、（专项时）AI 系统说明。",
+      "outputSummary": "审计报告正文 + 审计工作簿（多 Sheet 底稿）+ 问题整改清单，过 6 项校验门禁。\n\n**关键约束**：事实与判断分离、证据不足进\"事实与不确定性/未决事项\"；法规引用守上下位层级与版本台账；门禁不过不交付。",
+      "boundarySummary": "只写一份 DPA → dpa-drafter；轻量业务合规评估 → compliance-assessment；审计是合规评估不是执法结论。",
+      "sectionCharacterCount": 1537
+    },
+    {
+      "skillId": "lark-doc",
+      "title": "6.1 飞书文档",
+      "aliases": [
+        "6.1 飞书文档",
+        "lark-doc"
+      ],
+      "lineStart": 1357,
+      "lineEnd": 1381,
+      "oneLine": "文档全场景处理——本地 Office Word（.docx/.doc）与在线飞书/豆包文档（/docs、/docx、/wiki）的阅读、创建、编辑总入口。",
+      "triggerSummary": "\"新建/读/改飞书文档\"\"写 Word/DOCX\"\"按某文体成文\"\"文档插图/附件/思维导图\"。",
+      "inputSummary": "文档 URL/token 或本地 docx 路径、编辑目标、文体。",
+      "outputSummary": "在线文档链接或本地 .docx。\n\n**关键约束**：更新上传文件保留原格式；在线编辑以 XML 块为单位、读后改；本地 Word 注意中文字体。",
+      "boundarySummary": "表格 → sheet；幻灯片 → ppt；多维表格 → lark-base；PDF → doubao-pdf；纯云盘文件管理 → lark-drive。",
+      "sectionCharacterCount": 963
+    },
+    {
+      "skillId": "sheet",
+      "title": "6.2 飞书电子表格",
+      "aliases": [
+        "6.2 飞书电子表格",
+        "sheet",
+        "表格",
+        "Excel"
+      ],
+      "lineStart": 1382,
+      "lineEnd": 1407,
+      "oneLine": "表格全场景（本地 Excel/CSV 与在线飞书/豆包表格）：创建、读写、分析、计算、建模、语义处理、可视化与美化。",
+      "triggerSummary": "\"建表/填表/改表\"\"Excel 公式迁移飞书\"\"透视表/图表/条件格式\"\"财务建模\"\"本地 xlsx 处理\"。",
+      "inputSummary": "在线表 URL/token 或本地 xlsx/csv、操作目标、数据。",
+      "outputSummary": "在线表格链接或本地 xlsx/csv。\n\n**关键约束**：数字/日期/百分比用真实类型；批量写走 batch-update；公式迁移后必须 formula-verify。",
+      "boundarySummary": "找云盘里的表文件 → lark-drive 搜索；表单/看板/数据库 → lark-base。",
+      "sectionCharacterCount": 1178
+    },
+    {
+      "skillId": "ppt",
+      "title": "6.3 飞书幻灯片",
+      "aliases": [
+        "6.3 飞书幻灯片",
+        "ppt",
+        "PPT",
+        "演示文稿"
+      ],
+      "lineStart": 1408,
+      "lineEnd": 1435,
+      "oneLine": "创建和编辑飞书幻灯片，支持演示文稿创建、页面增删读改、局部替换、模板编辑、静态/XML 双校验。",
+      "triggerSummary": "\"做 PPT/幻灯片\"\"改第 N 页\"\"套模板\"\"上传媒体到幻灯片\"。",
+      "inputSummary": "主题/大纲/素材、风格、目标 deck URL（编辑时）。",
+      "outputSummary": "在线幻灯片链接。\n\n**关键约束**：每页改完即校验；XML 以 schema 与 `lark-cli schema` 为准。",
+      "boundarySummary": "文档 → lark-doc；独立画板 → lark-whiteboard。",
+      "sectionCharacterCount": 919
+    },
+    {
+      "skillId": "lark-base",
+      "title": "6.4 飞书多维表格",
+      "aliases": [
+        "6.4 飞书多维表格",
+        "lark-base"
+      ],
+      "lineStart": 1436,
+      "lineEnd": 1463,
+      "oneLine": "用多维表格搭建台账、清单、资料库、问卷、收集表、项目/客户/订单/库存/进度管理，支持看板、表单、仪表盘、自动化流程与权限角色。",
+      "triggerSummary": "\"搭台账/管理系统/收集表/项目看板\"\"多维表字段公式/引用\"\"仪表盘\"\"自动化流程/权限\"。",
+      "inputSummary": "Base URL/app_token、table、字段结构、记录或表单需求。",
+      "outputSummary": "多维表格（视图/表单/仪表盘/自动化）链接。\n\n**关键约束**：字段类型与 cell-value 格式严格；批量记录注意上限；权限按角色最小化。",
+      "boundarySummary": "普通电子表格/财务模型 → sheet；文档 → lark-doc。",
+      "sectionCharacterCount": 916
+    },
+    {
+      "skillId": "lark-wiki",
+      "title": "6.5 飞书知识库",
+      "aliases": [
+        "6.5 飞书知识库",
+        "lark-wiki"
+      ],
+      "lineStart": 1464,
+      "lineEnd": 1483,
+      "oneLine": "管理知识空间、空间成员与文档节点层级。",
+      "triggerSummary": "\"建知识库/知识空间\"\"移动/复制/删除 wiki 节点\"\"管理空间成员\"\"看知识库目录树\"。",
+      "inputSummary": "space/node token、成员、目标层级。",
+      "outputSummary": "知识空间/节点结构变更结果。\n\n**关键约束**：删除空间/节点属高危，先确认；成员权限区分空间级与节点级。",
+      "boundarySummary": "节点内正文编辑 → lark-doc；云盘普通文件 → lark-drive；wiki token 用于其他服务前先换 obj_token。",
+      "sectionCharacterCount": 531
+    },
+    {
+      "skillId": "lark-drive",
+      "title": "6.6 飞书云空间",
+      "aliases": [
+        "6.6 飞书云空间",
+        "lark-drive"
+      ],
+      "lineStart": 1484,
+      "lineEnd": 1509,
+      "oneLine": "云盘文件/文件夹全生命周期管理 + 评论协同 + 权限治理 + 版本管理，是本领域 references 最多的 Skill 之一。",
+      "triggerSummary": "\"上传/下载/导入导出文件\"\"搜云盘文件\"\"建文件夹/移动/复制/删除\"\"评论与批注协同\"\"权限设置/治理\"\"看历史版本/回滚\"\"文件密级\"\"批量整理知识库\"。",
+      "inputSummary": "file/folder token、路径、成员与权限、目标位置。",
+      "outputSummary": "文件/文件夹操作结果、权限/评论/版本清单、整理报告。\n\n**关键约束**：删除/移动/权限变更先 dry-run/确认；知识整理有回滚预案；批量操作走工作流五阶段。",
+      "boundarySummary": "文档正文 → lark-doc；表格内容 → sheet；wiki 层级 → lark-wiki。",
+      "sectionCharacterCount": 1178
+    },
+    {
+      "skillId": "lark-markdown",
+      "title": "6.7 飞书原生 Markdown",
+      "aliases": [
+        "6.7 飞书原生 Markdown",
+        "lark-markdown"
+      ],
+      "lineStart": 1510,
+      "lineEnd": 1529,
+      "oneLine": "查看、创建、上传、编辑飞书中的**原生 Markdown 文件**（区别于 docx 文档）。",
+      "triggerSummary": "\"新建/查看飞书 Markdown\"\"只改其中一段（patch）\"\"整篇替换（overwrite）\"\"对比改动 diff\"。",
+      "inputSummary": "md 文件 token、Markdown 内容、patch 位置。",
+      "outputSummary": "在线 Markdown 文件。\n\n**关键约束**：局部改用 patch 而非整篇 overwrite，避免覆盖他人改动；改前可 diff。",
+      "boundarySummary": "普通 docx 文档 → lark-doc；本地 md 文件不需要本 Skill。",
+      "sectionCharacterCount": 467
+    },
+    {
+      "skillId": "lark-whiteboard",
+      "title": "6.8 飞书画板",
+      "aliases": [
+        "6.8 飞书画板",
+        "lark-whiteboard"
+      ],
+      "lineStart": 1530,
+      "lineEnd": 1552,
+      "oneLine": "查询和编辑飞书云文档中的画板，支持导出预览图、导出原始节点结构、用多种路由更新画板。",
+      "triggerSummary": "\"画流程图/架构图/泳道/鱼骨/漏斗/飞轮\"\"用 Mermaid 生成画板\"\"导出画板图片/节点\"\"改画板\"。",
+      "inputSummary": "画板 token、图形类型、结构数据/Mermaid/SVG。",
+      "outputSummary": "更新后的画板、预览图或节点结构。\n\n**关键约束**：按场景选路由（结构化优先 DSL/Mermaid，精细图形用 SVG）；导出用于核对。",
+      "boundarySummary": "幻灯片里的图 → ppt；数据图表回复 → doubao-visualization；文档正文 → lark-doc。",
+      "sectionCharacterCount": 809
+    },
+    {
+      "skillId": "lark-im",
+      "title": "6.9 飞书即时通讯",
+      "aliases": [
+        "6.9 飞书即时通讯",
+        "lark-im"
+      ],
+      "lineStart": 1553,
+      "lineEnd": 1577,
+      "oneLine": "收发消息、管理群聊、搜索聊天记录、发交互卡片，覆盖消息/群/Feed/表情/加急/已读/话题全链路。",
+      "triggerSummary": "\"发消息/回复/群发\"\"搜聊天记录\"\"拉群成员/群列表\"\"做交互卡片/表单卡片\"\"加急/查已读/导出群消息\"。",
+      "inputSummary": "chat_id/open_id、消息内容、卡片结构。",
+      "outputSummary": "消息发送结果、消息/群/记录列表、交互卡片。\n\n**关键约束**：发消息属写操作需确认；open_id 等不回显给用户；卡片组件严格按 2.0 schema。",
+      "boundarySummary": "邮件 → lark-mail；会议消息 → lark-meeting；向外部账号发消息受权限限制。",
+      "sectionCharacterCount": 1117
+    },
+    {
+      "skillId": "lark-mail",
+      "title": "6.10 飞书邮箱",
+      "aliases": [
+        "6.10 飞书邮箱",
+        "lark-mail"
+      ],
+      "lineStart": 1578,
+      "lineEnd": 1597,
+      "oneLine": "邮件起草、发送、回复/回复全部、转发、撤回、模板、签名、规则、收件箱分诊与日历邀请。",
+      "triggerSummary": "\"起草/发邮件/回复全部/转发\"\"撤回邮件\"\"做邮件模板/签名/规则\"\"邮件分诊\"\"发日历邀请\"。",
+      "inputSummary": "收件人、主题、正文、附件、账号身份。",
+      "outputSummary": "邮件/草稿/模板/规则操作结果。\n\n**关键约束**：发送/撤回属高影响动作需确认；HTML 邮件过 lint-html。",
+      "boundarySummary": "IM 消息 → lark-im；日程本体 → lark-calendar。",
+      "sectionCharacterCount": 628
+    },
+    {
+      "skillId": "lark-calendar",
+      "title": "6.11 飞书日历",
+      "aliases": [
+        "6.11 飞书日历",
+        "lark-calendar"
+      ],
+      "lineStart": 1598,
+      "lineEnd": 1617,
+      "oneLine": "管理日程与会议室，支持创建/更新/转移、循环日程、忙闲查询、推荐时段、预定会议室、RSVP。",
+      "triggerSummary": "\"建会/改日程/循环日程\"\"找大家都空的时间/推荐时段\"\"订会议室\"\"查忙闲\"\"回复会议邀请\"。",
+      "inputSummary": "时间、参与人、会议室、循环规则、时区。",
+      "outputSummary": "日程、忙闲结果、会议室预订。\n\n**关键约束**：模糊时间先澄清；跨时区显式处理；预定会议室冲突需检测。",
+      "boundarySummary": "会议纪要/录制 → lark-meeting；待办 → lark-task；邮件邀请 → lark-mail。",
+      "sectionCharacterCount": 507
+    },
+    {
+      "skillId": "lark-meeting",
+      "title": "6.12 飞书会议与妙记",
+      "aliases": [
+        "6.12 飞书会议与妙记",
+        "lark-meeting"
+      ],
+      "lineStart": 1618,
+      "lineEnd": 1641,
+      "oneLine": "查询会议记录与产物（妙记/纪要/录制），并覆盖创建编辑妙记、会中互动、实时视频会议查询，是 minutes/note/vc/vc-agent 四个兼容名的统一收口。",
+      "triggerSummary": "\"找某场会的妙记/录制/纪要\"\"下载/上传妙记\"\"妙记转待办/改发言人\"\"会中发消息/截图/倒计时\"\"查进行中的会\"。",
+      "inputSummary": "会议/妙记 token、时间范围、操作目标。",
+      "outputSummary": "妙记内容/摘要/待办、录制、会议信息与产物。\n\n**关键约束**：妙记权限不足先 apply-permission；发言人替换需可追溯。",
+      "boundarySummary": "日程预订 → lark-calendar。",
+      "sectionCharacterCount": 835
+    },
+    {
+      "skillId": "lark-task",
+      "title": "6.13 飞书任务",
+      "aliases": [
+        "6.13 飞书任务",
+        "lark-task"
+      ],
+      "lineStart": 1642,
+      "lineEnd": 1661,
+      "oneLine": "管理任务与任务清单，支持创建、分派、协作人、提醒、子任务、截止、完成/重开、评论、附件。",
+      "triggerSummary": "\"建任务/派活/设截止提醒\"\"我的待办\"\"建任务清单并加任务\"\"子任务/协作人/评论/附件\"。",
+      "inputSummary": "任务标题、负责人、截止时间、清单、描述。",
+      "outputSummary": "任务/清单及状态。\n\n**关键约束**：分派对象需可解析；完成/重开状态准确流转。",
+      "boundarySummary": "日程 → lark-calendar；OKR → lark-okr；待办摘要工作流 → lark-workflow-standup-report。",
+      "sectionCharacterCount": 547
+    },
+    {
+      "skillId": "lark-approval",
+      "title": "6.14 飞书审批",
+      "aliases": [
+        "6.14 飞书审批",
+        "lark-approval"
+      ],
+      "lineStart": 1662,
+      "lineEnd": 1681,
+      "oneLine": "查询处理审批待办/已办/实例，搜索审批定义、查看定义详情并发起原生审批实例。",
+      "triggerSummary": "\"查我的审批待办/已办\"\"同意/驳回/加签/转交/催办\"\"按定义发起审批\"\"查实例详情/抄送\"。",
+      "inputSummary": "approval_code、instance_code、task id、表单值。",
+      "outputSummary": "审批操作结果、实例/任务列表。\n\n**关键约束**：同意/驳回/撤销为写操作需确认；表单控件值按 instance-form-control 规范。",
+      "boundarySummary": "任务 → lark-task。",
+      "sectionCharacterCount": 591
+    },
+    {
+      "skillId": "lark-okr",
+      "title": "6.15 飞书 OKR",
+      "aliases": [
+        "6.15 飞书 OKR",
+        "lark-okr"
+      ],
+      "lineStart": 1682,
+      "lineEnd": 1701,
+      "oneLine": "管理目标与关键结果，支持周期、对齐、批量创建、KR 指标与进展、权重、重排、进度增删改查、配图。",
+      "triggerSummary": "\"建/改 OKR\"\"对齐上级目标\"\"更新 KR 进展/指标\"\"调权重/重排\"\"看某周期 OKR\"。",
+      "inputSummary": "周期、O/KR 内容、对齐对象、权重、指标。",
+      "outputSummary": "OKR 结构、进展与对齐图。\n\n**关键约束**：O/KR 层级与权重正确；进展留痕。",
+      "boundarySummary": "普通任务 → lark-task；绩效不在本 Skill。",
+      "sectionCharacterCount": 529
+    },
+    {
+      "skillId": "lark-contact",
+      "title": "6.16 飞书通讯录",
+      "aliases": [
+        "6.16 飞书通讯录",
+        "lark-contact"
+      ],
+      "lineStart": 1702,
+      "lineEnd": 1721,
+      "oneLine": "按姓名/邮箱解析 open_id，按 open_id 反查姓名/部门/邮箱/状态/签名，按关键词搜人/搜机器人。",
+      "triggerSummary": "\"查某人的部门/邮箱/open_id\"\"按名字找人\"\"找某个机器人\"\"反查这个 id 是谁\"。",
+      "inputSummary": "姓名/邮箱/open_id/关键词。",
+      "outputSummary": "人员/机器人档案（对外回复不回显 open_id 等敏感 ID）。\n\n**关键约束**：隐私最小化，只返回任务所需字段。",
+      "boundarySummary": "群成员 → lark-im；组织架构深度治理走管理后台。",
+      "sectionCharacterCount": 401
+    },
+    {
+      "skillId": "lark-attendance",
+      "title": "6.17 飞书考勤",
+      "aliases": [
+        "6.17 飞书考勤",
+        "lark-attendance"
+      ],
+      "lineStart": 1722,
+      "lineEnd": 1741,
+      "oneLine": "查询考勤打卡、排班、请假余额、考勤统计（轻量入口）。",
+      "triggerSummary": "\"查我的打卡/排班/剩余年假\"\"团队考勤统计\"。",
+      "inputSummary": "人员、时间范围、考勤组。",
+      "outputSummary": "考勤记录/统计。\n\n**关键约束**：考勤属敏感数据，最小化查询。",
+      "boundarySummary": "考勤审批走 lark-approval。",
+      "sectionCharacterCount": 274
+    },
+    {
+      "skillId": "doubao-record",
+      "title": "6.18 飞书录音",
+      "aliases": [
+        "6.18 飞书录音",
+        "doubao-record"
+      ],
+      "lineStart": 1742,
+      "lineEnd": 1761,
+      "oneLine": "启动当前飞书会话的录音，或查询录音中的内容（发起录音、拿纪要/逐字稿）。",
+      "triggerSummary": "\"帮我录一下/录个音/记录这场会\"\"刚才录音说了什么/把纪要给我\"。",
+      "inputSummary": "当前会话、录音 id（查询时）。",
+      "outputSummary": "record_id、录音纪要/字幕。\n\n**关键约束**：录音需让与会方知情；不用于偷录。",
+      "boundarySummary": "历史会议妙记 → lark-meeting；本地视频音轨处理 → byted-mediakit-audio。",
+      "sectionCharacterCount": 417
+    },
+    {
+      "skillId": "lark-workflow-meeting-summary",
+      "title": "6.19 会议纪要汇总工作流",
+      "aliases": [
+        "6.19 会议纪要汇总工作流",
+        "lark-workflow-meeting-summary"
+      ],
+      "lineStart": 1762,
+      "lineEnd": 1781,
+      "oneLine": "编排 calendar + meeting + task，汇总指定时间范围的会议并生成结构化纪要报告。",
+      "triggerSummary": "\"把这周的会和纪要汇总一下\"\"生成会议周报\"。",
+      "inputSummary": "时间范围、参与人、是否要待办。",
+      "outputSummary": "结构化会议纪要汇总报告。",
+      "boundarySummary": "单场妙记 → lark-meeting；日程待办混合摘要 → standup-report。",
+      "sectionCharacterCount": 396
+    },
+    {
+      "skillId": "lark-workflow-standup-report",
+      "title": "6.20 日程待办站会工作流",
+      "aliases": [
+        "6.20 日程待办站会工作流",
+        "lark-workflow-standup-report"
+      ],
+      "lineStart": 1782,
+      "lineEnd": 1799,
+      "oneLine": "编排 calendar（agenda）+ task（get-my-tasks）生成每日站会/日程待办摘要。",
+      "triggerSummary": "\"今天的日程和待办汇总\"\"生成每日站会报告/晨会清单\"。",
+      "inputSummary": "日期/时间范围、是否含已完成。",
+      "outputSummary": "日程待办摘要。",
+      "boundarySummary": "纯会议纪要 → meeting-summary；任务本体操作 → lark-task。",
+      "sectionCharacterCount": 330
+    },
+    {
+      "skillId": "lark-openapi-explorer",
+      "title": "6.21 飞书 OpenAPI 探索器",
+      "aliases": [
+        "6.21 飞书 OpenAPI 探索器",
+        "lark-openapi-explorer"
+      ],
+      "lineStart": 1800,
+      "lineEnd": 1822,
+      "oneLine": "当 lark-cli 没有现成已注册 API/Shortcut 时，从飞书官方文档库逐层挖掘原生 OpenAPI（方法、路径、参数、权限），供 `lark-cli api` 裸调。",
+      "triggerSummary": "\"这个飞书功能 CLI 没有现成命令\"\"查某 OpenAPI 的路径和参数\"\"裸调飞书开放接口\"。",
+      "inputSummary": "想实现的飞书操作、所属产品域。",
+      "outputSummary": "接口方法/路径/参数/权限清单与调用命令。",
+      "boundarySummary": "已有 shortcut 的常规操作直接用对应业务 Skill。",
+      "sectionCharacterCount": 562
+    },
+    {
+      "skillId": "byted-mediakit-shared",
+      "title": "7.1 MediaKit 总入口",
+      "aliases": [
+        "7.1 MediaKit 总入口",
+        "byted-mediakit-shared"
+      ],
+      "lineStart": 1823,
+      "lineEnd": 1848,
+      "oneLine": "音视频与图像处理的统一导航入口与公共 CLI 合同，本身不含具体能力参数，只负责按\"对象 × 目标\"路由到 image/audio/video/editing 四个领域 Skill。",
+      "triggerSummary": "任何音视频/图片加工先经本入口判领域。",
+      "inputSummary": "",
+      "outputSummary": "",
+      "boundarySummary": "不重复具体工具参数；从 0 生成内容 → seed-* 系列。\n\n**内部资产**：reference/query_task.md（唯一协议）。\n\n---",
+      "sectionCharacterCount": 845
+    },
+    {
+      "skillId": "byted-mediakit-image",
+      "title": "7.2 MediaKit 图片处理",
+      "aliases": [
+        "7.2 MediaKit 图片处理",
+        "byted-mediakit-image"
+      ],
+      "lineStart": 1849,
+      "lineEnd": 1877,
+      "oneLine": "单张/批量图片的尺寸体积治理、质量优化、内容理解与基础编辑，共 **21 个工具**。",
+      "triggerSummary": "\"压缩/缩放图片到指定大小\"\"裁剪/旋转/圆角/调色/锐化\"\"打码/马赛克/加水印/抠底/擦除\"\"OCR 识别图中文字\"\"评估清晰度\"。",
+      "inputSummary": "本地图片路径、目标尺寸/体积/参数。",
+      "outputSummary": "处理后图片 + 探测/OCR/评估的结构化结果。\n\n**关键约束**：局部编辑类保持原图比例；异步走 query-task。",
+      "boundarySummary": "从 0 创作图片 → seedream-50/creative-design；视频帧 → video；图片表格结构化提取 → verify-ocr-table-extraction。",
+      "sectionCharacterCount": 946
+    },
+    {
+      "skillId": "byted-mediakit-audio",
+      "title": "7.3 MediaKit 音频处理",
+      "aliases": [
+        "7.3 MediaKit 音频处理",
+        "byted-mediakit-audio"
+      ],
+      "lineStart": 1878,
+      "lineEnd": 1901,
+      "oneLine": "音频/音轨的媒资探测、转码、语音边界定位、人声与背景声分离，共 **4 个工具**。",
+      "triggerSummary": "\"看音频参数/转成 mp3/wav\"\"定位哪些时间段有人说话\"\"提取人声/去背景音/分离伴奏\"。",
+      "inputSummary": "音频/含音轨视频路径、目标格式或分离模式。",
+      "outputSummary": "转码后音频、VAD 时间段、分离出的人声/背景音轨。",
+      "boundarySummary": "视频里的音轨 → editing 的 extract-audio；从 0 生成语音/音乐 → seed-audio；剪辑拼接混音 → editing。",
+      "sectionCharacterCount": 576
+    },
+    {
+      "skillId": "byted-mediakit-video",
+      "title": "7.4 MediaKit 视频理解与增强",
+      "aliases": [
+        "7.4 MediaKit 视频理解与增强",
+        "byted-mediakit-video"
+      ],
+      "lineStart": 1902,
+      "lineEnd": 1932,
+      "oneLine": "视频智能处理与内容理解，是 MediaKit 中工具最多的领域，共 **30 个工具**。",
+      "triggerSummary": "\"视频转码/抽帧/识别画面文字\"\"语音转字幕、擦字幕\"\"剧情分段/剧本整理/高光拆条\"\"画质增强/检测/超分\"\"人像/绿幕抠像、换脸、人脸打码\"\"加/提取隐形水印\"。",
+      "inputSummary": "视频路径、目标（理解类需说明要什么结构）。",
+      "outputSummary": "处理后视频、字幕、分段/剧本/高光时间轴、画质报告。\n\n**关键约束**：生成式增强/8K 耗时长，多轮 query-task；换脸等敏感能力须合规、不用于伪造他人。",
+      "boundarySummary": "裁剪拼接等剪辑 → editing；下载在线视频并出逐字稿 → video-extract；从 0 生成视频 → seedance。",
+      "sectionCharacterCount": 1302
+    },
+    {
+      "skillId": "byted-mediakit-editing",
+      "title": "7.5 MediaKit 音视频剪辑合成",
+      "aliases": [
+        "7.5 MediaKit 音视频剪辑合成",
+        "byted-mediakit-editing"
+      ],
+      "lineStart": 1933,
+      "lineEnd": 1960,
+      "oneLine": "用现有素材做时间线剪辑与合成，共 **23 个工具**。",
+      "triggerSummary": "\"裁剪/拼接/合并/调速/调音量\"\"滤镜/运镜/旋转翻转\"\"压字幕/叠图\"\"提取音轨/音视频合并/混音/淡入淡出\"\"图转视频/文字滚屏/截 GIF\"。",
+      "inputSummary": "素材路径、时间线（入出点/顺序）、参数。",
+      "outputSummary": "剪辑合成后的成片/音频。\n\n**关键约束**：时间点精确、多素材规格统一；异步轮询。",
+      "boundarySummary": "视频理解/增强/抠像 → video；音频人声分离 → audio；从 0 生成 → seedance/seed-audio。",
+      "sectionCharacterCount": 943
+    },
+    {
+      "skillId": "doubao-video-extract",
+      "title": "7.6 在线/本地视频提取",
+      "aliases": [
+        "7.6 在线/本地视频提取",
+        "doubao-video-extract"
+      ],
+      "lineStart": 1961,
+      "lineEnd": 1988,
+      "oneLine": "提取、下载、解析在线视频（抖音/快手/B 站/直链）或本地视频，产出音频、字幕、逐字稿、时间轴、关键帧、证据包。",
+      "triggerSummary": "\"下载这个抖音/B站/快手视频并出逐字稿\"\"要带精确时间码和关键帧的完整证据\"\"本地视频转文字/抽帧\"。",
+      "inputSummary": "视频 URL 或本地路径、要音频/逐字稿/帧中的哪些。",
+      "outputSummary": "音视频文件、逐字稿（带时间码）、关键帧、证据包、可选妙记。\n\n**关键约束**：逐字稿与时间窗可对齐；遵守平台与版权规则，不绕过登录权限。",
+      "boundarySummary": "只做剪辑 → mediakit-editing；会议录制转妙记 → lark-meeting；无法访问/需登录的受限站点要明说。",
+      "sectionCharacterCount": 1047
+    },
+    {
+      "skillId": "seed-audio",
+      "title": "7.7 音频生成",
+      "aliases": [
+        "7.7 音频生成",
+        "seed-audio"
+      ],
+      "lineStart": 1989,
+      "lineEnd": 2008,
+      "oneLine": "用自然语言一次性生成复合音频——人声对话、环境声、音效、背景音乐及它们的混合。",
+      "triggerSummary": "\"生成一段旁白/对话/环境音/配乐\"\"按这段参考音频的音色风格生成\"。",
+      "inputSummary": "声音内容、角色、情绪、风格、场景（A2A 需参考音频）。",
+      "outputSummary": "生成音频（WAV 等）。\n\n**关键约束**：prompt 描述声音而非只给待读文本；时长仅在用户明确给数值时指定。",
+      "boundarySummary": "处理已有音频（转码/分离）→ mediakit-audio；未授权声纹克隆/冒充他人禁止。",
+      "sectionCharacterCount": 410
+    },
+    {
+      "skillId": "seedance-25",
+      "title": "7.8 视频生成 Seedance 2.5",
+      "aliases": [
+        "7.8 视频生成 Seedance 2.5",
+        "seedance-25"
+      ],
+      "lineStart": 2009,
+      "lineEnd": 2028,
+      "oneLine": "使用 Seedance 2.5 模型做文生视频/图生视频，支持 5–30 秒、多比例、专业影像与广告级视频。",
+      "triggerSummary": "\"用 Seedance 2.5 生成视频\"\"把这张图做成视频\"\"按分镜生成片段\"。",
+      "inputSummary": "prompt/参考图、时长（5–30s）、比例、镜头要求。",
+      "outputSummary": "生成视频文件。\n\n**关键约束**：调用前遵循创意视频 Skill 规划；真实人物合成须合规。",
+      "boundarySummary": "只写视频脚本不生成 → creative-video；后期剪辑 → mediakit-editing；其他模型版本走通用视频工具。",
+      "sectionCharacterCount": 457
+    },
+    {
+      "skillId": "seedream-50",
+      "title": "7.9 图片生成 Seedream 5.0",
+      "aliases": [
+        "7.9 图片生成 Seedream 5.0",
+        "seedream-50"
+      ],
+      "lineStart": 2029,
+      "lineEnd": 2051,
+      "oneLine": "当用户明确点名\"5.0 / 5.0 Pro / Seedream 5.0 Pro\"生图时使用的模型专用 Skill，提供该模型的提示词与参数规范。",
+      "triggerSummary": "\"用 Seedream 5.0 Pro 生成\"\"5.0 模型做海报/产品图/风格图\"。",
+      "inputSummary": "画面描述、参考图（可选）、比例、风格、文字内容。",
+      "outputSummary": "生成图片。\n\n**关键约束**：图中文字用中文引号标注；品牌/人物要素不漂移。",
+      "boundarySummary": "未指定 5.0 的通用生图 → creative-design；图片后期 → mediakit-image。",
+      "sectionCharacterCount": 426
+    },
+    {
+      "skillId": "computer-use",
+      "title": "8.1 本地电脑 GUI 操作",
+      "aliases": [
+        "8.1 本地电脑 GUI 操作",
+        "computer-use",
+        "本地电脑",
+        "电脑操作",
+        "远程控制"
+      ],
+      "lineStart": 2052,
+      "lineEnd": 2073,
+      "oneLine": "操作本地电脑 GUI、浏览器原生界面或真实本地浏览器状态——桌面应用、系统设置、弹窗、安装器、文件选择器、专业软件、远程桌面，以及软件下载安装/更新/卸载/首次启动验证。",
+      "triggerSummary": "\"帮我装/卸/更新某个软件\"\"点这个弹窗/改系统设置\"\"操作这个桌面客户端\"\"走一遍安装向导并验证能打开\"。",
+      "inputSummary": "目标应用/操作、必要账号、授权范围。",
+      "outputSummary": "操作结果（截图为证）、安装/配置状态。\n\n**关键约束**：高风险/不可逆操作谨慎；不绕登录权限；每步可验证。",
+      "boundarySummary": "纯网页内容抓取/研究 → browser-use-automation；命令行能完成的用 Bash；网页应用生成 → app-builder。",
+      "sectionCharacterCount": 531
+    },
+    {
+      "skillId": "browser-use-automation",
+      "title": "8.2 浏览器自动化",
+      "aliases": [
+        "8.2 浏览器自动化",
+        "browser-use-automation"
+      ],
+      "lineStart": 2074,
+      "lineEnd": 2095,
+      "oneLine": "通过 CNGC Browser Use 栈（computer_use_tool，plane=bu）**只**用浏览器完成网站操作、信息研究与指定平台工作流。",
+      "triggerSummary": "\"在淘宝/微博/小红书上采集/互动/发布\"\"登录态网页操作\"\"网页信息研究\"。",
+      "inputSummary": "网址、操作目标、账号登录态。",
+      "outputSummary": "网页操作结果、采集数据、截图。\n\n**关键约束**：只用 bu 栈驱动页面；动作后必须验证。",
+      "boundarySummary": "本地桌面 GUI → computer-use；平台规则与登录权限不可绕过。",
+      "sectionCharacterCount": 571
+    },
+    {
+      "skillId": "doubao-pc-optimizer",
+      "title": "8.3 电脑优化清理",
+      "aliases": [
+        "8.3 电脑优化清理",
+        "doubao-pc-optimizer"
+      ],
+      "lineStart": 2096,
+      "lineEnd": 2117,
+      "oneLine": "清理磁盘垃圾、释放空间、处理卡顿/开机慢、优化 Windows/macOS 性能、提升游戏帧率，生成安全清理脚本。",
+      "triggerSummary": "\"C 盘满了/清垃圾/释放空间\"\"开机慢/卡顿优化\"\"游戏掉帧提帧率\"。",
+      "inputSummary": "系统、目标盘、清理范围授权。",
+      "outputSummary": "占用分析、分级清理清单、可执行清理脚本、优化结果。\n\n**关键约束**：**先分类—再确认—后执行**，未授权不直接删；区分安全/人工/不建议三类。",
+      "boundarySummary": "GUI 软件安装卸载 → computer-use；业务数据分析 → data-analysis。",
+      "sectionCharacterCount": 601
+    },
+    {
+      "skillId": "doubao-cron-scheduler",
+      "title": "8.4 定时任务",
+      "aliases": [
+        "8.4 定时任务",
+        "doubao-cron-scheduler"
+      ],
+      "lineStart": 2118,
+      "lineEnd": 2139,
+      "oneLine": "创建、查看、更新、删除定时任务——一次性提醒、周期任务、后台监控、多轮编辑、登录态敏感任务。",
+      "triggerSummary": "\"每天/每周/每小时跑一次\"\"一小时后提醒我\"\"定时监控/生成报告\"\"修改/删除那个定时任务\"。",
+      "inputSummary": "时间表达式、要执行的操作、标题、（周期任务）是否要截止。",
+      "outputSummary": "cron_job_id 与任务配置。\n\n**关键约束**：不把 in 1 minute 当 at 表达式（应 now + 1 minute）；非必要不取整到整点；周期任务无明确截止不填 deadline。",
+      "boundarySummary": "即时执行的任务不需要；日历日程 → lark-calendar。",
+      "sectionCharacterCount": 622
+    },
+    {
+      "skillId": "doubao-pdf",
+      "title": "8.5 PDF 全功能处理",
+      "aliases": [
+        "8.5 PDF 全功能处理",
+        "doubao-pdf"
+      ],
+      "lineStart": 2140,
+      "lineEnd": 2159,
+      "oneLine": "PDF 全场景——读取、创建、编辑、转换、内容提取、页面处理、表单填写、扫描件解析，重型 PDF 工具箱。",
+      "triggerSummary": "\"读/合并/拆分/转 PDF\"\"提取 PDF 文字/表格\"\"填 PDF 表单\"\"扫描件解析\"\"PDF 转图片/图片转 PDF\"。",
+      "inputSummary": "PDF 文件、操作目标、表单数据。",
+      "outputSummary": "处理后的 PDF、提取的文本/结构、填好的表单、校验图。\n\n**关键约束**：表单填写后生成校验图核对；扫描件质量不足要标注。",
+      "boundarySummary": "PDF 论文精读 → paper-close-reading；PDF 格式的论文排版 → journal-format。",
+      "sectionCharacterCount": 742
+    },
+    {
+      "skillId": "doubao-enterprise-search",
+      "title": "8.6 企业内部知识检索",
+      "aliases": [
+        "8.6 企业内部知识检索",
+        "doubao-enterprise-search"
+      ],
+      "lineStart": 2160,
+      "lineEnd": 2179,
+      "oneLine": "基于企业内部可访问资料检索、查询、综合——文档库、会议记录、工作消息、邮件、内部知识库，返回结构化参考。",
+      "triggerSummary": "\"公司内部有没有关于 X 的规定\"\"查内部文档/会议记录/历史讨论\"\"某项目背景是什么\"\"内部口径是什么\"。",
+      "inputSummary": "用自然语言表述问题（补全省略主体/时间范围）。",
+      "outputSummary": "结构化内部参考（带来源）。\n\n**关键约束**：调用前必须先读本 Skill；内部信息不外泄、标注来源与时效。",
+      "boundarySummary": "公开互联网信息 → general_search/scholar。",
+      "sectionCharacterCount": 440
+    },
+    {
+      "skillId": "skill-creator-for-work",
+      "title": "8.7 工作 Skill 创建指南",
+      "aliases": [
+        "8.7 工作 Skill 创建指南",
+        "skill-creator-for-work"
+      ],
+      "lineStart": 2180,
+      "lineEnd": 2201,
+      "oneLine": "创建有效工作类 Skill 的通用指南与脚手架。",
+      "triggerSummary": "\"帮我做一个新 Skill\"\"把这套工作方法封装成 Skill\"\"校验我的 Skill 写得对不对\"。",
+      "inputSummary": "要自动化的工作流程、输入输出、触发条件。",
+      "outputSummary": "一个结构合法的新 Skill 目录（SKILL.md + 资产）。\n\n**关键约束**：description 决定触发；通过 quick_validate 才算合格。",
+      "boundarySummary": "使用已有 Skill 即可完成的任务不需要本指南。",
+      "sectionCharacterCount": 573
+    },
+    {
+      "skillId": "doubao-identity",
+      "title": "8.8 豆包身份与会员服务",
+      "aliases": [
+        "8.8 豆包身份与会员服务",
+        "doubao-identity"
+      ],
+      "lineStart": 2202,
+      "lineEnd": 2221,
+      "oneLine": "解答豆包产品自身的记忆、官方内容、隐私数据、Pro 会员套餐与会员支持问题。",
+      "triggerSummary": "\"豆包怎么记忆/管理我的信息\"\"Pro 有什么套餐/权益\"\"会员扣费/续费/取消问题\"\"隐私数据怎么处理\"。",
+      "inputSummary": "用户的账号/会员问题。",
+      "outputSummary": "官方口径解答或办理指引。\n\n**关键约束**：以官方最新口径为准，不臆造套餐权益。",
+      "boundarySummary": "学生优惠办理 → student-discount-application；礼品卡 → gift-card-redemption；具体创作任务走对应领域。",
+      "sectionCharacterCount": 483
+    },
+    {
+      "skillId": "linkly-ai",
+      "title": "8.9 Linkly AI",
+      "aliases": [
+        "8.9 Linkly AI",
+        "linkly-ai"
+      ],
+      "lineStart": 2222,
+      "lineEnd": 2240,
+      "oneLine": "当用户调用 `$linkly-ai`、提到 Linkly AI/Linkly MCP，或要探索/列出其能力时使用，连接 Linkly MCP 工具集。",
+      "triggerSummary": "\"用 Linkly 找路径/搜索\"\"Linkly MCP 有哪些工具/怎么用\"\"Linkly 报错怎么办\"。",
+      "inputSummary": "Linkly 查询/路径需求。",
+      "outputSummary": "Linkly 检索/路径结果。\n\n**关键约束**：MCP 工具参数以 tool_search 返回 schema 为准，不凭名猜参。",
+      "boundarySummary": "企业内部知识 → enterprise-search；调用其 MCP 工具前需先 tool_search 取回真实 schema。",
+      "sectionCharacterCount": 553
+    },
+    {
+      "skillId": "doubao-visualization",
+      "title": "8.10 统一可视化",
+      "aliases": [
+        "8.10 统一可视化",
+        "doubao-visualization"
+      ],
+      "lineStart": 2241,
+      "lineEnd": 2267,
+      "oneLine": "把适合图形表达的内容转成可复核、可运行的可视化回复——精确数据用 ECharts、原图证据用叠加、知识结构用确定性 HTML/SVG，不用不可复核的 AI 配图兜底。",
+      "triggerSummary": "\"画图/图表/图解/关系图/流程图/时间线/信息图/交互演示\"；内容含趋势占比对比、可枚举结构、依赖原图证据、要看状态变化过程。",
+      "inputSummary": "结构化数据、用户原图或已核验事实、任务目标。",
+      "outputSummary": "文字结论 + ECharts option 或 `html type=\"renderer\"` 块（单块 ≤300 行）。\n\n**关键约束**：静态默认、交互须有增益；初始静态即可读懂、不依赖 hover；数据必须可复核、缺数据走空态/示例并标注；控件 ≥44×44px、正文 ≥14px；外部库失败要降级、禁 BootCDN；禁 100vh 固定高度。",
+      "boundarySummary": "简短事实/改写/闲聊、用户只要文字、海报头像壁纸写实插画、**地图/导航/地理轨迹/ECharts geo-map 一律禁止**、PDF/PPT/Word/Excel/图片等真实附件交付（走对应文件 Skill）。",
+      "sectionCharacterCount": 1176
+    },
+    {
+      "skillId": "doubao-data-analysis",
+      "title": "8.11 业务数据分析",
+      "aliases": [
+        "8.11 业务数据分析",
+        "doubao-data-analysis"
+      ],
+      "lineStart": 2268,
+      "lineEnd": 2289,
+      "oneLine": "结构化业务数据分析——附件读取与口径核验、定向筛选、规则/阈值判定、指标异动归因、漏斗/留存/实验分析、经营复盘与可审计报告。",
+      "triggerSummary": "\"分析这份 Excel/CSV/业务数据\"\"指标为什么异动\"\"漏斗/留存/A-B 实验\"\"经营复盘/财务诊断\"。",
+      "inputSummary": "数据文件、业务口径、分析问题、基准/阈值。",
+      "outputSummary": "分析结论 + 可审计报告（可出 Excel），结论可回溯到数据。\n\n**关键约束**：口径先核验；数字由明细现算；七道强制决策门不过不出结论；不编数据。",
+      "boundarySummary": "纯图表回复 → visualization；表格读写建模 → sheet；金融投研 → 领域二。",
+      "sectionCharacterCount": 843
+    },
+    {
+      "skillId": "doubao-app-builder",
+      "title": "8.12 网页应用构建",
+      "aliases": [
+        "8.12 网页应用构建",
+        "doubao-app-builder",
+        "应用生成",
+        "网页应用"
+      ],
+      "lineStart": 2290,
+      "lineEnd": 2311,
+      "oneLine": "统一处理网页应用的生成、编辑与围绕产物的问答，把自然语言需求、文档、截图、数据端到端转成可运行、可预览、可交付的网页应用；也支持编辑已有应用、读源码排查报错。",
+      "triggerSummary": "\"做个网站/H5/网页应用/小工具/仪表盘/小游戏\"\"改我之前那个应用\"\"这个应用报错帮我排查/总结它的功能\"。",
+      "inputSummary": "需求描述/文档/截图/数据；编辑时给 app_id。",
+      "outputSummary": "可运行网页应用（app_id、可预览链接）。\n\n**关键约束**：调用前先读 app-builder Skill 并判 arch_type；编辑类 user_prompt 按规范传；基于真实产物回答、不臆测源码。",
+      "boundarySummary": "桌面宠物 → desktop-pet-builder；纯图表回复 → visualization。",
+      "sectionCharacterCount": 767
+    },
+    {
+      "skillId": "doubao-desktop-pet-builder",
+      "title": "8.13 桌面宠物构建",
+      "aliases": [
+        "8.13 桌面宠物构建",
+        "doubao-desktop-pet-builder"
+      ],
+      "lineStart": 2312,
+      "lineEnd": 2336,
+      "oneLine": "把一张图/照片/角色或文字描述变成可运行的桌面宠物（Electron 应用），支持单图、完整动作素材、文字描述三种输入与修复已有工程。",
+      "triggerSummary": "\"把这张图变成桌宠\"\"基于文字描述生成桌宠\"\"修复我这个桌宠工程\"\"打包桌宠安装包\"。",
+      "inputSummary": "角色图/动作素材/文字描述、交互与提醒需求。",
+      "outputSummary": "可运行/可安装的 Electron 桌宠应用。\n\n**关键约束**：过失败门与 QA；素材版权来源清晰；数据隐私合规。",
+      "boundarySummary": "网页应用 → app-builder。",
+      "sectionCharacterCount": 1137
+    },
+    {
+      "skillId": "doubao-game-designer",
+      "title": "8.14 游戏设计",
+      "aliases": [
+        "8.14 游戏设计",
+        "doubao-game-designer"
+      ],
+      "lineStart": 2337,
+      "lineEnd": 2360,
+      "oneLine": "把游戏创意、参考作品、现有方案、配置或试玩证据，转化为玩法成立、规则闭合、数值可复算、能进入制作的 GDD（游戏设计文档）。",
+      "triggerSummary": "\"设计一款游戏/写 GDD\"\"这套玩法成不成立、数值平不平衡\"\"新手引导/商业化/制作拆解\"。",
+      "inputSummary": "创意、参考游戏、目标平台、核心玩法、数值草稿。",
+      "outputSummary": "玩法成立、数值可复算的 GDD（可含 HTML 玩法 demo）。\n\n**关键约束**：规则必须闭合、数值可复算；对抗评审不过回炉。",
+      "boundarySummary": "写游戏攻略 → ultimate-guide；做可玩网页小游戏 → app-builder(mini-game)。",
+      "sectionCharacterCount": 860
+    },
+    {
+      "skillId": "doubao-ultimate-guide",
+      "title": "8.15 统一攻略创作",
+      "aliases": [
+        "8.15 统一攻略创作",
+        "doubao-ultimate-guide"
+      ],
+      "lineStart": 2361,
+      "lineEnd": 2384,
+      "oneLine": "攻略创作总控，按需求路由到旅游、健身、美食烹饪、游戏四个分支，每个分支是独立子 Skill。",
+      "triggerSummary": "\"做旅游攻略/行程\"\"健身/训练/营养计划\"\"菜谱教程\"\"某游戏通关/配队/资源攻略\"。",
+      "inputSummary": "目的地/身体条件/菜品/游戏与目标、约束与偏好。",
+      "outputSummary": "结构化攻略（旅游/健身支持飞书与视觉交付）。\n\n**关键约束**：安全与质量门；图片承诺需校验、不编造图。",
+      "boundarySummary": "设计游戏 → game-designer；医学级健康建议 → 临床/医学 Skill。",
+      "sectionCharacterCount": 834
+    },
+    {
+      "skillId": "doubao-medical-report",
+      "title": "8.16 体检报告解读",
+      "aliases": [
+        "8.16 体检报告解读",
+        "doubao-medical-report"
+      ],
+      "lineStart": 2385,
+      "lineEnd": 2406,
+      "oneLine": "解读用户上传的体检报告、检验/检查单、化验单（含血常规/尿常规/生化/肝肾功能/血脂血糖，及图片/PDF/表格）。",
+      "triggerSummary": "\"解读我的体检报告/化验单\"\"这些指标异常吗、严重吗\"\"历次指标趋势\"\"要不要复查/就医\"。",
+      "inputSummary": "体检/检验报告（图/PDF/表格）、年龄性别、既往史（可选）。",
+      "outputSummary": "异常指标解读 + 分级建议 + 趋势图 + 复查/就医提示。\n\n**关键约束**：只解读不诊断、不替代医生；异常分级、参考范围以报告为准；来源链接需校验。",
+      "boundarySummary": "具体患者诊疗决策 → clinical-decision-support；查医学文献 → medical-literature-search。",
+      "sectionCharacterCount": 816
+    },
+    {
+      "skillId": "student-discount-application",
+      "title": "8.17 学生优惠申请",
+      "aliases": [
+        "8.17 学生优惠申请",
+        "student-discount-application"
+      ],
+      "lineStart": 2407,
+      "lineEnd": 2428,
+      "oneLine": "办理豆包专业版学生优惠——引导绑定抖音、完成学生认证（学信网）并领取权益，按阶段推进。",
+      "triggerSummary": "\"办学生优惠/学生认证\"\"我是学生怎么领专业版优惠\"\"卡在哪一步了\"。",
+      "inputSummary": "抖音绑定状态、学生身份信息。",
+      "outputSummary": "当前阶段 + 下一步指引，最终权益下发结果。\n\n**关键约束**：必须先读本 Skill 再调推进工具；不替用户伪造学籍。",
+      "boundarySummary": "一般会员咨询 → doubao-identity；非申请意图不触发；礼品卡 → gift-card。",
+      "sectionCharacterCount": 555
+    },
+    {
+      "skillId": "gift-card-redemption",
+      "title": "8.18 订阅礼品卡兑换",
+      "aliases": [
+        "8.18 订阅礼品卡兑换",
+        "gift-card-redemption"
+      ],
+      "lineStart": 2429,
+      "lineEnd": 2448,
+      "oneLine": "查询豆包订阅礼品卡的可兑换状态和套餐，确认后完成兑换。",
+      "triggerSummary": "\"兑换礼品卡\"\"这张卡能换什么套餐\"\"查礼品卡状态\"。",
+      "inputSummary": "礼品卡信息。",
+      "outputSummary": "可兑换状态/套餐、兑换结果。\n\n**关键约束**：确认后才兑换；工具响应按契约解释。",
+      "boundarySummary": "学生优惠 → student-discount；会员套餐咨询 → identity。",
+      "sectionCharacterCount": 351
+    },
+    {
+      "skillId": "artifact-preview",
+      "title": "8.19 产物预览自检",
+      "aliases": [
+        "8.19 产物预览自检",
+        "artifact-preview"
+      ],
+      "lineStart": 2449,
+      "lineEnd": 2470,
+      "oneLine": "在交付前把各类文件渲染成可视预览，供\"用不同于生成路径的方式\"回读自检。",
+      "triggerSummary": "\"交付前预览这个 Word/PPT/Excel/PDF/HTML\"\"把多页拼成一张图检查\"\"生成产物截图核对\"。",
+      "inputSummary": "本地产物路径。",
+      "outputSummary": "预览图/collage/渲染视图。\n\n**关键约束**：预览是自检手段，不替代规则校验。",
+      "boundarySummary": "规则化校验（数值/结构）→ verifier-hub；在线飞书产物用其自带截图能力。",
+      "sectionCharacterCount": 561
+    },
+    {
+      "skillId": "verifier-hub",
+      "title": "8.20 验证中心",
+      "aliases": [
+        "8.20 验证中心",
+        "verifier-hub"
+      ],
+      "lineStart": 2471,
+      "lineEnd": 2492,
+      "oneLine": "交付前的确定性校验中枢，对文档/表格/幻灯片/PDF/压缩包/文本做可复算的结构与内容校验，并支持自定义 rubric 与问卷。",
+      "triggerSummary": "\"校验这个 Excel 的合计/序号/空值\"\"检查 Word/PPT 结构是否合规\"\"按这份 rubric 打分\"\"验收清单逐项核\"。",
+      "inputSummary": "待验文件、校验规则/rubric。",
+      "outputSummary": "校验结果（Pass/Fail、问题定位、统计）。\n\n**关键约束**：结论不超检查范围；数值由文件现算。",
+      "boundarySummary": "视觉效果预览 → artifact-preview；OCR 表格核验编排 → verify-ocr（8.26）。",
+      "sectionCharacterCount": 608
+    },
+    {
+      "skillId": "verify-ocr-table-extraction",
+      "title": "8.21 图片表格提取与核验编排",
+      "aliases": [
+        "8.21 图片表格提取与核验编排",
+        "verify-ocr-table-extraction"
+      ],
+      "lineStart": 2493,
+      "lineEnd": 2665,
+      "oneLine": "把截图、扫描件、模糊表格图片提取为可编辑表格，并做低置信标注、行列结构、序号映射与合计核验的**编排型** Skill（自身不含 OCR/表格能力，负责串联）。",
+      "triggerSummary": "\"把这 6 张仪器截图录入表格并标模糊数字\"\"图片表格转 Excel，核对序号和合计\"。\n**不应触发**：识别一段文字（纯 OCR）、增强照片清晰度、视频字幕、已有可编辑表格的一般分析。\n**边界输入**：表头截断、两图重复行、总计与分项不一致。\n\n**工具协作（REQUIRED）**：byted-mediakit-image + sheet；重要数值加 verifier-hub。",
+      "inputSummary": "",
+      "outputSummary": "可编辑表格 + 低置信清单 + 结构/合计校验结果 + 来源图片映射。\n\n**关键约束**：医疗/金融/实验/工程截图的低置信数值**禁止静默猜测**；未验证项必须标注；删除覆盖等不可逆操作先确认。",
+      "boundarySummary": "",
+      "sectionCharacterCount": 10186
+    }
+  ]
+}

@@ -1,0 +1,1173 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-09-02T11:32:21.396Z",
+  "masterUrl": "https://zqyd2vqyqmy.feishu.cn/wiki/Jqnzwp8Zmivnkpksr9sci49anDb",
+  "dates": [
+    "9月2日"
+  ],
+  "institutionSectionCount": 11,
+  "discoveryErrorCount": 1,
+  "snapshotRecordCount": 77,
+  "uniqueDocumentCount": 68,
+  "discoveryErrors": [
+    {
+      "date": "9月2日",
+      "institution": "闪光点",
+      "blockId": "M9HwdYQi1oGDKhxR9hocnGTbnGf",
+      "error": "{ \"ok\": false, \"identity\": \"user\", \"error\": { \"type\": \"api\", \"subtype\": \"unknown\", \"code\": 3380004, \"message\": \"No permission to operate on this document: the current user lacks view or edit access. Confirm the current user has edit permission on the target document; if not, contact the document owner for authorization\", \"log_id\": \"202609021932139988D4B91364A73CE1CB\", \"troubleshooter\": \"排查建议查看(Troubleshooting suggestions): https://open.feishu.cn/search?from=openapi&log_id=202609021932139988D4B91364A73CE1CB&code=3380004&method_id=7624117956138650561\" } }"
+    }
+  ],
+  "sources": [
+    {
+      "docToken": "GlX9wadxaiPtehkuKEAcG757nNf",
+      "title": "【抖音】-课程教学-白金超cool-第一期",
+      "url": "https://zqyd2vqyqmy.feishu.cn/wiki/GlX9wadxaiPtehkuKEAcG757nNf",
+      "platform": "抖音",
+      "specialty": "课程教学",
+      "snapshots": [
+        {
+          "date": "9月2日",
+          "institution": "筑石",
+          "column": "推进脚本",
+          "note": "大纲 推脚本",
+          "contentStage": "outline"
+        }
+      ]
+    },
+    {
+      "docToken": "OMqfwycNZi6q3qk6uKRcmeqpnkg",
+      "title": "【抖音】-课程教学-陈最讲ai-第一期",
+      "url": "https://zqyd2vqyqmy.feishu.cn/wiki/OMqfwycNZi6q3qk6uKRcmeqpnkg",
+      "platform": "抖音",
+      "specialty": "课程教学",
+      "snapshots": [
+        {
+          "date": "9月2日",
+          "institution": "筑石",
+          "column": "推进脚本",
+          "note": "大纲 推脚本",
+          "contentStage": "outline"
+        }
+      ]
+    },
+    {
+      "docToken": "EBiNwQe2nipiqck1CcMchDbwnsl",
+      "title": "【抖音】-课程教学-鳄菲特-第二期",
+      "url": "https://zqyd2vqyqmy.feishu.cn/wiki/EBiNwQe2nipiqck1CcMchDbwnsl",
+      "platform": "抖音",
+      "specialty": "课程教学",
+      "snapshots": [
+        {
+          "date": "9月2日",
+          "institution": "筑石",
+          "column": "推进脚本",
+          "note": "大纲 推脚本已同步",
+          "contentStage": "outline"
+        }
+      ]
+    },
+    {
+      "docToken": "GpuwwICMhi9Ivfk7Sijc4OyNn33",
+      "title": "【抖音】-课程教学-十七。-第二期",
+      "url": "https://zqyd2vqyqmy.feishu.cn/wiki/GpuwwICMhi9Ivfk7Sijc4OyNn33",
+      "platform": "抖音",
+      "specialty": "课程教学",
+      "snapshots": [
+        {
+          "date": "9月2日",
+          "institution": "筑石",
+          "column": "推进脚本",
+          "note": "大纲 推脚本已同步",
+          "contentStage": "outline"
+        }
+      ]
+    },
+    {
+      "docToken": "WlhiwOZ5wiQHXvkQkx2c8BPln1d",
+      "title": "【抖音】-课程教学-西西ai日记-第二期",
+      "url": "https://zqyd2vqyqmy.feishu.cn/wiki/WlhiwOZ5wiQHXvkQkx2c8BPln1d",
+      "platform": "抖音",
+      "specialty": "课程教学",
+      "snapshots": [
+        {
+          "date": "9月2日",
+          "institution": "筑石",
+          "column": "待开拍",
+          "note": "脚本 注意批注，推拍吧",
+          "contentStage": "script"
+        }
+      ]
+    },
+    {
+      "docToken": "GY4xwpds3iwY3rki4sPczADxnvc",
+      "title": "【抖音】-课程教学-西西ai日记-第三期",
+      "url": "https://zqyd2vqyqmy.feishu.cn/wiki/GY4xwpds3iwY3rki4sPczADxnvc",
+      "platform": "抖音",
+      "specialty": "课程教学",
+      "snapshots": [
+        {
+          "date": "9月2日",
+          "institution": "筑石",
+          "column": "推进脚本",
+          "note": "大纲 推细化已同步",
+          "contentStage": "outline"
+        },
+        {
+          "date": "9月2日",
+          "institution": "筑石",
+          "column": "待开拍",
+          "note": "脚本 推拍",
+          "contentStage": "script"
+        }
+      ]
+    },
+    {
+      "docToken": "WPxIwAoHViw3GQkQoh5cyIikn1e",
+      "title": "【抖音】-课程教学-小森同学-第一期",
+      "url": "https://zqyd2vqyqmy.feishu.cn/wiki/WPxIwAoHViw3GQkQoh5cyIikn1e",
+      "platform": "抖音",
+      "specialty": "课程教学",
+      "snapshots": [
+        {
+          "date": "9月2日",
+          "institution": "筑石",
+          "column": "待开拍",
+          "note": "脚本 推拍 拍摄注意事项记得同步达人，不要拍错了",
+          "contentStage": "script"
+        }
+      ]
+    },
+    {
+      "docToken": "KcMiwzwLUiVk4fk5Sn1cx4XnnnW",
+      "title": "【抖音】-课程教学-小K探未来 二期",
+      "url": "https://zqyd2vqyqmy.feishu.cn/wiki/KcMiwzwLUiVk4fk5Sn1cx4XnnnW",
+      "platform": "抖音",
+      "specialty": "课程教学",
+      "snapshots": [
+        {
+          "date": "9月2日",
+          "institution": "肆野",
+          "column": "待修改",
+          "note": "",
+          "contentStage": "script"
+        }
+      ]
+    },
+    {
+      "docToken": "ZB9owXfraiRgjmkuplLcNpeNn9I",
+      "title": "【抖音】-课程教学-小K探未来 四期",
+      "url": "https://zqyd2vqyqmy.feishu.cn/wiki/ZB9owXfraiRgjmkuplLcNpeNn9I",
+      "platform": "抖音",
+      "specialty": "课程教学",
+      "snapshots": [
+        {
+          "date": "9月2日",
+          "institution": "肆野",
+          "column": "待修改",
+          "note": "",
+          "contentStage": "script"
+        }
+      ]
+    },
+    {
+      "docToken": "Ad9xwGn9diGfBNkOtDYcf55snJg",
+      "title": "【抖音】-课程教学-小K探未来 五期",
+      "url": "https://zqyd2vqyqmy.feishu.cn/wiki/Ad9xwGn9diGfBNkOtDYcf55snJg",
+      "platform": "抖音",
+      "specialty": "课程教学",
+      "snapshots": [
+        {
+          "date": "9月2日",
+          "institution": "肆野",
+          "column": "待修改",
+          "note": "",
+          "contentStage": "script"
+        }
+      ]
+    },
+    {
+      "docToken": "H67iwUatni1AITk6UFGcadXin7g",
+      "title": "【抖音】-课程教学-小K探未来 一期",
+      "url": "https://zqyd2vqyqmy.feishu.cn/wiki/H67iwUatni1AITk6UFGcadXin7g",
+      "platform": "抖音",
+      "specialty": "课程教学",
+      "snapshots": [
+        {
+          "date": "9月2日",
+          "institution": "肆野",
+          "column": "待修改",
+          "note": "这大纲，没提技能，开头展示成品也不展示，达人没看bf，他下一版改不好，别出下一期大纲了 他大纲都自己改掉，不看他后面几期",
+          "contentStage": "outline"
+        }
+      ]
+    },
+    {
+      "docToken": "MVfHw1G10isvE0kDWTgcf06Jnih",
+      "title": "【抖音】-课程教学-要要要ai -第五期",
+      "url": "https://zqyd2vqyqmy.feishu.cn/wiki/MVfHw1G10isvE0kDWTgcf06Jnih",
+      "platform": "抖音",
+      "specialty": "课程教学",
+      "snapshots": [
+        {
+          "date": "9月2日",
+          "institution": "筑石",
+          "column": "待开拍",
+          "note": "脚本 推拍已同步",
+          "contentStage": "script"
+        }
+      ]
+    },
+    {
+      "docToken": "CtUvw6TuVisGhakxCfXcRLI8n1b",
+      "title": "【抖音】豆包工作-jiarui的读博笔记 二期（课程教学改豆包工作）",
+      "url": "https://zqyd2vqyqmy.feishu.cn/wiki/CtUvw6TuVisGhakxCfXcRLI8n1b",
+      "platform": "抖音",
+      "specialty": "课程教学",
+      "snapshots": [
+        {
+          "date": "9月2日",
+          "institution": "肆野",
+          "column": "推进脚本",
+          "note": "开头注意修改",
+          "contentStage": "modified_script"
+        }
+      ]
+    },
+    {
+      "docToken": "PceMwzH28ib7GKkUJclcr4kineJ",
+      "title": "【抖音】课程教程-梨梨AI指南第四期",
+      "url": "https://zqyd2vqyqmy.feishu.cn/wiki/PceMwzH28ib7GKkUJclcr4kineJ",
+      "platform": "抖音",
+      "specialty": "课程教学",
+      "snapshots": [
+        {
+          "date": "9月2日",
+          "institution": "纽微特",
+          "column": "待修改",
+          "note": "脚本有一处硬伤，需要调整。【已同步",
+          "contentStage": "script"
+        },
+        {
+          "date": "9月2日",
+          "institution": "纽微特",
+          "column": "待开拍",
+          "note": "结构已调整 辛苦看一下推拍，已经直接改了【已同步",
+          "contentStage": "script"
+        }
+      ]
+    },
+    {
+      "docToken": "Zk9Adtintot41uxQ4n7cmsbznpi",
+      "title": "【抖音】课程教程-Rachel的AI使用日记-二期",
+      "url": "https://zqyd2vqyqmy.feishu.cn/wiki/Zk9Adtintot41uxQ4n7cmsbznpi",
+      "platform": "抖音",
+      "specialty": "课程教学",
+      "snapshots": [
+        {
+          "date": "9月2日",
+          "institution": "山恒",
+          "column": "待修改",
+          "note": "",
+          "contentStage": "script"
+        }
+      ]
+    },
+    {
+      "docToken": "GuTewNkeUiCShikLsuFc9bUhn1e",
+      "title": "【抖音】课程教学- 妮懂AI科技-第二期",
+      "url": "https://zqyd2vqyqmy.feishu.cn/wiki/GuTewNkeUiCShikLsuFc9bUhn1e",
+      "platform": "抖音",
+      "specialty": "课程教学",
+      "snapshots": [
+        {
+          "date": "9月2日",
+          "institution": "萌兽",
+          "column": "待修改",
+          "note": "就差给他写完了，按评论里的好好写清楚",
+          "contentStage": "script"
+        },
+        {
+          "date": "9月2日",
+          "institution": "萌兽",
+          "column": "待修改",
+          "note": "需要微调下脚本逻辑，另外",
+          "contentStage": "script"
+        }
+      ]
+    },
+    {
+      "docToken": "ZOYfdv714oOJoFxNNOAceD5snse",
+      "title": "【抖音】课程教学- 妮懂AI科技-第三期",
+      "url": "https://zqyd2vqyqmy.feishu.cn/wiki/ZOYfdv714oOJoFxNNOAceD5snse",
+      "platform": "抖音",
+      "specialty": "课程教学",
+      "snapshots": [
+        {
+          "date": "9月2日",
+          "institution": "萌兽",
+          "column": "推进脚本",
+          "note": "按意见推脚本",
+          "contentStage": "script"
+        }
+      ]
+    },
+    {
+      "docToken": "NHArwPqB9iChT7kRlHFcEzhfn5d",
+      "title": "【抖音】课程教学- 汤师爷不加班",
+      "url": "https://zqyd2vqyqmy.feishu.cn/wiki/NHArwPqB9iChT7kRlHFcEzhfn5d",
+      "platform": "抖音",
+      "specialty": "课程教学",
+      "snapshots": [
+        {
+          "date": "9月2日",
+          "institution": "山恒",
+          "column": "待开拍",
+          "note": "",
+          "contentStage": "script"
+        }
+      ]
+    },
+    {
+      "docToken": "W4w9wZGfpixt6Tk6U2EcoGTCnUg",
+      "title": "【抖音】课程教学- Max科技实验室-第一期",
+      "url": "https://zqyd2vqyqmy.feishu.cn/wiki/W4w9wZGfpixt6Tk6U2EcoGTCnUg",
+      "platform": "抖音",
+      "specialty": "课程教学",
+      "snapshots": [
+        {
+          "date": "9月2日",
+          "institution": "萌兽",
+          "column": "待修改",
+          "note": "按要求修改",
+          "contentStage": "modified_script"
+        }
+      ]
+    },
+    {
+      "docToken": "KoJXwmup0iYWVVkKB18cZvP9nVd",
+      "title": "【抖音】课程教学-阿甘探AI",
+      "url": "https://zqyd2vqyqmy.feishu.cn/wiki/KoJXwmup0iYWVVkKB18cZvP9nVd",
+      "platform": "抖音",
+      "specialty": "课程教学",
+      "snapshots": [
+        {
+          "date": "9月2日",
+          "institution": "山恒",
+          "column": "推进脚本",
+          "note": "",
+          "contentStage": "script"
+        }
+      ]
+    },
+    {
+      "docToken": "RCthwS2pdibI52kIFVtcaMJtnlh",
+      "title": "【抖音】课程教学-爱读书的zory 第一期",
+      "url": "https://zqyd2vqyqmy.feishu.cn/wiki/RCthwS2pdibI52kIFVtcaMJtnlh",
+      "platform": "抖音",
+      "specialty": "课程教学",
+      "snapshots": [
+        {
+          "date": "9月2日",
+          "institution": "纽微特",
+          "column": "待开拍",
+          "note": "脚本推拍【已同步】",
+          "contentStage": "script"
+        }
+      ]
+    },
+    {
+      "docToken": "N7MLwFhRWinBOBkbEWlcUFLPnAc",
+      "title": "【抖音】课程教学-陈冉的AI指南-第二期",
+      "url": "https://zqyd2vqyqmy.feishu.cn/wiki/N7MLwFhRWinBOBkbEWlcUFLPnAc",
+      "platform": "抖音",
+      "specialty": "课程教学",
+      "snapshots": [
+        {
+          "date": "9月2日",
+          "institution": "映画",
+          "column": "待修改",
+          "note": "按意见改",
+          "contentStage": "script"
+        }
+      ]
+    },
+    {
+      "docToken": "NTjxwdTTkiFC1nkiR0qcyEv9nKh",
+      "title": "【抖音】课程教学-崔姐带你探科技 二期",
+      "url": "https://zqyd2vqyqmy.feishu.cn/wiki/NTjxwdTTkiFC1nkiR0qcyEv9nKh",
+      "platform": "抖音",
+      "specialty": "课程教学",
+      "snapshots": [
+        {
+          "date": "9月2日",
+          "institution": "肆野",
+          "column": "待开拍",
+          "note": "Jen",
+          "contentStage": "script"
+        }
+      ]
+    },
+    {
+      "docToken": "MWv0wuIhLiQRTVkPQPmckeyrn4q",
+      "title": "【抖音】课程教学-崔姐带你探科技 一期",
+      "url": "https://zqyd2vqyqmy.feishu.cn/wiki/MWv0wuIhLiQRTVkPQPmckeyrn4q",
+      "platform": "抖音",
+      "specialty": "课程教学",
+      "snapshots": [
+        {
+          "date": "9月2日",
+          "institution": "肆野",
+          "column": "待开拍",
+          "note": "改完了",
+          "contentStage": "script"
+        }
+      ]
+    },
+    {
+      "docToken": "PZrrwuNoviSckmkIReJcdVo9nXc",
+      "title": "【抖音】课程教学-大杯鲜奶去冰三分糖",
+      "url": "https://zqyd2vqyqmy.feishu.cn/wiki/PZrrwuNoviSckmkIReJcdVo9nXc",
+      "platform": "抖音",
+      "specialty": "课程教学",
+      "snapshots": [
+        {
+          "date": "9月2日",
+          "institution": "志森",
+          "column": "推进脚本",
+          "note": "大纲",
+          "contentStage": "outline"
+        }
+      ]
+    },
+    {
+      "docToken": "N67pwWjz9iZT4okYOPfcWb6HnYe",
+      "title": "【抖音】课程教学-大刘职言- 第四期",
+      "url": "https://zqyd2vqyqmy.feishu.cn/wiki/N67pwWjz9iZT4okYOPfcWb6HnYe",
+      "platform": "抖音",
+      "specialty": "课程教学",
+      "snapshots": [
+        {
+          "date": "9月2日",
+          "institution": "筑石",
+          "column": "推进脚本",
+          "note": "大纲 推脚本",
+          "contentStage": "outline"
+        }
+      ]
+    },
+    {
+      "docToken": "SATMwhMKTi6c3uk7dL2csLsZnvh",
+      "title": "【抖音】课程教学-大世界小孟想-第三期",
+      "url": "https://zqyd2vqyqmy.feishu.cn/wiki/SATMwhMKTi6c3uk7dL2csLsZnvh",
+      "platform": "抖音",
+      "specialty": "课程教学",
+      "snapshots": [
+        {
+          "date": "9月2日",
+          "institution": "萌兽",
+          "column": "待修改",
+          "note": "按意见改",
+          "contentStage": "script"
+        }
+      ]
+    },
+    {
+      "docToken": "ViyNwe2DWiVdHIkbyYNc2MKlnNd",
+      "title": "【抖音】课程教学-大一口 第一期",
+      "url": "https://zqyd2vqyqmy.feishu.cn/wiki/ViyNwe2DWiVdHIkbyYNc2MKlnNd",
+      "platform": "抖音",
+      "specialty": "课程教学",
+      "snapshots": [
+        {
+          "date": "9月2日",
+          "institution": "纽微特",
+          "column": "待修改",
+          "note": "脚本教程感不足，修改 【已同步】",
+          "contentStage": "modified_script"
+        },
+        {
+          "date": "9月2日",
+          "institution": "纽微特",
+          "column": "待开拍",
+          "note": "脚本修改推拍",
+          "contentStage": "modified_script"
+        }
+      ]
+    },
+    {
+      "docToken": "SFjEw9xmkiHD66kO1JmcThQ3nsh",
+      "title": "【抖音】课程教学-哆哆趣说AI-第二期",
+      "url": "https://zqyd2vqyqmy.feishu.cn/wiki/SFjEw9xmkiHD66kO1JmcThQ3nsh",
+      "platform": "抖音",
+      "specialty": "课程教学",
+      "snapshots": [
+        {
+          "date": "9月2日",
+          "institution": "肆野",
+          "column": "待修改",
+          "note": "强调skill 能干什么 好处，去看bf中的参考案例",
+          "contentStage": "script"
+        }
+      ]
+    },
+    {
+      "docToken": "WsMmwfs8wikx1KktQYGcbpdLn0c",
+      "title": "【抖音】课程教学-冯飞飞Ai 第二期",
+      "url": "https://zqyd2vqyqmy.feishu.cn/wiki/WsMmwfs8wikx1KktQYGcbpdLn0c",
+      "platform": "抖音",
+      "specialty": "课程教学",
+      "snapshots": [
+        {
+          "date": "9月2日",
+          "institution": "纽微特",
+          "column": "待修改",
+          "note": "脚本修改【已同步】",
+          "contentStage": "modified_script"
+        }
+      ]
+    },
+    {
+      "docToken": "KBdKwR8xLi5ixzkNyurcXSmfnIf",
+      "title": "【抖音】课程教学-交叉科学 三期",
+      "url": "https://zqyd2vqyqmy.feishu.cn/wiki/KBdKwR8xLi5ixzkNyurcXSmfnIf",
+      "platform": "抖音",
+      "specialty": "课程教学",
+      "snapshots": [
+        {
+          "date": "9月2日",
+          "institution": "山恒",
+          "column": "推进脚本",
+          "note": "",
+          "contentStage": "script"
+        }
+      ]
+    },
+    {
+      "docToken": "Z9nQw9S57ivTdMkDz9OcsbEenab",
+      "title": "【抖音】课程教学-木兰AI控 第二期",
+      "url": "https://zqyd2vqyqmy.feishu.cn/wiki/Z9nQw9S57ivTdMkDz9OcsbEenab",
+      "platform": "抖音",
+      "specialty": "课程教学",
+      "snapshots": [
+        {
+          "date": "9月2日",
+          "institution": "纽微特",
+          "column": "待修改",
+          "note": "脚本修改微调【已同步】",
+          "contentStage": "modified_script"
+        }
+      ]
+    },
+    {
+      "docToken": "SnWDd4MkmodTnpxtJTAcHkkDnVe",
+      "title": "【抖音】课程教学-欧耶学ai-脚本",
+      "url": "https://zqyd2vqyqmy.feishu.cn/wiki/SnWDd4MkmodTnpxtJTAcHkkDnVe",
+      "platform": "抖音",
+      "specialty": "课程教学",
+      "snapshots": [
+        {
+          "date": "9月2日",
+          "institution": "睿立",
+          "column": "待开拍",
+          "note": "",
+          "contentStage": "script"
+        }
+      ]
+    },
+    {
+      "docToken": "XjPgwe1K6isFp1kGENEcZJEvnPg",
+      "title": "【抖音】课程教学-七七的AI片场第三期",
+      "url": "https://zqyd2vqyqmy.feishu.cn/wiki/XjPgwe1K6isFp1kGENEcZJEvnPg",
+      "platform": "抖音",
+      "specialty": "课程教学",
+      "snapshots": [
+        {
+          "date": "9月2日",
+          "institution": "纽微特",
+          "column": "待修改",
+          "note": "脚本修改【已同步】",
+          "contentStage": "modified_script"
+        },
+        {
+          "date": "9月2日",
+          "institution": "纽微特",
+          "column": "待开拍",
+          "note": "脚本已修改推拍【已同步】",
+          "contentStage": "modified_script"
+        }
+      ]
+    },
+    {
+      "docToken": "WjygwxTTEiZ2mdk1P6pcnwxSnSh",
+      "title": "【抖音】课程教学-七七的AI片场第四期",
+      "url": "https://zqyd2vqyqmy.feishu.cn/wiki/WjygwxTTEiZ2mdk1P6pcnwxSnSh",
+      "platform": "抖音",
+      "specialty": "课程教学",
+      "snapshots": [
+        {
+          "date": "9月2日",
+          "institution": "纽微特",
+          "column": "推进细化",
+          "note": "大纲按意见细化【已同步】",
+          "contentStage": "outline"
+        }
+      ]
+    },
+    {
+      "docToken": "Sw2dwS5OViTuhDk094VcfCWbnHb",
+      "title": "【抖音】课程教学-青禾AI捕手 二期",
+      "url": "https://zqyd2vqyqmy.feishu.cn/wiki/Sw2dwS5OViTuhDk094VcfCWbnHb",
+      "platform": "抖音",
+      "specialty": "课程教学",
+      "snapshots": [
+        {
+          "date": "9月2日",
+          "institution": "山恒",
+          "column": "推进脚本",
+          "note": "",
+          "contentStage": "script"
+        }
+      ]
+    },
+    {
+      "docToken": "GH9DwmuQMi4ApUkFywnc1gTincc",
+      "title": "【抖音】课程教学-青禾AI捕手 三期",
+      "url": "https://zqyd2vqyqmy.feishu.cn/wiki/GH9DwmuQMi4ApUkFywnc1gTincc",
+      "platform": "抖音",
+      "specialty": "课程教学",
+      "snapshots": [
+        {
+          "date": "9月2日",
+          "institution": "山恒",
+          "column": "推进脚本",
+          "note": "",
+          "contentStage": "script"
+        }
+      ]
+    },
+    {
+      "docToken": "GO2qwk5eLiJLiekvREPcApkxnDd",
+      "title": "【抖音】课程教学-赛赛AI捕手第二期",
+      "url": "https://zqyd2vqyqmy.feishu.cn/wiki/GO2qwk5eLiJLiekvREPcApkxnDd",
+      "platform": "抖音",
+      "specialty": "课程教学",
+      "snapshots": [
+        {
+          "date": "9月2日",
+          "institution": "纽微特",
+          "column": "待修改",
+          "note": "脚本修改[已同步",
+          "contentStage": "modified_script"
+        },
+        {
+          "date": "9月2日",
+          "institution": "纽微特",
+          "column": "待开拍",
+          "note": "脚本推拍【已同步",
+          "contentStage": "script"
+        }
+      ]
+    },
+    {
+      "docToken": "CAUPwWIzmimUIVk2rf2chfKentd",
+      "title": "【抖音】课程教学-钛度宇宙AI",
+      "url": "https://zqyd2vqyqmy.feishu.cn/wiki/CAUPwWIzmimUIVk2rf2chfKentd",
+      "platform": "抖音",
+      "specialty": "课程教学",
+      "snapshots": [
+        {
+          "date": "9月2日",
+          "institution": "萌兽",
+          "column": "待开拍",
+          "note": "优化完了，拍。注意画面对上口播",
+          "contentStage": "script"
+        }
+      ]
+    },
+    {
+      "docToken": "Eb9KwGqeAiOfP0keQ1NcM7HmnGd",
+      "title": "【抖音】课程教学-童童cyber- 三期",
+      "url": "https://zqyd2vqyqmy.feishu.cn/wiki/Eb9KwGqeAiOfP0keQ1NcM7HmnGd",
+      "platform": "抖音",
+      "specialty": "课程教学",
+      "snapshots": [
+        {
+          "date": "9月2日",
+          "institution": "山恒",
+          "column": "推进脚本",
+          "note": "",
+          "contentStage": "script"
+        }
+      ]
+    },
+    {
+      "docToken": "K76JwXeoYiBDZLkKMqFcvmMEnIg",
+      "title": "【抖音】课程教学-万万想到了Era",
+      "url": "https://zqyd2vqyqmy.feishu.cn/wiki/K76JwXeoYiBDZLkKMqFcvmMEnIg",
+      "platform": "抖音",
+      "specialty": "课程教学",
+      "snapshots": [
+        {
+          "date": "9月2日",
+          "institution": "志森",
+          "column": "待开拍",
+          "note": "脚本",
+          "contentStage": "script"
+        }
+      ]
+    },
+    {
+      "docToken": "FHFXwLAS3i4ErCkxcttcdmqDntO",
+      "title": "【抖音】课程教学-小囧君 第五期",
+      "url": "https://zqyd2vqyqmy.feishu.cn/wiki/FHFXwLAS3i4ErCkxcttcdmqDntO",
+      "platform": "抖音",
+      "specialty": "课程教学",
+      "snapshots": [
+        {
+          "date": "9月2日",
+          "institution": "纽微特",
+          "column": "待修改",
+          "note": "脚本修改【已同步",
+          "contentStage": "modified_script"
+        }
+      ]
+    },
+    {
+      "docToken": "VpRZw0fDTi1hrakGnn4cHRlKnEd",
+      "title": "【抖音】课程教学-小林科技世界 一期",
+      "url": "https://zqyd2vqyqmy.feishu.cn/wiki/VpRZw0fDTi1hrakGnn4cHRlKnEd",
+      "platform": "抖音",
+      "specialty": "课程教学",
+      "snapshots": [
+        {
+          "date": "9月2日",
+          "institution": "肆野",
+          "column": "待开拍",
+          "note": "",
+          "contentStage": "script"
+        }
+      ]
+    },
+    {
+      "docToken": "RzHuwW7VBixSRKka7i3cQoeInZb",
+      "title": "【抖音】课程教学-小胖讲AI. 二期",
+      "url": "https://zqyd2vqyqmy.feishu.cn/wiki/RzHuwW7VBixSRKka7i3cQoeInZb",
+      "platform": "抖音",
+      "specialty": "课程教学",
+      "snapshots": [
+        {
+          "date": "9月2日",
+          "institution": "山恒",
+          "column": "待修改",
+          "note": "",
+          "contentStage": "script"
+        },
+        {
+          "date": "9月2日",
+          "institution": "山恒",
+          "column": "待开拍",
+          "note": "",
+          "contentStage": "script"
+        }
+      ]
+    },
+    {
+      "docToken": "N7uSwte2Ki4CBLk19fXcM0kGnt0",
+      "title": "【抖音】课程教学-徐皓AI分享-第二期",
+      "url": "https://zqyd2vqyqmy.feishu.cn/wiki/N7uSwte2Ki4CBLk19fXcM0kGnt0",
+      "platform": "抖音",
+      "specialty": "课程教学",
+      "snapshots": [
+        {
+          "date": "9月2日",
+          "institution": "萌兽",
+          "column": "待修改",
+          "note": "改方向，让达人一定把skill详细理解。",
+          "contentStage": "script"
+        }
+      ]
+    },
+    {
+      "docToken": "Wnh8w6TihilUovku1ytcFNvYnhg",
+      "title": "【抖音】课程教学-羊叨叨AI 第一期",
+      "url": "https://zqyd2vqyqmy.feishu.cn/wiki/Wnh8w6TihilUovku1ytcFNvYnhg",
+      "platform": "抖音",
+      "specialty": "课程教学",
+      "snapshots": [
+        {
+          "date": "9月2日",
+          "institution": "山恒",
+          "column": "待修改",
+          "note": "",
+          "contentStage": "script"
+        }
+      ]
+    },
+    {
+      "docToken": "AMHMwdnttiLf1Iki9KMcfyaknwh",
+      "title": "【抖音】课程教学-一颗地蛋（考公版）",
+      "url": "https://zqyd2vqyqmy.feishu.cn/wiki/AMHMwdnttiLf1Iki9KMcfyaknwh",
+      "platform": "抖音",
+      "specialty": "课程教学",
+      "snapshots": [
+        {
+          "date": "9月2日",
+          "institution": "纽微特",
+          "column": "待修改",
+          "note": "大纲修改，把skill讲细【已同步】",
+          "contentStage": "outline"
+        }
+      ]
+    },
+    {
+      "docToken": "JGsBwGRNEihpL7kAMHfcc9Lyngd",
+      "title": "【抖音】课程教学-悠米AI百科-第二期",
+      "url": "https://zqyd2vqyqmy.feishu.cn/wiki/JGsBwGRNEihpL7kAMHfcc9Lyngd",
+      "platform": "抖音",
+      "specialty": "课程教学",
+      "snapshots": [
+        {
+          "date": "9月2日",
+          "institution": "映画",
+          "column": "待修改",
+          "note": "按意见改",
+          "contentStage": "script"
+        }
+      ]
+    },
+    {
+      "docToken": "XzQ9woJcxiBuYQk0N4ocgC9Injg",
+      "title": "【抖音】课程教学-悠米AI百科-第三期",
+      "url": "https://zqyd2vqyqmy.feishu.cn/wiki/XzQ9woJcxiBuYQk0N4ocgC9Injg",
+      "platform": "抖音",
+      "specialty": "课程教学",
+      "snapshots": [
+        {
+          "date": "9月2日",
+          "institution": "映画",
+          "column": "待修改",
+          "note": "太水了，咋能这么水，vibe coding这么多能讲的东西",
+          "contentStage": "script"
+        }
+      ]
+    },
+    {
+      "docToken": "Fvm4wSUGkikZTMkmSUYcOUZ9nbc",
+      "title": "【抖音】课程教学-煜林AI工坊第三期",
+      "url": "https://zqyd2vqyqmy.feishu.cn/wiki/Fvm4wSUGkikZTMkmSUYcOUZ9nbc",
+      "platform": "抖音",
+      "specialty": "课程教学",
+      "snapshots": [
+        {
+          "date": "9月2日",
+          "institution": "纽微特",
+          "column": "待开拍",
+          "note": "脚本推拍【已同步",
+          "contentStage": "script"
+        }
+      ]
+    },
+    {
+      "docToken": "TeGlwttfairc8VkmyqIcLuG8nng",
+      "title": "【抖音】课程教学-芝士AI笔记四期",
+      "url": "https://zqyd2vqyqmy.feishu.cn/wiki/TeGlwttfairc8VkmyqIcLuG8nng",
+      "platform": "抖音",
+      "specialty": "课程教学",
+      "snapshots": [
+        {
+          "date": "9月2日",
+          "institution": "山恒",
+          "column": "待修改",
+          "note": "",
+          "contentStage": "script"
+        }
+      ]
+    },
+    {
+      "docToken": "Rtg3wvbsXiyHrHke8Pic13evnVd",
+      "title": "【抖音】课程教学-吱吱轩AI 二期",
+      "url": "https://zqyd2vqyqmy.feishu.cn/wiki/Rtg3wvbsXiyHrHke8Pic13evnVd",
+      "platform": "抖音",
+      "specialty": "课程教学",
+      "snapshots": [
+        {
+          "date": "9月2日",
+          "institution": "山恒",
+          "column": "待修改",
+          "note": "",
+          "contentStage": "script"
+        }
+      ]
+    },
+    {
+      "docToken": "PZIrwOnNMizyY3kvZIAcIu4Zn7d",
+      "title": "【抖音】课程教学-AI打工我摸鱼",
+      "url": "https://zqyd2vqyqmy.feishu.cn/wiki/PZIrwOnNMizyY3kvZIAcIu4Zn7d",
+      "platform": "抖音",
+      "specialty": "课程教学",
+      "snapshots": [
+        {
+          "date": "9月2日",
+          "institution": "志森",
+          "column": "待开拍",
+          "note": "脚本修改",
+          "contentStage": "modified_script"
+        }
+      ]
+    },
+    {
+      "docToken": "NvX9wYNk9iHMnZkDLbscsayqnYf",
+      "title": "【抖音】课程教学-AI实习生-嘟嘟 三期",
+      "url": "https://zqyd2vqyqmy.feishu.cn/wiki/NvX9wYNk9iHMnZkDLbscsayqnYf",
+      "platform": "抖音",
+      "specialty": "课程教学",
+      "snapshots": [
+        {
+          "date": "9月2日",
+          "institution": "山恒",
+          "column": "待修改",
+          "note": "",
+          "contentStage": "script"
+        }
+      ]
+    },
+    {
+      "docToken": "U22Dwnzw7iZVLSk5A1gcwQwlnJf",
+      "title": "【抖音】课程教学-AI信息差【第二期】",
+      "url": "https://zqyd2vqyqmy.feishu.cn/wiki/U22Dwnzw7iZVLSk5A1gcwQwlnJf",
+      "platform": "抖音",
+      "specialty": "课程教学",
+      "snapshots": [
+        {
+          "date": "9月2日",
+          "institution": "肆野",
+          "column": "待开拍",
+          "note": "",
+          "contentStage": "script"
+        }
+      ]
+    },
+    {
+      "docToken": "Zl5Ld6gkRohTQExfZmFcbXixnhf",
+      "title": "【抖音】课程教学-AI信息差【第三期】",
+      "url": "https://zqyd2vqyqmy.feishu.cn/wiki/Zl5Ld6gkRohTQExfZmFcbXixnhf",
+      "platform": "抖音",
+      "specialty": "课程教学",
+      "snapshots": [
+        {
+          "date": "9月2日",
+          "institution": "肆野",
+          "column": "推进脚本",
+          "note": "重点skill",
+          "contentStage": "script"
+        }
+      ]
+    },
+    {
+      "docToken": "JMLJwlX41iWdSuk6e8EcCeHmndc",
+      "title": "【抖音】课程教学-AI伊次元-第二期",
+      "url": "https://zqyd2vqyqmy.feishu.cn/wiki/JMLJwlX41iWdSuk6e8EcCeHmndc",
+      "platform": "抖音",
+      "specialty": "课程教学",
+      "snapshots": [
+        {
+          "date": "9月2日",
+          "institution": "映画",
+          "column": "待修改",
+          "note": "按意见改",
+          "contentStage": "script"
+        }
+      ]
+    },
+    {
+      "docToken": "YeGZwYiz8ipv2hk2FYKcnmLRnzc",
+      "title": "【抖音】课程教学-AI芝士派",
+      "url": "https://zqyd2vqyqmy.feishu.cn/wiki/YeGZwYiz8ipv2hk2FYKcnmLRnzc",
+      "platform": "抖音",
+      "specialty": "课程教学",
+      "snapshots": [
+        {
+          "date": "9月2日",
+          "institution": "萌兽",
+          "column": "待修改",
+          "note": "按群里说的来，别再给我挖坑了！",
+          "contentStage": "script"
+        }
+      ]
+    },
+    {
+      "docToken": "UKiKwPB6SiOuY9kkXKkcV8tqn5e",
+      "title": "【抖音】课程教学-Boya松绑了第六期",
+      "url": "https://zqyd2vqyqmy.feishu.cn/wiki/UKiKwPB6SiOuY9kkXKkcV8tqn5e",
+      "platform": "抖音",
+      "specialty": "课程教学",
+      "snapshots": [
+        {
+          "date": "9月2日",
+          "institution": "纽微特",
+          "column": "待修改",
+          "note": "大纲修改【已同步",
+          "contentStage": "outline"
+        }
+      ]
+    },
+    {
+      "docToken": "S3zGwI0pRiSN5dkWMG9cfMCpnhg",
+      "title": "【抖音】课程教学-Boya松绑了第四期",
+      "url": "https://zqyd2vqyqmy.feishu.cn/wiki/S3zGwI0pRiSN5dkWMG9cfMCpnhg",
+      "platform": "抖音",
+      "specialty": "课程教学",
+      "snapshots": [
+        {
+          "date": "9月2日",
+          "institution": "纽微特",
+          "column": "待修改",
+          "note": "脚本修改【已同步",
+          "contentStage": "modified_script"
+        },
+        {
+          "date": "9月2日",
+          "institution": "纽微特",
+          "column": "待开拍",
+          "note": "脚本推拍【已同步",
+          "contentStage": "script"
+        }
+      ]
+    },
+    {
+      "docToken": "BspTwC1PkiQI8Xk7LR7cddVjnYd",
+      "title": "【抖音】课程教学-Boya松绑了第五期",
+      "url": "https://zqyd2vqyqmy.feishu.cn/wiki/BspTwC1PkiQI8Xk7LR7cddVjnYd",
+      "platform": "抖音",
+      "specialty": "课程教学",
+      "snapshots": [
+        {
+          "date": "9月2日",
+          "institution": "纽微特",
+          "column": "推进细化",
+          "note": "大纲按意见推脚本，加了一个MCP功能【已同步",
+          "contentStage": "outline"
+        }
+      ]
+    },
+    {
+      "docToken": "Jw3Iw3vXpipiS9kNO4BcTj0Zn2s",
+      "title": "【抖音】课程教学-Cyber蚊子-第一期",
+      "url": "https://zqyd2vqyqmy.feishu.cn/wiki/Jw3Iw3vXpipiS9kNO4BcTj0Zn2s",
+      "platform": "抖音",
+      "specialty": "课程教学",
+      "snapshots": [
+        {
+          "date": "9月2日",
+          "institution": "映画",
+          "column": "待开拍",
+          "note": "优化了一点，拍吧，挺好的",
+          "contentStage": "script"
+        }
+      ]
+    },
+    {
+      "docToken": "JnoBwBzq3i2dZWkm1aVcDoYpndf",
+      "title": "【抖音】课程教学-E淼测评",
+      "url": "https://zqyd2vqyqmy.feishu.cn/wiki/JnoBwBzq3i2dZWkm1aVcDoYpndf",
+      "platform": "抖音",
+      "specialty": "课程教学",
+      "snapshots": [
+        {
+          "date": "9月2日",
+          "institution": "杭杭",
+          "column": "推进脚本",
+          "note": "参考bf中的脚本，强调skill 推脚本",
+          "contentStage": "script"
+        }
+      ]
+    },
+    {
+      "docToken": "ZsFOwngZ0ikLZgkWhebc5gYlnre",
+      "title": "【抖音】课程教学-Rachel的AI使用日记 三期",
+      "url": "https://zqyd2vqyqmy.feishu.cn/wiki/ZsFOwngZ0ikLZgkWhebc5gYlnre",
+      "platform": "抖音",
+      "specialty": "课程教学",
+      "snapshots": [
+        {
+          "date": "9月2日",
+          "institution": "山恒",
+          "column": "待修改",
+          "note": "",
+          "contentStage": "script"
+        }
+      ]
+    },
+    {
+      "docToken": "KIoqwGcctigz3HkdtdOcLKCZnOb",
+      "title": "【抖音】课程教学（3w粉以下） —娜娜AI 笔记 一期",
+      "url": "https://zqyd2vqyqmy.feishu.cn/wiki/KIoqwGcctigz3HkdtdOcLKCZnOb",
+      "platform": "抖音",
+      "specialty": "课程教学",
+      "snapshots": [
+        {
+          "date": "9月2日",
+          "institution": "山恒",
+          "column": "待修改",
+          "note": "",
+          "contentStage": "script"
+        }
+      ]
+    },
+    {
+      "docToken": "YhlqwNyEii8dCSkkNuncuK4unMd",
+      "title": "【抖音】课程教学（3w粉以下）-德先生聊AI 二期",
+      "url": "https://zqyd2vqyqmy.feishu.cn/wiki/YhlqwNyEii8dCSkkNuncuK4unMd",
+      "platform": "抖音",
+      "specialty": "课程教学",
+      "snapshots": [
+        {
+          "date": "9月2日",
+          "institution": "山恒",
+          "column": "待修改",
+          "note": "",
+          "contentStage": "script"
+        }
+      ]
+    },
+    {
+      "docToken": "Izstwlnc1iItBNkYQ5Zc5nfXn9c",
+      "title": "【抖音】课程教学（3w粉以下）-小薯AI 一期",
+      "url": "https://zqyd2vqyqmy.feishu.cn/wiki/Izstwlnc1iItBNkYQ5Zc5nfXn9c",
+      "platform": "抖音",
+      "specialty": "课程教学",
+      "snapshots": [
+        {
+          "date": "9月2日",
+          "institution": "山恒",
+          "column": "待修改",
+          "note": "",
+          "contentStage": "script"
+        },
+        {
+          "date": "9月2日",
+          "institution": "山恒",
+          "column": "待开拍",
+          "note": "",
+          "contentStage": "script"
+        }
+      ]
+    },
+    {
+      "docToken": "VBATwXabpih4gZkZz4rcWiqLn9p",
+      "title": "【抖音】课程教学3w-冯西西Fury 第一期",
+      "url": "https://zqyd2vqyqmy.feishu.cn/wiki/VBATwXabpih4gZkZz4rcWiqLn9p",
+      "platform": "抖音",
+      "specialty": "课程教学",
+      "snapshots": [
+        {
+          "date": "9月2日",
+          "institution": "纽微特",
+          "column": "推进细化",
+          "note": "大纲细化",
+          "contentStage": "outline"
+        }
+      ]
+    }
+  ]
+}
