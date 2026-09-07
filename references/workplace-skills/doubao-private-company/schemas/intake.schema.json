@@ -1,0 +1,254 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "private-market-project-evaluation/schemas/intake.schema.json",
+  "title": "private-market-project-evaluation Intake",
+  "type": "object",
+  "required": [
+    "task_id",
+    "skill",
+    "mode",
+    "as_of",
+    "jurisdiction_or_market",
+    "inputs"
+  ],
+  "properties": {
+    "task_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "skill": {
+      "const": "private-market-project-evaluation"
+    },
+    "mode": {
+      "enum": [
+        "快速初筛",
+        "完整 Screening",
+        "聚焦核查"
+      ]
+    },
+    "as_of": {
+      "type": "string",
+      "minLength": 1
+    },
+    "jurisdiction_or_market": {
+      "type": "string",
+      "minLength": 1
+    },
+    "decision_context": {
+      "type": "string"
+    },
+    "requested_decision_layers": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "research_view",
+          "management_meeting",
+          "data_room_access",
+          "investment_progression",
+          "return_calculation"
+        ]
+      }
+    },
+    "inputs": {
+      "type": "object",
+      "description": "按成功契约冻结的业务输入",
+      "properties": {
+        "project": {
+          "type": "string",
+          "minLength": 1
+        },
+        "business_description": {
+          "type": "string",
+          "minLength": 1
+        },
+        "investment_stage": {
+          "type": "string",
+          "minLength": 1
+        },
+        "fund_mandate": {
+          "type": "object"
+        },
+        "focus_question": {
+          "type": "string",
+          "minLength": 1
+        },
+        "identity": {
+          "type": "object",
+          "properties": {
+            "legal_entity": {
+              "type": "string"
+            },
+            "product_scope": {
+              "type": "string"
+            },
+            "equity_boundary": {
+              "type": "string"
+            },
+            "object_ambiguous": {
+              "type": "boolean"
+            }
+          },
+          "additionalProperties": true
+        },
+        "technology_taxonomy": {
+          "type": "object",
+          "description": "技术/产品分析前冻结目标对象；不适用项明确写 not_applicable",
+          "required": [
+            "target_product",
+            "sensor_modality",
+            "intervention_or_decoding",
+            "medical_or_consumer",
+            "hardware_or_software",
+            "legal_entity_business_boundary"
+          ],
+          "properties": {
+            "target_product": {
+              "type": "string",
+              "minLength": 1
+            },
+            "sensor_modality": {
+              "type": "string",
+              "minLength": 1
+            },
+            "intervention_or_decoding": {
+              "type": "string",
+              "minLength": 1
+            },
+            "medical_or_consumer": {
+              "enum": ["medical", "consumer", "hybrid", "not_applicable", "unknown"]
+            },
+            "hardware_or_software": {
+              "enum": ["hardware", "software", "integrated", "not_applicable", "unknown"]
+            },
+            "legal_entity_business_boundary": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "additionalProperties": true
+        },
+        "meeting": {
+          "type": "object",
+          "properties": {
+            "kill_questions": {
+              "type": "array",
+              "minItems": 5,
+              "maxItems": 5,
+              "items": {
+                "type": "object",
+                "required": [
+                  "question",
+                  "information_increment",
+                  "why_it_matters",
+                  "upgrade_if",
+                  "downgrade_if"
+                ],
+                "properties": {
+                  "question": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "information_increment": {
+                    "enum": [
+                      "identity_and_technology",
+                      "revenue_and_cash_collection",
+                      "clinical_increment",
+                      "unit_economics",
+                      "transaction"
+                    ]
+                  },
+                  "why_it_matters": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "upgrade_if": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "downgrade_if": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "additionalProperties": true
+              }
+            }
+          },
+          "additionalProperties": true
+        },
+        "data_room": {
+          "type": "object",
+          "description": "数据室仅是信息获取层，不代表投资推进",
+          "properties": {
+            "initial_meeting_completed": {
+              "type": "boolean"
+            },
+            "public_evidence_positive": {
+              "type": "boolean"
+            },
+            "high_value_requests": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "counterparty_refuses_basic_authenticity": {
+              "type": "boolean"
+            }
+          },
+          "additionalProperties": true
+        }
+      },
+      "required": [
+        "project",
+        "business_description"
+      ],
+      "additionalProperties": true
+    },
+    "requested_artifacts": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "report.md",
+          "facts.json",
+          "report-display.md",
+          "report-capabilities.json",
+          "report-manifest.json"
+        ]
+      }
+    }
+  },
+  "additionalProperties": true,
+  "x-required-business-inputs": [
+    "项目或公司名称",
+    "业务描述或BP/Deck",
+    "评估目标"
+  ],
+  "x-slot-scoped-inputs": {
+    "mandate_fit": [
+      "基金mandate"
+    ],
+    "investment_progression": [
+      "可投额度",
+      "投资工具",
+      "权益与权利",
+      "估值口径",
+      "关键商业数据",
+      "退出框架"
+    ],
+    "data_room_access": [
+      "已完成初会",
+      "积极且可交叉验证的公开证据",
+      "能改变判断的定向数据请求"
+    ],
+    "return_calculation": [
+      "进入价格",
+      "后续稀释",
+      "退出权益价值",
+      "退出时间"
+    ]
+  }
+}

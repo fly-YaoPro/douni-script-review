@@ -1,0 +1,62 @@
+{
+  "can_plan": {
+    "allowed": true,
+    "missing": [],
+    "blocked_slots": []
+  },
+  "can_quantify_tax": {
+    "allowed": false,
+    "missing": [
+      "payload.verified_tax_rules"
+    ],
+    "blocked_slots": [
+      "tax_amount",
+      "tax_action"
+    ]
+  },
+  "can_budget": {
+    "allowed": false,
+    "missing": [
+      "payload.monthly_income",
+      "payload.budget_categories"
+    ],
+    "blocked_slots": [
+      "budget_allocation",
+      "unassigned_cash"
+    ]
+  },
+  "can_compute_net_worth": {
+    "allowed": false,
+    "missing": [
+      "payload.as_of"
+    ],
+    "blocked_slots": [
+      "net_worth",
+      "net_worth_change"
+    ]
+  },
+  "can_rank_debt_avalanche": {
+    "allowed": false,
+    "missing": [
+      "payload.liabilities.balance",
+      "payload.liabilities.apr",
+      "payload.liabilities.monthly_payment",
+      "payload.liabilities.prepayment_rule"
+    ],
+    "blocked_slots": [
+      "debt_avalanche_order",
+      "interest_comparison"
+    ]
+  },
+  "can_set_emergency_target": {
+    "allowed": false,
+    "missing": [
+      "payload.monthly_essential_expenses",
+      "payload.emergency_months_target"
+    ],
+    "blocked_slots": [
+      "emergency_target",
+      "emergency_gap"
+    ]
+  }
+}

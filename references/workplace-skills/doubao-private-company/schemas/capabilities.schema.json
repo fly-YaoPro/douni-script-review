@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "private-market-project-evaluation/schemas/capabilities.schema.json",
+  "title": "Private Market Capability Gates",
+  "type": "object",
+  "required": [
+    "can_form_research_view",
+    "can_recommend_management_meeting",
+    "can_recommend_data_room_access",
+    "can_recommend_investment_progression",
+    "can_compute_returns"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "can_form_research_view": {
+      "$ref": "#/$defs/gate"
+    },
+    "can_recommend_management_meeting": {
+      "$ref": "#/$defs/gate"
+    },
+    "can_recommend_data_room_access": {
+      "$ref": "#/$defs/gate"
+    },
+    "can_recommend_investment_progression": {
+      "$ref": "#/$defs/gate"
+    },
+    "can_compute_returns": {
+      "$ref": "#/$defs/gate"
+    }
+  },
+  "$defs": {
+    "gate": {
+      "type": "object",
+      "required": [
+        "allowed",
+        "missing",
+        "blockers",
+        "blocked_slots"
+      ],
+      "properties": {
+        "allowed": {
+          "type": "boolean"
+        },
+        "missing": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "blockers": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "blocked_slots": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

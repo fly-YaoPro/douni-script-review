@@ -1,0 +1,57 @@
+{
+  "can_form_research_view": {
+    "allowed": true,
+    "missing": [],
+    "blockers": [],
+    "blocked_slots": [
+      "project_specific_research_view",
+      "valuation_conclusion"
+    ]
+  },
+  "can_recommend_management_meeting": {
+    "allowed": true,
+    "missing": [],
+    "blockers": [],
+    "blocked_slots": [
+      "management_meeting"
+    ]
+  },
+  "can_recommend_data_room_access": {
+    "allowed": true,
+    "missing": [],
+    "blockers": [],
+    "blocked_slots": [
+      "information_access"
+    ]
+  },
+  "can_recommend_investment_progression": {
+    "allowed": false,
+    "missing": [
+      "payload.deal_terms.instrument",
+      "payload.deal_terms.price_or_valuation",
+      "payload.deal_terms.investor_rights",
+      "payload.key_commercial_data",
+      "payload.exit_framework"
+    ],
+    "blockers": [],
+    "blocked_slots": [
+      "deal_quality",
+      "investment_progression"
+    ]
+  },
+  "can_compute_returns": {
+    "allowed": false,
+    "missing": [
+      "payload.deal_terms.entry_equity_value",
+      "payload.deal_terms.instrument",
+      "payload.deal_terms.investor_rights",
+      "payload.return_inputs.dilution",
+      "payload.return_inputs.exit_equity_value",
+      "payload.return_inputs.exit_timing"
+    ],
+    "blockers": [],
+    "blocked_slots": [
+      "return_calculation"
+    ]
+  }
+}

@@ -1,0 +1,609 @@
+{
+  "version": "V3.3-finance-integration",
+  "legacy_release_version": 11,
+  "case_type": "wealth-planning",
+  "state_contract": {
+    "field": "artifact_state",
+    "transition_gate": "scripts/wealth_runtime_gate.py",
+    "allowed_states": [
+      "ready",
+      "degraded",
+      "intake_required",
+      "confirmation_required",
+      "routed",
+      "stopped"
+    ]
+  },
+  "default_delivery_tier": "direct",
+  "route_contract": {
+    "fields": [
+      "selected_skill",
+      "intent",
+      "route_status"
+    ],
+    "route_only_no_analysis": true
+  },
+  "claim_ledger": {
+    "required": true,
+    "unknown_conservation": true,
+    "critical_primary_or_official": true,
+    "required_fields": [
+      "claim_id",
+      "claim",
+      "claim_type",
+      "critical",
+      "object_id",
+      "as_of",
+      "period",
+      "currency",
+      "unit",
+      "source_ids",
+      "source_role",
+      "source_tier",
+      "confidence",
+      "conflict_state"
+    ],
+    "validator": "scripts/validate_facts.py"
+  },
+  "artifact_contract": {
+    "full": "write_complete_json_with_schema_hash_counts",
+    "compact": "core_results_exceptions_unknowns_hard_gates_sources_path",
+    "required_artifacts": [
+      "report.md",
+      "facts.json",
+      "report-display.md",
+      "report-capabilities.json",
+      "report-manifest.json"
+    ],
+    "validator": "scripts/validate_deliverable.py",
+    "verify_exists_and_hash": true
+  },
+  "finalizer": {
+    "type": "source_locked",
+    "path": "scripts/finalize_report.py",
+    "max_runs": 1,
+    "may_add_facts": false,
+    "may_add_source_ids": false,
+    "failure_state": "degraded"
+  },
+  "side_effect_policy": {
+    "read_compute_draft": "allow",
+    "transfer_repay_open_account_purchase": "preview_confirm_permission_audit",
+    "permission_gate": "scripts/wealth_runtime_gate.py"
+  },
+  "default_mode": "auto",
+  "modes": {
+    "快速体检": {
+      "required_payload": [
+        "household",
+        "cash_flow",
+        "assets",
+        "liabilities"
+      ],
+      "required_sections": [
+        {
+          "aliases": [
+            "家庭财务快照"
+          ],
+          "min_chars": 20,
+          "fact_binding": true
+        },
+        {
+          "aliases": [
+            "现金流、应急资金与债务"
+          ],
+          "min_chars": 20,
+          "fact_binding": true
+        },
+        {
+          "aliases": [
+            "保障与重大风险"
+          ],
+          "min_chars": 20,
+          "fact_binding": true
+        },
+        {
+          "aliases": [
+            "行动清单与年度复盘"
+          ],
+          "min_chars": 20,
+          "fact_binding": true
+        },
+        {
+          "aliases": [
+            "假设、局限和专业咨询事项"
+          ],
+          "min_chars": 20,
+          "fact_binding": false
+        }
+      ]
+    },
+    "完整规划": {
+      "required_payload": [
+        "household",
+        "cash_flow",
+        "assets",
+        "liabilities",
+        "goals",
+        "assumptions"
+      ],
+      "required_sections": [
+        {
+          "aliases": [
+            "家庭财务快照"
+          ],
+          "min_chars": 20,
+          "fact_binding": true
+        },
+        {
+          "aliases": [
+            "目标与优先级"
+          ],
+          "min_chars": 20,
+          "fact_binding": true
+        },
+        {
+          "aliases": [
+            "现金流、应急资金与债务"
+          ],
+          "min_chars": 20,
+          "fact_binding": true
+        },
+        {
+          "aliases": [
+            "保障与重大风险"
+          ],
+          "min_chars": 20,
+          "fact_binding": true
+        },
+        {
+          "aliases": [
+            "目标资金测算与情景"
+          ],
+          "min_chars": 20,
+          "fact_binding": true
+        },
+        {
+          "aliases": [
+            "资产配置原则与区间"
+          ],
+          "min_chars": 20,
+          "fact_binding": true
+        },
+        {
+          "aliases": [
+            "行动清单与年度复盘"
+          ],
+          "min_chars": 20,
+          "fact_binding": true
+        },
+        {
+          "aliases": [
+            "假设、局限和专业咨询事项"
+          ],
+          "min_chars": 20,
+          "fact_binding": false
+        }
+      ]
+    },
+    "年度更新": {
+      "required_payload": [
+        "household",
+        "goals",
+        "assumptions"
+      ],
+      "required_sections": [
+        {
+          "aliases": [
+            "家庭财务快照"
+          ],
+          "min_chars": 20,
+          "fact_binding": true
+        },
+        {
+          "aliases": [
+            "目标与优先级"
+          ],
+          "min_chars": 20,
+          "fact_binding": true
+        },
+        {
+          "aliases": [
+            "目标资金测算与情景"
+          ],
+          "min_chars": 20,
+          "fact_binding": true
+        },
+        {
+          "aliases": [
+            "资产配置原则与区间"
+          ],
+          "min_chars": 20,
+          "fact_binding": true
+        },
+        {
+          "aliases": [
+            "行动清单与年度复盘"
+          ],
+          "min_chars": 20,
+          "fact_binding": true
+        },
+        {
+          "aliases": [
+            "假设、局限和专业咨询事项"
+          ],
+          "min_chars": 20,
+          "fact_binding": false
+        }
+      ]
+    }
+  },
+  "capabilities": {
+    "can_plan": {
+      "requirements": [
+        "payload.household",
+        "payload.cash_flow",
+        "payload.goals"
+      ],
+      "blocked_slots": [
+        "integrated_plan",
+        "goal_priority"
+      ]
+    },
+    "can_quantify_tax": {
+      "requirements": [
+        "payload.verified_tax_rules"
+      ],
+      "blocked_slots": [
+        "tax_amount",
+        "tax_action"
+      ]
+    },
+    "can_budget": {
+      "requirements": [
+        "payload.monthly_income",
+        "payload.budget_categories"
+      ],
+      "blocked_slots": [
+        "budget_allocation",
+        "unassigned_cash"
+      ]
+    },
+    "can_compute_net_worth": {
+      "requirements": [
+        "payload.assets",
+        "payload.liabilities",
+        "payload.as_of"
+      ],
+      "blocked_slots": [
+        "net_worth",
+        "net_worth_change"
+      ]
+    },
+    "can_rank_debt_avalanche": {
+      "requirements": [
+        "payload.liabilities.balance",
+        "payload.liabilities.apr",
+        "payload.liabilities.monthly_payment",
+        "payload.liabilities.prepayment_rule"
+      ],
+      "blocked_slots": [
+        "debt_avalanche_order",
+        "interest_comparison"
+      ]
+    },
+    "can_set_emergency_target": {
+      "requirements": [
+        "payload.monthly_essential_expenses",
+        "payload.emergency_months_target"
+      ],
+      "blocked_slots": [
+        "emergency_target",
+        "emergency_gap"
+      ]
+    }
+  },
+  "privacy_scan": true,
+  "banned_patterns": [],
+  "direct_response": {
+    "route_only_max_chars": 800,
+    "max_clarifying_questions": 3,
+    "max_search_rounds": 3,
+    "require_inline_source_for_critical_numbers": true,
+    "forbid_internal_markers": true
+  },
+  "success_contract": {
+    "快速体检": {
+      "success": "识别应急资金、债务、基础保障和最紧急动作。",
+      "degraded": "缺辖区或数据时只询问必要汇总信息。",
+      "stop": "用户要求具体股票、基金、保险或信贷推荐。"
+    },
+    "完整规划": {
+      "success": "基线、目标、现金流、风险、配置原则、压力情景与行动计划一致。",
+      "degraded": "can_quantify_tax=false时只列官方核验和专业咨询事项。",
+      "stop": "用户拒绝提供目标金额、期限或基础现金流。"
+    },
+    "年度更新": {
+      "success": "基于旧计划识别变化、压力影响和行动调整。",
+      "degraded": "缺旧基线时降级为完整规划。",
+      "stop": "请求属于法律、税务申报或产品销售。"
+    }
+  },
+  "expected_artifacts": [
+    "report.md",
+    "facts.json",
+    "report-display.md",
+    "report-capabilities.json",
+    "report-manifest.json"
+  ],
+  "future_adjacent_skills": [
+    "retirement-monte-carlo",
+    "tax-planning-review",
+    "estate-planning-intake",
+    "insurance-needs-analysis",
+    "personal-tax-planning"
+  ],
+  "rubric_id": "wealth-planning-v1",
+  "loading_profile": "config/loading-profile.json",
+  "degraded_artifacts": "references/degraded-artifacts.md",
+  "deterministic_tool": "scripts/wealth_planning_engine.py",
+  "tool_contract": "references/deterministic-tool-contract.md",
+  "compact_tool_output": "scripts/compact_tool_output.py",
+  "ark_output_budget_tokens": 3500,
+  "ark_output_budget_policy": "soft_target",
+  "ark_output_contract": "references/ark-output-contract.md",
+  "complexity_router": "scripts/complexity_router.py",
+  "delivery_tiers": {
+    "direct": {
+      "target_chars": 1200,
+      "target_output_tokens": 700,
+      "hard_max_chars": 2200,
+      "hard_max_output_tokens": 1200,
+      "slots": [
+        "direct_answer",
+        "hard_gates",
+        "formula_or_priority",
+        "immediate_actions",
+        "missing_inputs",
+        "professional_boundary"
+      ]
+    },
+    "brief": {
+      "target_chars": 2600,
+      "target_output_tokens": 1500,
+      "hard_max_chars": 4200,
+      "hard_max_output_tokens": 2400,
+      "slots": [
+        "baseline",
+        "hard_gates",
+        "priority",
+        "scenario",
+        "actions",
+        "unknowns",
+        "professional_boundary"
+      ]
+    },
+    "full": {
+      "target_chars": 6000,
+      "target_output_tokens": 3400,
+      "hard_max_chars": 9000,
+      "hard_max_output_tokens": 5200,
+      "slots": [
+        "household_snapshot",
+        "hard_gates",
+        "goals",
+        "cashflow",
+        "risk_capacity",
+        "scenarios",
+        "allocation_boundary",
+        "actions",
+        "assumptions",
+        "unknowns",
+        "artifact_index"
+      ]
+    }
+  },
+  "length_policy": "soft_target",
+  "provider_safety_ceiling": {
+    "max_output_tokens": 6500,
+    "on_risk": "complete_compact_degraded_artifact",
+    "failure_statuses": [
+      "incomplete"
+    ],
+    "failure_finish_reasons": [
+      "length",
+      "max_tokens"
+    ],
+    "target_overrun_is_failure": false
+  },
+  "intake_preflight": "scripts/intake_preflight.py",
+  "intake_required_inputs": {
+    "快速体检": [
+      "inputs.household",
+      "inputs.cashflow"
+    ],
+    "完整规划": [
+      "inputs.household",
+      "inputs.cashflow",
+      "inputs.assets_liabilities",
+      "inputs.goals"
+    ],
+    "年度更新": [
+      "inputs.household",
+      "inputs.cashflow",
+      "inputs.prior_plan"
+    ]
+  },
+  "conditional_tool_policy": "纯现金计算使用通用公式或现金流工具；年度更新材料齐全时才运行年度跑道工具；缺数据时保持变量。",
+  "search_router": "scripts/search_router.py",
+  "search_evidence_validator": "scripts/search_evidence_validator.py",
+  "deliverable_validator": "scripts/validate_deliverable.py",
+  "search_max_calls": 4,
+  "search_evidence_context": "compact_ledger_only",
+  "search_runtime": {
+    "router": "scripts/search_router.py",
+    "evidence_validator": "scripts/search_evidence_validator.py",
+    "route_default": "off",
+    "max_calls": 4,
+    "optional_max_calls": 2,
+    "two_stage_search": [
+      "discovery",
+      "primary_source_verification"
+    ],
+    "decision_policy": {
+      "principle": "用户业务目标不决定是否联网；先冻结家庭、期间、辖区和结论槽位",
+      "required_when": [
+        "当前公开政策、官方限额或计划规则是当前结论的必要输入且材料未闭合"
+      ],
+      "optional_when": [
+        "用户材料已足够，仅需核对少量官方生效状态"
+      ],
+      "off_when": [
+        "封闭材料、纯家庭计算、方法模板或官方材料已闭合"
+      ],
+      "blocked_when": [
+        "辖区或对象未冻结，或缺口只能由用户私有家庭数据补齐"
+      ],
+      "private_input_substitution_forbidden": true
+    },
+    "provider_routing": {
+      "general_search": {
+        "required_topics": [
+          "tax_law",
+          "social_security",
+          "housing_fund",
+          "pension_eligibility",
+          "regulatory_rules"
+        ],
+        "priority": "P1"
+      },
+      "seed_finance_search": {
+        "priority": "low",
+        "activation": "explicit_public_finance_data_request_only",
+        "eligible_topics": [
+          "public_product_or_market_data",
+          "rates_or_yields",
+          "index_or_fund_public_facts",
+          "financial_institution_public_materials"
+        ],
+        "closed_fixture": "off",
+        "search_off": "off",
+        "schema_policy": "inspect_host_schema_and_use_supported_fields_only",
+        "unavailable_fallback": "general_search",
+        "database_is_official": false,
+        "may_recommend_products": false,
+        "may_replace_household_inputs": false,
+        "may_replace_licensed_advice": false
+      }
+    }
+  },
+  "search_contract": {
+    "routing_policy": "general_official_rules_seed_optional_market_data",
+    "max_calls": 4,
+    "optional_max_calls": 2,
+    "max_calls_is_hard_limit": true,
+    "repair_calls_reserved_min": 1,
+    "government_rules_require_official_general_search": true,
+    "seed_may_support_standard_public_market_fields": true,
+    "seed_may_support_tax_social_security_pension_or_regulation": false,
+    "seed_may_replace_household_inputs": false,
+    "transport_status_separate_from_evidence_status": true,
+    "secondary_repetition_upgrades_to_supported": false,
+    "secondary_only_rule_claim_status": "provisional",
+    "script_execution_evidence": {
+      "help_or_import_is_task_execution": false,
+      "requires_exit_status_and_artifact": true
+    },
+    "runtime_profiles": {
+      "full_runtime": "task_execution_success_plus_artifacts",
+      "hybrid_runtime": "executed_scripts_plus_inline_fallback",
+      "agent_only": "references/online-agent-execution-contract.md"
+    },
+    "trace_policy": {
+      "preferred": "host_captured_native_event_stream",
+      "model_summary_is_raw_trace": false,
+      "raw_unavailable_marker": "raw_trace_unavailable"
+    },
+    "output_claim_policy": {
+      "all_external_numbers_must_exist_in_claim_ledger": true,
+      "all_household_inputs_must_exist_in_user_fact_ledger": true,
+      "derived_values_require_calculation_and_assumption_records": true,
+      "provisional_rule_claim_blocks_rule_quantification": true
+    },
+    "output_hard_template": {
+      "identity_verification_independent_of_complexity": true,
+      "verify_before_conclusion": [
+        "entity_listing_status_and_ticker",
+        "rule_published_by_issuing_authority_and_effective_date",
+        "period_unit_currency_as_of",
+        "conflicting_values_both_disclosed"
+      ],
+      "inline_source_tag_required_per_number": true,
+      "source_tag_vocabulary": [
+        "一手",
+        "库",
+        "用户",
+        "推算",
+        "待核",
+        "阈值"
+      ],
+      "blanket_source_statement_satisfies_tagging": false,
+      "unsourced_number_action": "tag_as_pending_not_delete_and_not_vague",
+      "missing_input_action": "conditional_tier_table_not_assumption_not_refusal",
+      "unsourced_magnitude_container": "assumption_card",
+      "assumption_card_numbers_may_appear_in_conclusion": false,
+      "precedent_parameter_inheritance_allowed": false,
+      "auditable_summary_first": true,
+      "auditable_summary_max_lines": 5,
+      "template_may_reduce_analysis_depth": false,
+      "every_number_must_have_a_tag_class": true,
+      "user_stated_facts_need_no_external_source": true,
+      "derived_value_tag_requires_inputs_and_formula": true,
+      "tier_table_may_contain_absolute_amounts": false,
+      "generic_default_ranges_must_be_tier_variables": true,
+      "summary_allows_only_primary_db_or_user_tags": true,
+      "listing_status_evidence": {
+        "ticker_or_ir_page_proves_current_listing": false,
+        "accepted_sources": [
+          "exchange_listing_or_delisting_notice",
+          "regulator_notice",
+          "tender_offer_result_announcement"
+        ],
+        "must_search_tender_offer_privatization_delisting_per_entity": true,
+        "conclusion_requires_as_of_date": true,
+        "industry_common_knowledge_is_sufficient": false
+      },
+      "absolute_amount_ban_applies_to_whole_response": true,
+      "derived_value_allowed_in_summary_when_inputs_are_strong": true,
+      "tier_table_replaces_stress_scenario": false,
+      "summary_written_last_placed_first": true,
+      "summary_numbers_must_be_copied_from_body": true,
+      "summary_strongest_evidence_is_verbatim_copy": true,
+      "summary_may_contain_freshly_written_numbers": false,
+      "summary_self_check_locate_original_sentence": true,
+      "analyst_set_threshold_requires_explicit_tag": true,
+      "threshold_must_state_it_is_set_not_observed": true,
+      "summary_line_is_single_verbatim_copy": true,
+      "summary_line_may_append_after_copy": false,
+      "summary_fallback_is_precheck_result": true,
+      "summary_may_downgrade_to_pending_evidence": false,
+      "falsification_line_exempt_from_copy_rule": true,
+      "falsification_threshold_requires_threshold_tag": true
+    }
+  },
+  "jurisdiction_profiles": {
+    "中国大陆": "references/china-mainland-jurisdiction.md"
+  },
+  "cash_runway_finalizer": "scripts/finalize_cash_runway.py",
+  "integrated_modules": [
+    "household_budgeting",
+    "net_worth",
+    "spending_review",
+    "lifestyle_change_review",
+    "recurring_charge_review",
+    "financial_goals",
+    "emergency_fund",
+    "debt_patterns"
+  ],
+  "module_reference": "references/household-budgeting.md"
+}

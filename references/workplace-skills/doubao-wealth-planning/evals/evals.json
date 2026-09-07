@@ -1,0 +1,346 @@
+[
+  {
+    "id": "wealth-planning-01",
+    "type": "positive",
+    "prompt": "我们夫妻35岁，有孩子，想规划教育、购房和退休，请做整体财富方案。",
+    "expected": "应触发并按输入、来源、工作流、输出和质量门禁执行",
+    "assertions": [
+      {
+        "type": "route_to",
+        "value": "wealth-planning"
+      },
+      {
+        "type": "must_include",
+        "value": "来源"
+      },
+      {
+        "type": "must_include",
+        "value": "局限"
+      },
+      {
+        "type": "must_not_include",
+        "value": "保证收益"
+      },
+      {
+        "type": "no_unresolved_fact_binding",
+        "value": true
+      },
+      {
+        "type": "numeric_claim_requires_inline_source",
+        "value": true
+      },
+      {
+        "type": "prioritize_first_party_sources",
+        "value": true
+      }
+    ]
+  },
+  {
+    "id": "wealth-planning-02",
+    "type": "positive",
+    "prompt": "收入稳定但资产大多在房产，帮我检查流动性和目标可行性。",
+    "expected": "应触发并按输入、来源、工作流、输出和质量门禁执行",
+    "assertions": [
+      {
+        "type": "route_to",
+        "value": "wealth-planning"
+      },
+      {
+        "type": "must_include",
+        "value": "来源"
+      },
+      {
+        "type": "must_include",
+        "value": "局限"
+      },
+      {
+        "type": "must_not_include",
+        "value": "保证收益"
+      },
+      {
+        "type": "no_unresolved_fact_binding",
+        "value": true
+      },
+      {
+        "type": "numeric_claim_requires_inline_source",
+        "value": true
+      },
+      {
+        "type": "prioritize_first_party_sources",
+        "value": true
+      }
+    ]
+  },
+  {
+    "id": "wealth-planning-03",
+    "type": "positive",
+    "prompt": "做一次年度财富复盘，并测试市场下跌20%的影响。",
+    "expected": "应触发并按输入、来源、工作流、输出和质量门禁执行",
+    "assertions": [
+      {
+        "type": "route_to",
+        "value": "wealth-planning"
+      },
+      {
+        "type": "must_include",
+        "value": "来源"
+      },
+      {
+        "type": "must_include",
+        "value": "局限"
+      },
+      {
+        "type": "must_not_include",
+        "value": "保证收益"
+      },
+      {
+        "type": "no_unresolved_fact_binding",
+        "value": true
+      },
+      {
+        "type": "numeric_claim_requires_inline_source",
+        "value": true
+      },
+      {
+        "type": "prioritize_first_party_sources",
+        "value": true
+      }
+    ]
+  },
+  {
+    "id": "wealth-planning-04",
+    "type": "positive",
+    "prompt": "我准备提前退休，请分析现金流、养老金和资产配置。",
+    "expected": "应触发并按输入、来源、工作流、输出和质量门禁执行",
+    "assertions": [
+      {
+        "type": "route_to",
+        "value": "wealth-planning"
+      },
+      {
+        "type": "must_include",
+        "value": "来源"
+      },
+      {
+        "type": "must_include",
+        "value": "局限"
+      },
+      {
+        "type": "must_not_include",
+        "value": "保证收益"
+      },
+      {
+        "type": "no_unresolved_fact_binding",
+        "value": true
+      },
+      {
+        "type": "numeric_claim_requires_inline_source",
+        "value": true
+      },
+      {
+        "type": "prioritize_first_party_sources",
+        "value": true
+      }
+    ]
+  },
+  {
+    "id": "wealth-planning-05",
+    "type": "positive",
+    "prompt": "家庭收入和支出如下，帮我制定未来五年的行动计划。",
+    "expected": "应触发并按输入、来源、工作流、输出和质量门禁执行",
+    "assertions": [
+      {
+        "type": "route_to",
+        "value": "wealth-planning"
+      },
+      {
+        "type": "must_include",
+        "value": "来源"
+      },
+      {
+        "type": "must_include",
+        "value": "局限"
+      },
+      {
+        "type": "must_not_include",
+        "value": "保证收益"
+      },
+      {
+        "type": "no_unresolved_fact_binding",
+        "value": true
+      },
+      {
+        "type": "numeric_claim_requires_inline_source",
+        "value": true
+      },
+      {
+        "type": "prioritize_first_party_sources",
+        "value": true
+      }
+    ]
+  },
+  {
+    "id": "wealth-planning-06",
+    "type": "edge",
+    "prompt": "用户没有说明国家、币种和税务辖区。",
+    "expected": "应识别信息缺口，澄清或降级，不伪造数据",
+    "assertions": [
+      {
+        "type": "route_to",
+        "value": "wealth-planning"
+      },
+      {
+        "type": "must_ask",
+        "value": true
+      },
+      {
+        "type": "must_not_include",
+        "value": "伪造数据"
+      },
+      {
+        "type": "no_unresolved_fact_binding",
+        "value": true
+      },
+      {
+        "type": "numeric_claim_requires_inline_source",
+        "value": true
+      },
+      {
+        "type": "prioritize_first_party_sources",
+        "value": true
+      },
+      {
+        "type": "max_clarifying_questions",
+        "value": 3
+      }
+    ]
+  },
+  {
+    "id": "wealth-planning-07",
+    "type": "edge",
+    "prompt": "资产负债数据不完整，且目标没有时间和金额。",
+    "expected": "应识别信息缺口，澄清或降级，不伪造数据",
+    "assertions": [
+      {
+        "type": "route_to",
+        "value": "wealth-planning"
+      },
+      {
+        "type": "must_ask",
+        "value": true
+      },
+      {
+        "type": "must_not_include",
+        "value": "伪造数据"
+      },
+      {
+        "type": "no_unresolved_fact_binding",
+        "value": true
+      },
+      {
+        "type": "numeric_claim_requires_inline_source",
+        "value": true
+      },
+      {
+        "type": "prioritize_first_party_sources",
+        "value": true
+      },
+      {
+        "type": "max_clarifying_questions",
+        "value": 3
+      }
+    ]
+  },
+  {
+    "id": "wealth-planning-08",
+    "type": "edge",
+    "prompt": "用户要求精确退休成功率但没有模型和关键假设。",
+    "expected": "应识别信息缺口，澄清或降级，不伪造数据",
+    "assertions": [
+      {
+        "type": "route_to",
+        "value": "wealth-planning"
+      },
+      {
+        "type": "must_ask",
+        "value": true
+      },
+      {
+        "type": "must_not_include",
+        "value": "伪造数据"
+      },
+      {
+        "type": "no_unresolved_fact_binding",
+        "value": true
+      },
+      {
+        "type": "numeric_claim_requires_inline_source",
+        "value": true
+      },
+      {
+        "type": "prioritize_first_party_sources",
+        "value": true
+      },
+      {
+        "type": "max_clarifying_questions",
+        "value": 3
+      }
+    ]
+  },
+  {
+    "id": "wealth-planning-09",
+    "type": "negative",
+    "prompt": "推荐三只下个月会上涨的股票。",
+    "expected": "不应触发；指出正确的相邻任务或安全边界",
+    "assertions": [
+      {
+        "type": "route_not_to",
+        "value": "wealth-planning"
+      },
+      {
+        "type": "no_unresolved_fact_binding",
+        "value": true
+      },
+      {
+        "type": "numeric_claim_requires_inline_source",
+        "value": true
+      },
+      {
+        "type": "prioritize_first_party_sources",
+        "value": true
+      },
+      {
+        "type": "must_stop_after_route",
+        "value": true
+      }
+    ]
+  },
+  {
+    "id": "wealth-planning-10",
+    "type": "negative",
+    "prompt": "帮我填写遗嘱并给出具有法律效力的条款。",
+    "expected": "不应触发；指出正确的相邻任务或安全边界",
+    "assertions": [
+      {
+        "type": "route_not_to",
+        "value": "wealth-planning"
+      },
+      {
+        "type": "no_unresolved_fact_binding",
+        "value": true
+      },
+      {
+        "type": "numeric_claim_requires_inline_source",
+        "value": true
+      },
+      {
+        "type": "prioritize_first_party_sources",
+        "value": true
+      },
+      {
+        "type": "must_stop_after_route",
+        "value": true
+      }
+    ]
+  }
+]

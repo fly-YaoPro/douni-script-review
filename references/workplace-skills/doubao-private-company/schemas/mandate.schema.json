@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "private-market-project-evaluation/schemas/mandate.schema.json",
+  "title": "private-market-project-evaluation mandate.schema.json",
+  "additionalProperties": true,
+  "type": "object",
+  "required": [
+    "industry",
+    "stage",
+    "geography",
+    "check_size",
+    "holding_period"
+  ],
+  "properties": {
+    "industry": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "stage": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "geography": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "check_size": {
+      "type": "object"
+    },
+    "target_ownership": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "holding_period": {
+      "type": "object"
+    },
+    "hard_exclusions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

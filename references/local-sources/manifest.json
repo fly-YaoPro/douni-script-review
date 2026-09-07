@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-09-03T13:48:47.359Z",
+  "sources": [
+    {
+      "key": "course_teaching_regular_brief",
+      "title": "课程教学｜抖音 KOC Brief",
+      "file": "brief-course-teaching-regular.md",
+      "source": "https://zqyd2vqyqmy.feishu.cn/wiki/FVmnwUBNGi3KjJksYLacHRG8nkg",
+      "sha256": "2502141632b99e7d3f5b1105d66897064a06f9f29b5fa30b6784988ed0e7132e",
+      "characters": 6699,
+      "revision": "580"
+    },
+    {
+      "key": "course_teaching_3w_brief",
+      "title": "课程教学｜抖音 3W 粉以下达人 Brief",
+      "file": "brief-course-teaching-3w.md",
+      "source": "https://zqyd2vqyqmy.feishu.cn/wiki/SDchwuXOQiVlTTkpln7cC4Vnn1e",
+      "sha256": "4b17605d0e14a5661c587276c9d07b340343fc40cca87504f74b598b5c512988",
+      "characters": 3871,
+      "revision": "247"
+    },
+    {
+      "key": "doubao_work_independent_client_brief",
+      "title": "豆包工作独立端大纲模板",
+      "file": "brief-doubao-work-independent-client.md",
+      "source": "https://zqyd2vqyqmy.feishu.cn/wiki/EEKOwKGrNiIDLZkoR4dc7343nxh",
+      "sha256": "39caa983cfc511bf33542f959e1d69c746e42318cd53d8c3754ac1675caa8c51",
+      "characters": 2011,
+      "revision": "3"
+    },
+    {
+      "key": "institution_review_must_read",
+      "title": "豆包工作提报审核必看——对机构版",
+      "file": "institution-review-must-read.md",
+      "source": "https://zqyd2vqyqmy.feishu.cn/wiki/EtFpwtzkPiLOy2kGwaZcjeFFnMb",
+      "sha256": "a1544108620694a672849d80e105c79d86dc1e106918a97534195d2af335b507",
+      "characters": 14859,
+      "revision": "4145"
+    },
+    {
+      "key": "review_alignment_meeting_transcript",
+      "title": "审稿要求对齐会议完整逐字稿",
+      "file": "meeting-review-alignment-full-transcript.txt",
+      "source": "https://zqyd2vqyqmy.feishu.cn/minutes/obcnmd839w15al2ka648y5rj",
+      "sha256": "67caf568d353abde497b283ad6a81109f8f27ecdf1e6d0f793fafd0146c47c56",
+      "characters": 12676
+    }
+  ]
+}

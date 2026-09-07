@@ -1,0 +1,30 @@
+{
+  "jurisdiction": "CN",
+  "currency": "CNY",
+  "return_rate": 0.05,
+  "inflation_rate": 0.02,
+  "goals": [
+    {
+      "name": "education",
+      "priority": 1,
+      "target_today": 100,
+      "years": 10,
+      "allocated_assets": 20,
+      "annual_contribution": 5
+    },
+    {
+      "name": "retirement",
+      "priority": 2,
+      "target_today": 500,
+      "years": 25,
+      "allocated_assets": 50,
+      "annual_contribution": 10
+    }
+  ],
+  "stress_scenarios": [
+    {
+      "name": "low-return",
+      "return_rate_delta": -0.03
+    }
+  ]
+}

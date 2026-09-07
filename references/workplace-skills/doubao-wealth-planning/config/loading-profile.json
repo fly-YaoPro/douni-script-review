@@ -1,0 +1,159 @@
+{
+  "version": 10,
+  "initial_files": [
+    "SKILL.md"
+  ],
+  "mode_references": {
+    "快速体检": [
+      "cashflow-goals.md",
+      "household-budgeting.md",
+      "references/seed-finance-search-routing.md",
+      "references/online-agent-execution-contract.md"
+    ],
+    "完整规划": [
+      "multi-goal-priority-protocol.md",
+      "household-budgeting.md",
+      "references/seed-finance-search-routing.md",
+      "references/online-agent-execution-contract.md"
+    ],
+    "年度更新": [
+      "annual-review.md",
+      "household-budgeting.md",
+      "references/seed-finance-search-routing.md",
+      "references/online-agent-execution-contract.md"
+    ]
+  },
+  "output_token_budget": {
+    "快速体检": 1400,
+    "完整规划": 2800,
+    "年度更新": 2200
+  },
+  "search": {
+    "default": "auto",
+    "route_only": "off",
+    "closed_fixture": "off",
+    "freeze_object_before_search": true,
+    "router": "scripts/search_router.py",
+    "evidence_validator": "scripts/search_evidence_validator.py",
+    "max_calls": 4,
+    "tool_order": [
+      "general_search",
+      "seed_finance_search"
+    ],
+    "seed_finance_search": {
+      "priority": "low",
+      "activation": "explicit_public_finance_data_request_only",
+      "eligible_topics": [
+        "public_product_or_market_data",
+        "rates_or_yields",
+        "index_or_fund_public_facts",
+        "financial_institution_public_materials"
+      ],
+      "forbidden_topics": [
+        "tax_law",
+        "social_security",
+        "housing_fund",
+        "pension_eligibility",
+        "regulatory_rules"
+      ],
+      "closed_fixture": "off",
+      "search_off": "off",
+      "schema_policy": "inspect_host_schema_and_use_supported_fields_only",
+      "unavailable_fallback": "general_search",
+      "database_is_official": false,
+      "may_recommend_products": false,
+      "may_replace_household_inputs": false,
+      "may_replace_licensed_advice": false
+    },
+    "source_order": [
+      "government_rule",
+      "regulator",
+      "official_program",
+      "professional_secondary"
+    ],
+    "query_stages": [
+      "jurisdiction_and_tax_year",
+      "official_limits",
+      "official_benefit_rules",
+      "professional_boundaries"
+    ],
+    "evidence_context": "compact_ledger_only"
+  },
+  "runtime_profiles": {
+    "full_runtime": {
+      "requires_task_execution_success": true,
+      "requires_task_artifacts": true,
+      "help_or_import_counts_as_execution": false
+    },
+    "hybrid_runtime": {
+      "validation": "executed_scripts_plus_inline_fallback",
+      "may_claim_unexecuted_scripts_ran": false
+    },
+    "agent_only": {
+      "validation": "references/online-agent-execution-contract.md",
+      "may_claim_scripts_ran": false,
+      "global_degrade_because_scripts_unavailable": false
+    }
+  },
+  "tool_context": {
+    "full_output": "write_to_workdir",
+    "model_input": "compact_summary_only",
+    "include": [
+      "core_results",
+      "exceptions",
+      "unknowns",
+      "hard_gates"
+    ]
+  },
+  "ark_output_budget_tokens": 3500,
+  "ark_output_budget_policy": "soft_target",
+  "delivery_tiers": {
+    "direct": {
+      "target_chars": 1200,
+      "slots": [
+        "direct_answer",
+        "formula_or_priority",
+        "immediate_actions",
+        "missing_inputs"
+      ]
+    },
+    "brief": {
+      "target_chars": 2600,
+      "slots": [
+        "baseline",
+        "priority",
+        "scenario",
+        "actions",
+        "professional_boundary"
+      ]
+    },
+    "full": {
+      "target_chars": 6000,
+      "slots": [
+        "household_snapshot",
+        "goals",
+        "cashflow",
+        "risk_capacity",
+        "scenarios",
+        "allocation_boundary",
+        "actions",
+        "assumptions"
+      ]
+    }
+  },
+  "length_policy": "soft_target",
+  "provider_safety_ceiling": {
+    "failure_statuses": [
+      "incomplete"
+    ],
+    "failure_finish_reasons": [
+      "length",
+      "max_tokens"
+    ],
+    "target_overrun_is_failure": false
+  },
+  "complexity_router": "scripts/complexity_router.py",
+  "jurisdiction_references": {
+    "中国大陆": "china-mainland-jurisdiction.md"
+  }
+}

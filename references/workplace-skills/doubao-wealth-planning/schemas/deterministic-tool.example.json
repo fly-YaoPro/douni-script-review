@@ -1,0 +1,62 @@
+{
+  "currency": "CNY",
+  "assets": [
+    {
+      "id": "cash",
+      "value": 180000,
+      "liquidity": "liquid",
+      "restricted": false
+    },
+    {
+      "id": "restricted_retirement_account",
+      "value": 300000,
+      "liquidity": 1,
+      "restricted": true
+    },
+    {
+      "id": "home",
+      "value": 2000000,
+      "liquidity": "illiquid",
+      "restricted": false
+    }
+  ],
+  "liabilities": [
+    {
+      "id": "mortgage",
+      "balance": 900000,
+      "monthly_payment": 6500
+    }
+  ],
+  "monthly_income": 24000,
+  "monthly_expenses": 12000,
+  "one_time_needs": [
+    {
+      "id": "medical",
+      "amount": 30000
+    }
+  ],
+  "goals": [
+    {
+      "id": "education",
+      "target": 500000,
+      "current_funding": 125000,
+      "horizon_months": 96
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "income_interruption",
+      "monthly_income": 0
+    },
+    {
+      "id": "higher_expenses",
+      "monthly_expenses": 16000,
+      "one_time_needs": [
+        {
+          "id": "medical",
+          "amount": 50000
+        }
+      ]
+    }
+  ]
+}

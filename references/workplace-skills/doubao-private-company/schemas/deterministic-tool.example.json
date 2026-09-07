@@ -1,0 +1,48 @@
+{
+  "archetype": "saas",
+  "valuation": {
+    "pre_money": 80000000
+  },
+  "financing": {
+    "round_size": 20000000,
+    "ticket_size": 5000000
+  },
+  "cash": {
+    "current_cash": 10000000,
+    "monthly_net_burn": 2000000
+  },
+  "financials": {
+    "revenue": 25000000,
+    "arr": 20000000,
+    "net_burn": 12000000,
+    "net_new_arr": 6000000
+  },
+  "archetype_metrics": {
+    "saas": {
+      "starting_arr": 10000000,
+      "expansion_arr": 2000000,
+      "contraction_arr": 500000,
+      "churned_arr": 500000,
+      "cac": 12000,
+      "new_customer_arr": 24000,
+      "gross_margin": 0.75
+    }
+  },
+  "red_flag_rules": [
+    {
+      "id": "USER_DEFINED_RUNWAY",
+      "field": "metrics.post_financing_runway_months",
+      "operator": "lt",
+      "value": 12,
+      "message": "融资后 runway 低于输入规则阈值"
+    }
+  ],
+  "scenarios": [
+    {
+      "name": "lower burn",
+      "overrides": {
+        "cash.monthly_net_burn": 1500000
+      }
+    }
+  ]
+}

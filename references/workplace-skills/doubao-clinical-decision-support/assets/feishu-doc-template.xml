@@ -1,0 +1,122 @@
+<title>{{病例主题}}循证医学决策支持报告</title>
+
+<h1>一、总结论</h1>
+<callout emoji="🩺" background-color="light-green">
+  <p><b>总结：</b>{{直接回答用户提出的问题，说明当前答案及其确定性；涉及文献、指南或说明书时直接引用可点击来源。}}</p>
+  <p><b>关键依据：</b>{{按需概括最能支撑回答的病例信息、指南、研究或安全来源；数量由问题决定。}}</p>
+</callout>
+<callout emoji="⚠️" background-color="light-yellow">
+  <p><b>注意事项：</b>{{按需说明与当前问题直接相关的不确定性、禁忌/风险、需补充信息或 MDT/专科讨论条件，以及回答适用的人群、疾病阶段、临床场景、安全前提和证据限制；没有实质内容时删除本块。}}</p>
+</callout>
+
+<h1>二、病例信息梳理与临床问题</h1>
+
+<h1>三、临床问题分析和解答</h1>
+<p>{{围绕用户原始问题自由展开分析，可按需要拆分临床子问题；结合病例信息、证据方向、现实约束和不确定性，直接回答用户提出的诊断、鉴别、检查路径、用药/治疗选择、安全性或预后问题，并在涉及外部证据时主动引用相关可点击资料链接。无真实附件时只基于用户文字，不声称读取上传报告。}}</p>
+
+<h1>四、{{根据用户问题生成的风险、安全性或临床管理标题}}</h1>
+<p>{{结合病例和用户问题自由组织本章内容；说明相关风险或临床管理方向及其病例依据，必要时引用可点击指南、说明书、论文或监管来源。}}</p>
+
+<h1>五、证据关系与决策逻辑</h1>
+<h2>5.1 证据关系思维导图</h2>
+<whiteboard type="mermaid">
+mindmap
+  root(({{当前临床问题或病例判断}}))
+    病例线索
+      {{具体病例证据一}}
+        {{该病例证据产生的结论}}
+      {{具体病例证据二}}
+        {{该病例证据产生的结论}}
+    指南与共识
+      {{可读指南或共识简称}}
+        {{该指南证据产生的病例化结论}}
+      {{另一指南或共识简称}}
+        {{该指南证据产生的病例化结论}}
+    关键研究
+      {{可读研究简称}}
+        {{该研究证据产生的病例化结论}}
+      {{另一可读研究简称}}
+        {{该研究证据产生的病例化结论}}
+    安全边界
+      {{说明书阈值或患者风险证据}}
+        {{该安全证据产生的限制或监测结论}}
+      {{关键缺失信息}}
+        {{补齐前能够得出的条件性结论}}
+    综合判断
+      {{整合后的主要证据方向}}
+        {{当前倾向及适用前提}}
+      {{备选证据方向}}
+        {{备选路径及触发条件}}
+</whiteboard>
+<table>
+  <tr><th background-color="light-blue">图中简称</th><th background-color="light-blue">标题</th><th background-color="light-blue">来源链接</th><th background-color="light-blue">期刊/来源</th><th background-color="light-blue">证据级别</th><th background-color="light-blue">期刊级别（2025）</th></tr>
+  <tr><td>{{KDIGO 2024/DAPA-CKD 等可读简称}}</td><td>{{完整标题}}</td><td><a href="{{url}}">{{link_label}}</a></td><td>{{期刊/机构}}</td><td>{{研究填 Oxford CEBM 2009 级别；指南/共识填“不适用”；研究设计信息不足时填“暂未分级”}}</td><td>{{论文匹配成功时填中科院分区/北大核心；否则留空}}</td></tr>
+</table>
+<h2>5.2 决策逻辑图</h2>
+<whiteboard type="mermaid">
+flowchart TD
+    {{替换为结合本病例实际状况、关键缺失项和安全条件生成的纯 Mermaid 节点与连线；不要保留占位符，不要加入代码围栏、HTML/XML 标签或反斜杠 n}}
+</whiteboard>
+
+<h1>六、指南与共识证据</h1>
+<h2>6.1 中国指南/本土共识</h2>
+<p><a href="{{url}}">{{中国指南或本土共识名}}</a>（{{机构/期刊，年份；原指南分级体系和等级（如有）}}）。{{与当前病例和问题情况直接相关的指南片段、推荐或限制，可列举推荐内容、病例适配性、原文表述}}</p>
+<h2>6.2 国际指南/共识</h2>
+<p><a href="{{url}}">{{国际指南或共识名}}</a>（{{机构/期刊，年份；原指南分级体系和等级（如有）}}）。{{与当前病例直接相关的指南片段、推荐或限制，可列举推荐内容、病例适配性、原文表述}}</p>
+<table>
+  <tr><th background-color="light-blue">指南/共识</th><th background-color="light-blue">机构/年份</th><th background-color="light-blue">推荐内容</th><th background-color="light-blue">原指南推荐等级</th><th background-color="light-blue">病例适配性</th><th background-color="light-blue">原文定位</th></tr>
+  <tr><td><a href="{{url}}">{{指南名}}</a></td><td>{{机构/年份}}</td><td>{{推荐内容}}</td><td>{{原文体系和等级；整份指南无单一等级时填“按具体推荐条文”}}</td><td>{{适配性}}</td><td>{{章节/页码/推荐编号}}</td></tr>
+</table>
+
+<h1>七、关键研究证据</h1>
+<h2>7.1 核心研究逐条解读</h2>
+<p><a href="{{url}}">{{研究名或论文标题}}</a>（{{期刊名}}，{{年份}}，{{研究类型}}；Oxford CEBM 2009：{{1a-5；研究设计信息不足时填“暂未分级”}}；{{journal_rank_2025 非空时显示“期刊级别：中科院分区/北大核心”，为空则省略该字段}}）。{{研究设计、关键结果、关键结论、病例适配性和局限性；内容较多时可按需使用无序列表，提高表达清晰度}}</p>
+<table>
+  <tr>
+    <th background-color="light-blue">研究/文献</th>
+    <th background-color="light-blue">期刊/来源</th>
+    <th background-color="light-blue">证据级别（Oxford 2009）</th>
+    <th background-color="light-blue">期刊级别（2025）</th>
+    <th background-color="light-blue">年份</th>
+    <th background-color="light-blue">关键结果/片段定位</th>
+    <th background-color="light-blue">病例适配性</th>
+    <th background-color="light-blue">局限性</th>
+  </tr>
+  <tr>
+    <td><a href="{{url}}">{{标题或研究名}}</a></td>
+    <td>{{NEJM/Kidney International/期刊名}}</td>
+    <td background-color="light-green">{{1a/1b/2a/2b/2c/3a/3b/4/5；研究设计信息不足时填“暂未分级”}}</td>
+    <td>{{匹配成功时填中科院分区/北大核心；未匹配时留空}}</td>
+    <td>{{年份}}</td>
+    <td>{{页码/章节/结果}}</td>
+    <td>{{适配性}}</td>
+    <td>{{局限性}}</td>
+  </tr>
+</table>
+
+<h1>八、检索策略与证据覆盖</h1>
+<callout emoji="🔎" background-color="light-blue">
+  <p>{{检索范围、关键词、纳入排除标准、检索截止日期；说明中国指南/本土共识、国际指南、关键研究、安全来源和专科证据的覆盖情况。}}</p>
+</callout>
+
+<h1>九、完整参考文献（含链接）</h1>
+<h2>9.1 核心证据</h2>
+<table>
+  <tr><th background-color="light-blue">标题</th><th background-color="light-blue">来源</th><th background-color="light-blue">类型</th><th background-color="light-blue">年份</th><th background-color="light-blue">期刊分区</th><th background-color="light-blue">链接</th></tr>
+  <tr><td>{{标题或研究名}}</td><td>{{来源/期刊}}</td><td>{{指南/RCT/系统综述等}}</td><td>{{年份}}</td><td>{{journal_rank_2025 非空时填中科院分区/北大核心；否则留空}}</td><td><a href="{{url}}">{{link_label}}</a></td></tr>
+</table>
+<h2>9.2 辅助参考</h2>
+<table>
+  <tr><th background-color="light-blue">标题</th><th background-color="light-blue">来源</th><th background-color="light-blue">类型</th><th background-color="light-blue">年份</th><th background-color="light-blue">期刊分区</th><th background-color="light-blue">链接</th></tr>
+  <tr><td>{{标题}}</td><td>{{来源/期刊}}</td><td>{{辅助参考类型}}</td><td>{{年份}}</td><td>{{journal_rank_2025 非空时填中科院分区/北大核心；否则留空}}</td><td><a href="{{url}}">{{link_label}}</a></td></tr>
+</table>
+<h2>9.3 排除/待核验记录</h2>
+<table>
+  <tr><th background-color="light-blue">标题</th><th background-color="light-blue">来源</th><th background-color="light-blue">类型</th><th background-color="light-blue">年份</th><th background-color="light-blue">期刊分区</th><th background-color="light-blue">链接</th></tr>
+  <tr><td>{{标题}}</td><td>{{来源/期刊}}</td><td>{{排除/待核验；原因简写}}</td><td>{{年份}}</td><td>{{journal_rank_2025 非空时填中科院分区/北大核心；否则留空}}</td><td><a href="{{url}}">{{link_label}}</a></td></tr>
+</table>
+
+<p><b>证据与期刊级别说明：</b>本文对研究证据采用英国牛津大学循证医学中心 2009 证据等级（1a-5）与推荐意见（A-D）。指南或共识的 Oxford 证据级别标注为“不适用”，其原文分级体系和推荐等级在对应条文中保留。研究设计信息不足时标注“暂未分级”。期刊级别参考 2025 中科院分区/北大核心索引，仅表示发表载体，未匹配时不显示。参见 <a href="https://www.cebm.ox.ac.uk/resources/levels-of-evidence/oxford-centre-for-evidence-based-medicine-levels-of-evidence-march-2009">Oxford CEBM 2009 Levels of Evidence</a>。</p>
+
+<h1>十、免责声明</h1>
+<p>本报告为 AI 辅助生成的循证证据整理和临床决策讨论材料，仅供医生和临床团队参考，不替代医生面诊、主管医生医嘱、院内诊疗规范、MDT 讨论或患者知情同意。若患者病情急剧变化或出现危急情况，应立即按现场医疗流程处理。</p>

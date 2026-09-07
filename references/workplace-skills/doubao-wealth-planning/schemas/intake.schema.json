@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "wealth-planning/schemas/intake.schema.json",
+  "title": "wealth-planning Intake",
+  "type": "object",
+  "required": [
+    "task_id",
+    "skill",
+    "mode",
+    "as_of",
+    "jurisdiction_or_market",
+    "inputs"
+  ],
+  "properties": {
+    "task_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "skill": {
+      "const": "wealth-planning"
+    },
+    "mode": {
+      "enum": [
+        "快速体检",
+        "完整规划",
+        "年度更新"
+      ]
+    },
+    "as_of": {
+      "type": "string",
+      "minLength": 1
+    },
+    "jurisdiction_or_market": {
+      "type": "string",
+      "minLength": 1
+    },
+    "decision_context": {
+      "type": "string"
+    },
+    "inputs": {
+      "type": "object",
+      "description": "按成功契约冻结的业务输入",
+      "properties": {
+        "household": {
+          "type": "object"
+        },
+        "cashflow": {
+          "type": "object"
+        },
+        "assets_liabilities": {
+          "type": "object"
+        },
+        "goals": {
+          "type": "array",
+          "minItems": 1
+        },
+        "prior_plan": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "household",
+        "cashflow"
+      ],
+      "additionalProperties": true
+    },
+    "requested_artifacts": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "report.md",
+          "facts.json",
+          "report-display.md",
+          "report-capabilities.json",
+          "report-manifest.json"
+        ]
+      }
+    }
+  },
+  "additionalProperties": true,
+  "x-required-business-inputs": [
+    "国家或地区",
+    "税务居民身份",
+    "币种",
+    "家庭结构",
+    "汇总收入支出",
+    "汇总资产负债",
+    "目标金额与期限",
+    "风险偏好和风险承载能力"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "_note": "This file is a Skill reference document describing the full tool contract (inputSchema + outputSchema + annotations). It is NOT the MCP Hub registration schema (which uses the standard `parameters` field, no `outputSchema`). For MCP Hub registration, use a separate schema that follows the standard MCP tool definition format.",
+  "name": "student_discount_run_application_step",
+  "title": "办理豆包专业版学生优惠申请",
+  "description": "办理豆包专业版学生优惠申请。此文件描述工具提供方的完整 Schema；模型运行时只能读取 content 和 errorMsg，structuredContent 及其字段不可见。Skill 按 content 中的稳定文案锚点路由，非空 errorMsg 作为错误优先信号。工具无业务入参，只接受空对象 {}；UID 由运行时注入。STUDENT_AUTH_REQUIRED 状态下 content 文本中附带认证二维码 CDN 链接（模型以 markdown 图片形式渲染），DOUYIN_BIND_REQUIRED 状态下文本中包含绑定按钮指引。structuredContent 仅供工具实现、适配层和排障参考。",
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {},
+    "required": []
+  },
+  "annotations": {
+    "readOnlyHint": false,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": true
+  }
+}

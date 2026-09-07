@@ -1,0 +1,175 @@
+{
+  "version": 12,
+  "initial_files": [
+    "SKILL.md"
+  ],
+  "mode_references": {
+    "快速初筛": [
+      "seed-finance-search-routing.md",
+      "online-agent-execution-contract.md",
+      "capability-gates.md",
+      "mandate-structure.md",
+      "stage-commercialization-gates.md",
+      "red-flags.md"
+    ],
+    "完整 Screening": [
+      "seed-finance-search-routing.md",
+      "online-agent-execution-contract.md",
+      "capability-gates.md",
+      "mandate-screen.md",
+      "unit-economics.md"
+    ],
+    "聚焦核查": [
+      "seed-finance-search-routing.md",
+      "online-agent-execution-contract.md",
+      "capability-gates.md",
+      "unit-economics.md",
+      "forecast-bridge-protocol.md"
+    ]
+  },
+  "output_token_budget": {
+    "快速初筛": 1400,
+    "完整 Screening": 3000,
+    "聚焦核查": 1800
+  },
+  "search": {
+    "default": "auto",
+    "route_only": "off",
+    "closed_fixture": "off",
+    "freeze_object_before_search": true,
+    "router": "scripts/search_router.py",
+    "evidence_validator": "scripts/search_evidence_validator.py",
+    "max_calls": 4,
+    "tool_order": [
+      "general_search",
+      "seed_finance_search"
+    ],
+    "source_order": [
+      "company_primary",
+      "counterparty_primary",
+      "investor_primary",
+      "regulator",
+      "reputable_secondary"
+    ],
+    "query_stages": [
+      "entity_and_timeline",
+      "funding_primary_sources",
+      "commercialization_counterparty_check",
+      "risks_and_unknowns"
+    ],
+    "evidence_context": "compact_ledger_only",
+    "seed_finance_reference": "references/seed-finance-search-routing.md",
+    "seed_finance_scope": [
+      "public_funding",
+      "institutional_research",
+      "industry",
+      "listed_comparables",
+      "public_financial_clues"
+    ],
+    "general_document_scope": [
+      "company",
+      "investor",
+      "counterparty",
+      "regulator",
+      "clinical",
+      "product",
+      "customer"
+    ],
+    "fallback": "general_search",
+    "ledger_fields": [
+      "tool",
+      "query",
+      "asof",
+      "source",
+      "period",
+      "unit",
+      "currency",
+      "reported-vs-estimate"
+    ]
+  },
+  "runtime_profiles": {
+    "full_runtime": {
+      "requires_task_execution_success": true,
+      "requires_task_artifacts": true,
+      "help_or_import_counts_as_execution": false
+    },
+    "hybrid_runtime": {
+      "validation": "executed_scripts_plus_inline_fallback",
+      "may_claim_unexecuted_scripts_ran": false
+    },
+    "agent_only": {
+      "validation": "references/online-agent-execution-contract.md",
+      "may_claim_scripts_ran": false,
+      "global_degrade_because_scripts_unavailable": false
+    }
+  },
+  "tool_context": {
+    "full_output": "write_to_workdir",
+    "model_input": "compact_summary_only",
+    "include": [
+      "core_results",
+      "exceptions",
+      "unknowns",
+      "hard_gates"
+    ]
+  },
+  "ark_output_budget_tokens": 3500,
+  "ark_output_budget_policy": "soft_target",
+  "delivery_tiers": {
+    "direct": {
+      "target_chars": 1400,
+      "slots": [
+        "direct_answer",
+        "capability_gates",
+        "answerable_slots",
+        "paused_slots",
+        "kill_questions_with_upgrade_downgrade"
+      ]
+    },
+    "brief": {
+      "target_chars": 2800,
+      "slots": [
+        "capability_gates",
+        "stage_and_mandate",
+        "commercialization",
+        "technology_evidence_and_value_capture",
+        "valuation_object_and_relationship",
+        "economics_unknowns",
+        "red_flags",
+        "kill_questions_with_upgrade_downgrade",
+        "decision"
+      ]
+    },
+    "full": {
+      "target_chars": 6000,
+      "slots": [
+        "capability_gates",
+        "identity",
+        "mandate",
+        "commercialization",
+        "market",
+        "unit_economics",
+        "team",
+        "valuation_object_and_relationship",
+        "technology_evidence_and_value_capture",
+        "terms",
+        "red_flags",
+        "kill_questions_with_upgrade_downgrade",
+        "diligence",
+        "decision"
+      ]
+    }
+  },
+  "length_policy": "soft_target",
+  "provider_safety_ceiling": {
+    "failure_statuses": [
+      "incomplete"
+    ],
+    "failure_finish_reasons": [
+      "length",
+      "max_tokens"
+    ],
+    "target_overrun_is_failure": false
+  },
+  "complexity_router": "scripts/complexity_router.py"
+}

@@ -1,0 +1,465 @@
+{
+  "version": 13,
+  "case_type": "private-market-project-evaluation",
+  "default_mode": "auto",
+  "modes": {
+    "快速初筛": {
+      "required_payload": [
+        "company"
+      ],
+      "required_sections": [
+        {
+          "aliases": [
+            "项目概览与材料完整度"
+          ],
+          "min_chars": 20,
+          "fact_binding": true
+        },
+        {
+          "aliases": [
+            "投资标准匹配"
+          ],
+          "min_chars": 20,
+          "fact_binding": true
+        },
+        {
+          "aliases": [
+            "情景、红旗与尽调清单"
+          ],
+          "min_chars": 20,
+          "fact_binding": true
+        },
+        {
+          "aliases": [
+            "分层结论与下一动作",
+            "初步建议：推进 / 条件推进 / 暂缓 / 放弃"
+          ],
+          "min_chars": 20,
+          "fact_binding": true
+        }
+      ]
+    },
+    "完整 Screening": {
+      "required_payload": [
+        "company"
+      ],
+      "required_sections": [
+        {
+          "aliases": [
+            "项目概览与材料完整度"
+          ],
+          "min_chars": 20,
+          "fact_binding": true
+        },
+        {
+          "aliases": [
+            "投资标准匹配"
+          ],
+          "min_chars": 20,
+          "fact_binding": true
+        },
+        {
+          "aliases": [
+            "商业模式、市场与竞争"
+          ],
+          "min_chars": 20,
+          "fact_binding": true
+        },
+        {
+          "aliases": [
+            "经营质量与单位经济"
+          ],
+          "min_chars": 20,
+          "fact_binding": true
+        },
+        {
+          "aliases": [
+            "团队、治理与执行"
+          ],
+          "min_chars": 20,
+          "fact_binding": true
+        },
+        {
+          "aliases": [
+            "估值、交易与退出"
+          ],
+          "min_chars": 20,
+          "fact_binding": true
+        },
+        {
+          "aliases": [
+            "情景、红旗与尽调清单"
+          ],
+          "min_chars": 20,
+          "fact_binding": true
+        },
+        {
+          "aliases": [
+            "分层结论与下一动作",
+            "初步建议：推进 / 条件推进 / 暂缓 / 放弃"
+          ],
+          "min_chars": 20,
+          "fact_binding": true
+        }
+      ]
+    },
+    "聚焦核查": {
+      "required_payload": [
+        "company"
+      ],
+      "required_sections": [
+        {
+          "aliases": [
+            "聚焦核查",
+            "Focused Review"
+          ],
+          "min_chars": 20,
+          "fact_binding": true
+        },
+        {
+          "aliases": [
+            "情景、红旗与尽调清单"
+          ],
+          "min_chars": 20,
+          "fact_binding": true
+        },
+        {
+          "aliases": [
+            "分层结论与下一动作",
+            "初步建议：推进 / 条件推进 / 暂缓 / 放弃"
+          ],
+          "min_chars": 20,
+          "fact_binding": true
+        }
+      ]
+    }
+  },
+  "capability_gates": {
+    "can_form_research_view": {
+      "required": [
+        "payload.company"
+      ],
+      "blockers": [
+        "payload.identity.object_ambiguous"
+      ],
+      "blocked_slots": [
+        "project_specific_research_view",
+        "valuation_conclusion"
+      ]
+    },
+    "can_recommend_management_meeting": {
+      "required": [
+        "payload.company",
+        "payload.meeting.kill_questions",
+        "payload.meeting.coverage_complete"
+      ],
+      "blockers": [
+        "payload.identity.object_ambiguous",
+        "payload.fund_mandate.hard_pass_confirmed",
+        "payload.meeting.no_real_contact_window",
+        "payload.meeting.counterparty_refuses_identity_or_authenticity"
+      ],
+      "blocked_slots": [
+        "management_meeting"
+      ]
+    },
+    "can_recommend_data_room_access": {
+      "required": [
+        "payload.company",
+        "payload.data_room.initial_meeting_completed",
+        "payload.data_room.public_evidence_positive",
+        "payload.data_room.high_value_requests"
+      ],
+      "blockers": [
+        "payload.identity.object_ambiguous",
+        "payload.fund_mandate.hard_pass_confirmed",
+        "payload.data_room.counterparty_refuses_basic_authenticity"
+      ],
+      "blocked_slots": [
+        "information_access"
+      ]
+    },
+    "can_recommend_investment_progression": {
+      "required": [
+        "payload.fund_mandate",
+        "payload.deal_terms.instrument",
+        "payload.deal_terms.price_or_valuation",
+        "payload.deal_terms.investor_rights",
+        "payload.key_commercial_data",
+        "payload.exit_framework"
+      ],
+      "blockers": [
+        "payload.identity.object_ambiguous",
+        "payload.fund_mandate.hard_pass_confirmed",
+        "payload.transaction.no_real_window"
+      ],
+      "blocked_slots": [
+        "deal_quality",
+        "investment_progression"
+      ]
+    },
+    "can_compute_returns": {
+      "required": [
+        "payload.deal_terms.entry_equity_value",
+        "payload.deal_terms.instrument",
+        "payload.deal_terms.investor_rights",
+        "payload.return_inputs.dilution",
+        "payload.return_inputs.exit_equity_value",
+        "payload.return_inputs.exit_timing"
+      ],
+      "blockers": [],
+      "blocked_slots": [
+        "return_calculation"
+      ]
+    }
+  },
+  "privacy_scan": true,
+  "banned_patterns": [],
+  "direct_response": {
+    "route_only_max_chars": 800,
+    "max_clarifying_questions": 5,
+    "max_kill_questions": 5,
+    "require_upgrade_downgrade_conditions": true,
+    "forbid_blanket_refusal_on_local_gaps": true,
+    "max_search_rounds": 3,
+    "require_inline_source_for_critical_numbers": true,
+    "forbid_internal_markers": true
+  },
+  "success_contract": {
+    "快速初筛": {
+      "success": "分别完成公开研究观点、信息收集型初会、条件式数据室信息获取和投资推进能力判断，并先回答可答部分。",
+      "degraded": "私有材料或交易输入不足时只暂停受影响槽位，保留公开研究、条件式初会和适用时的数据室信息获取建议。",
+      "stop": "请求实际是上市公司研究或正式IC审批。"
+    },
+    "完整 Screening": {
+      "success": "商业、市场、单位经济、团队、交易、情景、红旗、尽调问题与条件建议一致。",
+      "degraded": "缺条款时can_compute_returns=false，只给公式和数据需求。",
+      "stop": "材料身份不明或命中基金Hard Pass。"
+    },
+    "聚焦核查": {
+      "success": "围绕单位经济、团队、估值条款或指定红旗给出证据、反方和验证请求。",
+      "degraded": "管理层数据只作management claim。",
+      "stop": "用户要求完整LBO、正式IC Memo或专项尽调。"
+    }
+  },
+  "expected_artifacts": [
+    "report.md",
+    "facts.json",
+    "report-display.md",
+    "report-capabilities.json",
+    "report-manifest.json"
+  ],
+  "future_adjacent_skills": [
+    "lbo-analysis",
+    "ic-memo",
+    "cap-table-modeling",
+    "commercial-due-diligence",
+    "legal-tax-due-diligence"
+  ],
+  "rubric_id": "private-market-project-evaluation-v1",
+  "loading_profile": "config/loading-profile.json",
+  "degraded_artifacts": "references/degraded-artifacts.md",
+  "deterministic_tool": "scripts/private_market_engine.py",
+  "tool_contract": "references/deterministic-tool-contract.md",
+  "compact_tool_output": "scripts/compact_tool_output.py",
+  "ark_output_budget_tokens": 3500,
+  "ark_output_budget_policy": "soft_target",
+  "ark_output_contract": "references/ark-output-contract.md",
+  "complexity_router": "scripts/complexity_router.py",
+  "delivery_tiers": {
+    "direct": {
+      "target_chars": 1400,
+      "slots": [
+        "direct_answer",
+        "capability_gates",
+        "technology_product_taxonomy",
+        "answerable_slots",
+        "paused_slots",
+        "kill_questions_with_upgrade_downgrade"
+      ]
+    },
+    "brief": {
+      "target_chars": 2800,
+      "slots": [
+        "capability_gates",
+        "stage_and_mandate",
+        "commercialization",
+        "technology_product_taxonomy",
+        "technology_evidence_and_value_capture",
+        "valuation_object_and_relationship",
+        "economics_unknowns",
+        "red_flags",
+        "kill_questions_with_upgrade_downgrade",
+        "decision"
+      ]
+    },
+    "full": {
+      "target_chars": 6000,
+      "slots": [
+        "capability_gates",
+        "identity",
+        "mandate",
+        "commercialization",
+        "technology_product_taxonomy",
+        "market",
+        "unit_economics",
+        "team",
+        "valuation_object_and_relationship",
+        "technology_evidence_and_value_capture",
+        "terms",
+        "red_flags",
+        "kill_questions_with_upgrade_downgrade",
+        "diligence",
+        "decision"
+      ]
+    }
+  },
+  "length_policy": "soft_target",
+  "provider_safety_ceiling": {
+    "failure_statuses": [
+      "incomplete"
+    ],
+    "failure_finish_reasons": [
+      "length",
+      "max_tokens"
+    ],
+    "target_overrun_is_failure": false
+  },
+  "intake_preflight": "scripts/intake_preflight.py",
+  "intake_required_inputs": {
+    "快速初筛": [
+      "inputs.project",
+      "inputs.business_description"
+    ],
+    "完整 Screening": [
+      "inputs.project",
+      "inputs.business_description"
+    ],
+    "聚焦核查": [
+      "inputs.project",
+      "inputs.focus_question"
+    ]
+  },
+  "conditional_tool_policy": "仅在具备订单、BOM、成本或现金预算等结构化输入时运行单位经济工具；公开预筛与SaaS缺数据任务不得套硬件Fixture。",
+  "search_router": "scripts/search_router.py",
+  "search_evidence_validator": "scripts/search_evidence_validator.py",
+  "deliverable_validator": "scripts/validate_deliverable.py",
+  "search_max_calls": 4,
+  "search_evidence_context": "compact_ledger_only",
+  "seed_finance_search": {
+    "reference": "references/seed-finance-search-routing.md",
+    "schema_policy": "use_host_actual_schema_do_not_invent_parameters",
+    "allowed_scope": [
+      "public_funding",
+      "institutional_research",
+      "industry",
+      "listed_comparables",
+      "public_financial_clues"
+    ],
+    "forbidden_substitutions": [
+      "bp",
+      "data_room",
+      "cap_table",
+      "term_sheet",
+      "mandate",
+      "transaction_terms"
+    ],
+    "fallback": "general_search",
+    "private_data_gap_policy": "local_degradation_no_blanket_refusal",
+    "library_result_is_primary": false,
+    "ledger_fields": [
+      "tool",
+      "query",
+      "asof",
+      "source",
+      "period",
+      "unit",
+      "currency",
+      "reported-vs-estimate"
+    ]
+  },
+  "search_contract": {
+    "routing_policy": "claim_driven_general_primary_seed_public_finance",
+    "max_calls": 4,
+    "optional_max_calls": 2,
+    "max_calls_is_hard_limit": true,
+    "repair_calls_reserved_min": 1,
+    "fallback": "general_search",
+    "private_data_gap_policy": "local_degradation_no_blanket_refusal",
+    "forbidden_substitutions": [
+      "bp",
+      "data_room",
+      "cap_table",
+      "term_sheet",
+      "mandate",
+      "transaction_terms"
+    ],
+    "authoritative_financial_database_may_support_listed_comparable_standard_fields": true,
+    "seed_may_support_private_target_revenue_customer_contract_or_terms": false,
+    "transport_status_separate_from_evidence_status": true,
+    "secondary_repetition_upgrades_to_supported": false,
+    "secondary_only_critical_claim_status": "provisional",
+    "script_execution_evidence": {
+      "help_or_import_is_task_execution": false,
+      "requires_exit_status_and_artifact": true
+    },
+    "runtime_profiles": {
+      "full_runtime": "task_execution_success_plus_artifacts",
+      "hybrid_runtime": "executed_scripts_plus_inline_fallback",
+      "agent_only": "references/online-agent-execution-contract.md"
+    },
+    "trace_policy": {
+      "preferred": "host_captured_native_event_stream",
+      "model_summary_is_raw_trace": false,
+      "raw_unavailable_marker": "raw_trace_unavailable"
+    },
+    "output_claim_policy": {
+      "all_external_numbers_and_company_facts_must_exist_in_claim_ledger": true,
+      "derived_values_require_calculation_and_assumption_records": true,
+      "all_critical_provisional_blocks_investment_progression": true
+    },
+    "output_hard_template": {
+      "identity_verification_independent_of_complexity": true,
+      "verify_before_conclusion": [
+        "entity_listing_status_and_ticker",
+        "rule_published_by_issuing_authority_and_effective_date",
+        "period_unit_currency_as_of",
+        "conflicting_values_both_disclosed"
+      ],
+      "inline_source_tag_required_per_number": true,
+      "source_tag_vocabulary": [
+        "一手",
+        "库",
+        "用户",
+        "推算",
+        "待核",
+        "阈值"
+      ],
+      "blanket_source_statement_satisfies_tagging": false,
+      "unsourced_number_action": "tag_as_pending_not_delete_and_not_vague",
+      "missing_input_action": "conditional_tier_table_not_assumption_not_refusal",
+      "unsourced_magnitude_container": "assumption_card",
+      "assumption_card_numbers_may_appear_in_conclusion": false,
+      "precedent_parameter_inheritance_allowed": false,
+      "auditable_summary_first": true,
+      "auditable_summary_max_lines": 5,
+      "template_may_reduce_analysis_depth": false,
+      "summary_written_last_placed_first": true,
+      "summary_numbers_must_be_copied_from_body": true,
+      "summary_strongest_evidence_is_verbatim_copy": true,
+      "summary_may_contain_freshly_written_numbers": false,
+      "summary_self_check_locate_original_sentence": true,
+      "every_number_must_have_a_tag_class": true,
+      "user_stated_facts_need_no_external_source": true,
+      "derived_value_tag_requires_inputs_and_formula": true,
+      "analyst_set_threshold_requires_explicit_tag": true,
+      "threshold_must_state_it_is_set_not_observed": true,
+      "summary_line_is_single_verbatim_copy": true,
+      "summary_line_may_append_after_copy": false,
+      "summary_fallback_is_precheck_result": true,
+      "summary_may_downgrade_to_pending_evidence": false,
+      "falsification_line_exempt_from_copy_rule": true,
+      "falsification_threshold_requires_threshold_tag": true
+    }
+  }
+}

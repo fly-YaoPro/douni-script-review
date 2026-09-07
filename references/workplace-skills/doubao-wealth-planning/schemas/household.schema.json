@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "wealth-planning/schemas/household.schema.json",
+  "title": "wealth-planning household.schema.json",
+  "additionalProperties": true,
+  "type": "object",
+  "required": [
+    "jurisdiction",
+    "tax_residency",
+    "currency",
+    "household",
+    "cash_flow",
+    "assets",
+    "liabilities",
+    "goals"
+  ],
+  "properties": {
+    "jurisdiction": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "tax_residency": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "currency": {
+      "type": "string"
+    },
+    "household": {
+      "type": "object"
+    },
+    "cash_flow": {
+      "type": "object"
+    },
+    "assets": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "liabilities": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "balance": {"type": ["number", "string"]},
+          "monthly_payment": {"type": ["number", "string"]},
+          "apr": {"type": ["number", "string", "null"]},
+          "prepayment_rule": {"type": ["string", "null"]}
+        }
+      }
+    },
+    "goals": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "risk_tolerance": {
+      "type": "object"
+    },
+    "risk_capacity": {
+      "type": "object"
+    },
+    "budget_categories": {
+      "type": "array",
+      "items": {"type": "object"}
+    },
+    "monthly_essential_expenses": {
+      "type": ["number", "string", "null"]
+    },
+    "emergency_months_target": {
+      "type": ["number", "string", "null"]
+    },
+    "spending_periods": {
+      "type": "array",
+      "items": {"type": "object"}
+    },
+    "spending_change_threshold": {
+      "type": ["number", "null"]
+    },
+    "recurring_charges": {
+      "type": "array",
+      "items": {"type": "object"}
+    }
+  }
+}

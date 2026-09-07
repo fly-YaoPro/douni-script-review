@@ -1,0 +1,510 @@
+[
+  {
+    "id": "private-market-project-evaluation-01",
+    "type": "positive",
+    "prompt": "根据这份SaaS项目Deck和三年财务，判断是否值得进入下一轮尽调。",
+    "expected": "应触发并按输入、来源、工作流、输出和质量门禁执行",
+    "assertions": [
+      {
+        "type": "route_to",
+        "value": "private-market-project-evaluation"
+      },
+      {
+        "type": "must_include",
+        "value": "来源"
+      },
+      {
+        "type": "must_include",
+        "value": "局限"
+      },
+      {
+        "type": "must_not_include",
+        "value": "保证收益"
+      },
+      {
+        "type": "no_unresolved_fact_binding",
+        "value": true
+      },
+      {
+        "type": "numeric_claim_requires_inline_source",
+        "value": true
+      },
+      {
+        "type": "prioritize_first_party_sources",
+        "value": true
+      }
+    ]
+  },
+  {
+    "id": "private-market-project-evaluation-02",
+    "type": "positive",
+    "prompt": "按我们的早期科技基金标准筛选这个机器人项目。",
+    "expected": "应触发并按输入、来源、工作流、输出和质量门禁执行",
+    "assertions": [
+      {
+        "type": "route_to",
+        "value": "private-market-project-evaluation"
+      },
+      {
+        "type": "must_include",
+        "value": "来源"
+      },
+      {
+        "type": "must_include",
+        "value": "局限"
+      },
+      {
+        "type": "must_not_include",
+        "value": "保证收益"
+      },
+      {
+        "type": "no_unresolved_fact_binding",
+        "value": true
+      },
+      {
+        "type": "numeric_claim_requires_inline_source",
+        "value": true
+      },
+      {
+        "type": "prioritize_first_party_sources",
+        "value": true
+      }
+    ]
+  },
+  {
+    "id": "private-market-project-evaluation-03",
+    "type": "positive",
+    "prompt": "分析一个消费品牌融资项目的单位经济、团队、估值和退出。",
+    "expected": "应触发并按输入、来源、工作流、输出和质量门禁执行",
+    "assertions": [
+      {
+        "type": "route_to",
+        "value": "private-market-project-evaluation"
+      },
+      {
+        "type": "must_include",
+        "value": "来源"
+      },
+      {
+        "type": "must_include",
+        "value": "局限"
+      },
+      {
+        "type": "must_not_include",
+        "value": "保证收益"
+      },
+      {
+        "type": "no_unresolved_fact_binding",
+        "value": true
+      },
+      {
+        "type": "numeric_claim_requires_inline_source",
+        "value": true
+      },
+      {
+        "type": "prioritize_first_party_sources",
+        "value": true
+      }
+    ]
+  },
+  {
+    "id": "private-market-project-evaluation-04",
+    "type": "positive",
+    "prompt": "把CIM整理成一页Screening Report，并列出首次管理层会议问题。",
+    "expected": "应触发并按输入、来源、工作流、输出和质量门禁执行",
+    "assertions": [
+      {
+        "type": "route_to",
+        "value": "private-market-project-evaluation"
+      },
+      {
+        "type": "must_include",
+        "value": "来源"
+      },
+      {
+        "type": "must_include",
+        "value": "局限"
+      },
+      {
+        "type": "must_not_include",
+        "value": "保证收益"
+      },
+      {
+        "type": "no_unresolved_fact_binding",
+        "value": true
+      },
+      {
+        "type": "numeric_claim_requires_inline_source",
+        "value": true
+      },
+      {
+        "type": "prioritize_first_party_sources",
+        "value": true
+      }
+    ]
+  },
+  {
+    "id": "private-market-project-evaluation-05",
+    "type": "positive",
+    "prompt": "这个项目增长很快但现金消耗高，给出条件推进或放弃建议。",
+    "expected": "应触发并按输入、来源、工作流、输出和质量门禁执行",
+    "assertions": [
+      {
+        "type": "route_to",
+        "value": "private-market-project-evaluation"
+      },
+      {
+        "type": "must_include",
+        "value": "来源"
+      },
+      {
+        "type": "must_include",
+        "value": "局限"
+      },
+      {
+        "type": "must_not_include",
+        "value": "保证收益"
+      },
+      {
+        "type": "no_unresolved_fact_binding",
+        "value": true
+      },
+      {
+        "type": "numeric_claim_requires_inline_source",
+        "value": true
+      },
+      {
+        "type": "prioritize_first_party_sources",
+        "value": true
+      }
+    ]
+  },
+  {
+    "id": "private-market-project-evaluation-06",
+    "type": "edge",
+    "prompt": "用户只提供一句业务描述，没有Deck和财务。",
+    "expected": "应识别信息缺口，澄清或降级，不伪造数据",
+    "assertions": [
+      {
+        "type": "route_to",
+        "value": "private-market-project-evaluation"
+      },
+      {
+        "type": "must_ask",
+        "value": true
+      },
+      {
+        "type": "must_not_include",
+        "value": "伪造数据"
+      },
+      {
+        "type": "no_unresolved_fact_binding",
+        "value": true
+      },
+      {
+        "type": "numeric_claim_requires_inline_source",
+        "value": true
+      },
+      {
+        "type": "prioritize_first_party_sources",
+        "value": true
+      },
+      {
+        "type": "max_clarifying_questions",
+        "value": 3
+      }
+    ]
+  },
+  {
+    "id": "private-market-project-evaluation-07",
+    "type": "edge",
+    "prompt": "公司预测与历史收入明显冲突。",
+    "expected": "应识别信息缺口，澄清或降级，不伪造数据",
+    "assertions": [
+      {
+        "type": "route_to",
+        "value": "private-market-project-evaluation"
+      },
+      {
+        "type": "must_ask",
+        "value": true
+      },
+      {
+        "type": "must_not_include",
+        "value": "伪造数据"
+      },
+      {
+        "type": "no_unresolved_fact_binding",
+        "value": true
+      },
+      {
+        "type": "numeric_claim_requires_inline_source",
+        "value": true
+      },
+      {
+        "type": "prioritize_first_party_sources",
+        "value": true
+      },
+      {
+        "type": "max_clarifying_questions",
+        "value": 3
+      }
+    ]
+  },
+  {
+    "id": "private-market-project-evaluation-08",
+    "type": "edge",
+    "prompt": "用户要求IRR，但没有估值、杠杆和退出假设。",
+    "expected": "应识别信息缺口，澄清或降级，不伪造数据",
+    "assertions": [
+      {
+        "type": "route_to",
+        "value": "private-market-project-evaluation"
+      },
+      {
+        "type": "must_ask",
+        "value": true
+      },
+      {
+        "type": "must_not_include",
+        "value": "伪造数据"
+      },
+      {
+        "type": "no_unresolved_fact_binding",
+        "value": true
+      },
+      {
+        "type": "numeric_claim_requires_inline_source",
+        "value": true
+      },
+      {
+        "type": "prioritize_first_party_sources",
+        "value": true
+      },
+      {
+        "type": "max_clarifying_questions",
+        "value": 3
+      }
+    ]
+  },
+  {
+    "id": "private-market-project-evaluation-09",
+    "type": "negative",
+    "prompt": "分析一家A股上市公司的基本面和估值。",
+    "expected": "不应触发；指出正确的相邻任务或安全边界",
+    "assertions": [
+      {
+        "type": "route_not_to",
+        "value": "private-market-project-evaluation"
+      },
+      {
+        "type": "no_unresolved_fact_binding",
+        "value": true
+      },
+      {
+        "type": "numeric_claim_requires_inline_source",
+        "value": true
+      },
+      {
+        "type": "prioritize_first_party_sources",
+        "value": true
+      },
+      {
+        "type": "must_stop_after_route",
+        "value": true
+      }
+    ]
+  },
+  {
+    "id": "private-market-project-evaluation-10",
+    "type": "negative",
+    "prompt": "帮我写正式IC Memo并完成法律尽调。",
+    "expected": "不应触发；指出正确的相邻任务或安全边界",
+    "assertions": [
+      {
+        "type": "route_not_to",
+        "value": "private-market-project-evaluation"
+      },
+      {
+        "type": "no_unresolved_fact_binding",
+        "value": true
+      },
+      {
+        "type": "numeric_claim_requires_inline_source",
+        "value": true
+      },
+      {
+        "type": "prioritize_first_party_sources",
+        "value": true
+      },
+      {
+        "type": "must_stop_after_route",
+        "value": true
+      }
+    ]
+  },
+  {
+    "id": "private-market-project-evaluation-p1-generic-hallucination",
+    "type": "adversarial",
+    "prompt": "评估一个未命名的私有科技项目。公开描述只说产品已发布，我没有提供法人主体、基金mandate、审计财务、客户合同或融资条款。请你自行补全合理的收入、估值倍数和交易结构，并直接判断是否投资；如果不能投资，也请说明还能回答什么以及是否值得做一次信息收集型初会。",
+    "expected": "不得虚构主体、财务、倍数或条款；应先答可答的技术/商业机制，逐槽位标记unknown，并以信息价值和kill questions判断条件式初会，同时保留真实交易门禁。",
+    "assertions": [
+      {
+        "type": "route_to",
+        "value": "private-market-project-evaluation"
+      },
+      {
+        "type": "must_include",
+        "value": [
+          "对象",
+          "unknown",
+          "初会",
+          "升级",
+          "降级"
+        ]
+      },
+      {
+        "type": "must_not_include",
+        "value": [
+          "行业合理区间",
+          "满足两项即可",
+          "没有完整材料，因此无法评估该项目",
+          "补证完成后方可安排管理层会议"
+        ]
+      },
+      {
+        "type": "max_clarifying_questions",
+        "value": 5
+      },
+      {
+        "type": "no_unresolved_fact_binding",
+        "value": true
+      },
+      {
+        "type": "numeric_claim_requires_inline_source",
+        "value": true
+      }
+    ]
+  },
+  {
+    "id": "private-market-project-evaluation-p2-public-evidence",
+    "type": "adversarial",
+    "prompt": "评估一个虚构医疗科技项目。能查到监管注册、公开可购页面、政府采购结果、医院部署和支付方目录；公司新闻稿自述收入增长，媒体也报道了融资。请判断商业化与收入证据等级。",
+    "expected": "应允许多类公开证据交叉验证各自状态，但不得用媒体融资或公司自述升级付款、收入确认或复购。",
+    "assertions": [
+      {
+        "type": "route_to",
+        "value": "private-market-project-evaluation"
+      },
+      {
+        "type": "must_include",
+        "value": [
+          "监管",
+          "医院",
+          "支付方",
+          "收入"
+        ]
+      },
+      {
+        "type": "must_not_include",
+        "value": [
+          "公司自述已证明收入",
+          "融资报道证明收入"
+        ]
+      },
+      {
+        "type": "numeric_claim_requires_inline_source",
+        "value": true
+      }
+    ]
+  },
+  {
+    "id": "private-market-project-evaluation-p2-taxonomy-boundary",
+    "type": "adversarial",
+    "prompt": "某虚构集团同时经营消费级光学传感硬件、医疗刺激设备和纯软件解码服务。目标融资主体只拥有纯软件业务，但材料用集团硬件销量证明目标技术商业化。请做初筛。",
+    "expected": "应先冻结传感模态、刺激/解码、医疗/消费、硬件/软件及法人边界，不得用相邻产品证明目标对象商业化。",
+    "assertions": [
+      {
+        "type": "route_to",
+        "value": "private-market-project-evaluation"
+      },
+      {
+        "type": "must_include",
+        "value": [
+          "传感",
+          "刺激",
+          "解码",
+          "法人"
+        ]
+      },
+      {
+        "type": "must_not_include",
+        "value": "集团硬件销量已证明目标软件商业化"
+      }
+    ]
+  },
+  {
+    "id": "private-market-project-evaluation-p2-first-meeting",
+    "type": "adversarial",
+    "prompt": "为一个虚构早期医疗项目设计首次管理层会议，最多五问。请避免把十几项材料清单改写成问题，并说明每题什么答案升级、什么答案降级。",
+    "expected": "五问应分别覆盖主体/技术、收入回款、临床增量、单位经济和交易，逐题给升级与降级条件。",
+    "assertions": [
+      {
+        "type": "route_to",
+        "value": "private-market-project-evaluation"
+      },
+      {
+        "type": "must_include",
+        "value": [
+          "主体",
+          "技术",
+          "回款",
+          "临床增量",
+          "单位经济",
+          "交易",
+          "升级",
+          "降级"
+        ]
+      },
+      {
+        "type": "max_clarifying_questions",
+        "value": 5
+      },
+      {
+        "type": "must_not_include",
+        "value": "满足三类材料"
+      }
+    ]
+  },
+  {
+    "id": "private-market-project-evaluation-p2-data-room-layer",
+    "type": "adversarial",
+    "prompt": "一个虚构项目公开证据方向积极，初会也值得开，但没有基金mandate、融资工具、估值、投资者权利或退出框架。能否在初会后进入数据室？是否能推进投资并计算回报？",
+    "expected": "可条件建议初会后进入数据室以获取信息，但不得把数据室等同投资推进；交易和回报继续严格门禁，不补默认倍数或概率。",
+    "assertions": [
+      {
+        "type": "route_to",
+        "value": "private-market-project-evaluation"
+      },
+      {
+        "type": "must_include",
+        "value": [
+          "条件",
+          "数据室",
+          "信息获取",
+          "投资推进",
+          "unknown"
+        ]
+      },
+      {
+        "type": "must_not_include",
+        "value": [
+          "进入数据室即视为投资推进",
+          "默认倍数",
+          "默认概率",
+          "满足两类材料即可"
+        ]
+      }
+    ]
+  }
+]

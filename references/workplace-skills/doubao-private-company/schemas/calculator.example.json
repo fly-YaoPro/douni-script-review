@@ -1,0 +1,25 @@
+{
+  "scenarios": [
+    {
+      "name": "base",
+      "probability": 0.6,
+      "entry_equity": 100,
+      "exit_equity": 200,
+      "years": 5
+    },
+    {
+      "name": "upside",
+      "probability": 0.2,
+      "entry_equity": 100,
+      "exit_equity": 300,
+      "years": 5
+    },
+    {
+      "name": "downside",
+      "probability": 0.2,
+      "entry_equity": 100,
+      "exit_equity": 60,
+      "years": 5
+    }
+  ]
+}

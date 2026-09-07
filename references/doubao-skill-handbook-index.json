@@ -2,8 +2,8 @@
   "schemaVersion": 1,
   "generatedAt": "2026-09-01T13:58:18.297Z",
   "sourceFile": "豆包 Skill 全量手册（详细结构化版）.md",
-  "handbookPath": "E:\\豆包创作线Agent\\skills\\douni-script-review\\references\\doubao-skill-handbook.md",
-  "mirrorPath": "E:\\Linkly知识库\\豆尼审稿Skill-Linkly数据库\\02-豆包Workplace全部Skills\\豆包-Skill-全量手册-详细结构化版.md",
+  "handbookPath": "references/doubao-skill-handbook.md",
+  "mirrorPath": "references/workplace-skills/豆包-Skill-全量手册-详细结构化版.md",
   "priority": {
     "role": "secondary_capability_reference",
     "precedence": "现行产品官方 Skill/SKILL.md > 本手册 > 模型常识",
