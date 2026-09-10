@@ -1,10 +1,10 @@
 # 团队安装与每次更新
 
-维护仓库：https://github.com/fly-YaoPro/douni-script-review ，默认分支 `main`。这是含客户 Brief、会议全文和内部审稿样本的私有仓库，请由维护者给同事的 GitHub 账号开放读取权限。飞书账号权限与 GitHub 仓库权限分别管理，不共享任何人的登录凭据。
+维护仓库：https://github.com/fly-YaoPro/douni-script-review ，默认分支 `main`。仓库已公开，包含原有 Brief、会议与审稿参考样本。下载不需要私有仓库授权；访问飞书源文档仍需要使用者自己的权限，不共享任何人的登录凭据。
 
 ## 同事首次安装
 
-需要 Git、Python 3.10+、lark-cli，以及能访问该私有仓库的本人 GitHub 认证。Git 认证使用同事自己的系统凭据管理器；不要把 token 拼进 URL。先用 AI 客户端的 Skill 安装方式安装该仓库，或 `git clone https://github.com/fly-YaoPro/douni-script-review.git <客户端Skills目录>/douni-script-review`。ZIP 下载方式也支持：解压后让 `SKILL.md` 直接位于 `douni-script-review` 目录下，不能再套一层仓库名称。
+需要 Git、Python 3.10+、lark-cli。公开仓库可以匿名读取；如使用 Git 认证，交给本机凭据管理器，不要把 token 拼进 URL。先用 AI 客户端的 Skill 安装方式安装该仓库，或 `git clone https://github.com/fly-YaoPro/douni-script-review.git <客户端Skills目录>/douni-script-review`。ZIP 下载方式也支持：解压后让 `SKILL.md` 直接位于 `douni-script-review` 目录下，不能再套一层仓库名称。
 
 让助手执行 `python "<Skill路径>/scripts/ensure_latest.py"`，成功后重新加载 Skill。Windows 使用 PowerShell 7；macOS/Linux 可将 `python` 换为 `python3`。无需安装内置 Workplace Skills 的依赖：它们仅用于核对能力，不在审稿时执行。
 
